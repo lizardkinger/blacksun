@@ -1,0 +1,444 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta name="BlackSun" content="Manual"/>
+<title>BlackSun 3D-Editor</title>
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+<body text="black" link="black" vlink="black" alink="black">
+<a name="07">
+<h1>7. Materialien</h1>
+</a>
+<div>Um Oberflächen zu beschreiben, bietet BlackSun Materialien an. Diese kombinieren Oberflächeneigenschaften (z.b. Farben), alle zu verwendenden Texturen und die Kombinationseinstellungen dieser Texturen. Hat ein Modell kein Material gebunden, wird ein Standardmaterial verwendet.</div>
+<a name="07-01">
+<h2>7.1 der Materialeditor</h2>
+</a>
+<div class="shortcut">Menü -> Material ->  Material editor</div><br />
+	<br />
+	Der Materialeditor dient dazu, alle Oberflächeneigenschaften komfortable zu konfigurieren. </div>
+<br />
+<div class="pic">
+	<div class="center"> <a href="../images/kap7/Material_MaterialEditor_1.png" target="_blank"><img src="../images/kap7/Material_MaterialEditor_1.png" alt="" height="297" width="374" border="0" /></a></div>
+	<div> Material-Editor <a href="../images/kap7/Material_MaterialEditor_1.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div> <u>Der Editor ist in 5 Teile geteilt:</u><br />
+	<table border="0">
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Available materials:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Eine Liste mit allen verf&uuml;gbaren  Materialien</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Preview:</em> </td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Ein Vorschaufenster</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>General:</em> </td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Farbeinstellungen und Name des  Materials</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>Texturestate:</em> </td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Liste der auf das Material gelegten  Texturen und deren Einstellungen</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Buttonfeld:</em> </td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Verwalten von Materialien</td>
+		</tr>
+	</table>
+	<br />
+	<span class="topic">Available materials:</span><br />
+	Alle verfügbaren, vom Benutzer erstellten Materialien werden hier aufgelistet. Es wird der Name des Materials und die ID aufgezeigt. <br />
+	<br />
+	<span class="topic">Preview:</span><br />
+	Zeigt eine Vorschau des Materials an bestimmten Grundkörpern dar. Einstellen lässt sich die Vorschau über das Kontextmenü (erreichbar über die rechte Maustaste): </div>
+<br />
+<br />
+<br />
+<br />
+<div class="pic">
+	<div class="center"> <img src="../images/kap7/Material_MaterialEditor_Kontextmenue.png" alt="" height="159" width="134" border="0" /></a></div>
+	<div> Preview-Kontextmenü </div>
+</div>
+<div class="fleft">
+	<table border="0">
+		<tr>
+			<td valign="top"><em>Reset view: </em> </td>
+			<td>Setzt die Kameraeinstellungen zur&uuml;ck</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>Show grid:</em> </td>
+			<td>Aktiviert/Deaktiviert das Gitternetz</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>Render box:</em></td>
+			<td>Stellt als Testobjekt eine Box dar</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>Render sphere:</em></td>
+			<td>Stellt als Testobjekt eine Kugel dar</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>Render torus:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Stellt als Testobjekt einen Torus dar</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>Render helix:</em></td>
+			<td>Stellt als Testobjekt eine Spirale dar</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Render grid:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Stellt als Testobjekt ein Gitter dar</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Render geosphere:</em></td>
+			<td>Stellt als Testobjekt eine GeoSphere  dar</td>
+		</tr>
+	</table>
+</div>
+<br />
+<div class="clear"><span class="topic">General:</span><br />
+	Hier können der Name und die Farbeigenschaften eingestellt werden. Es können folgende Farbeigenschaften bearbeitet werden:<br />
+	<br />
+	<table border="0">
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Color:</em></td>
+			<td>Die Grundfarbe</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Ambient color:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Ambienter Lichtanteil der reflektiert  werden soll</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Diffuse color:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Diffuser Lichtanteil der reflektiert  werden soll</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Specular color:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Glanzlichtanteil der reflektiert werden  soll</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Emissive color:</em></td>
+			<td>Selbstaustrahlender Anteil</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Specular factor:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Der Glanzfaktor (Glanzlichtexponent).  Je gr&ouml;&szlig;er der Faktor, desto h&auml;rter/gl&auml;tter wirkt das  Material</td>
+		</tr>
+	</table>
+</div>
+<br />
+<div><span class="topic">Texturestate:</span><br />
+	Texturen können hier geladen und auf das Material gelegt werden. Insgesamt können maximal 4 Texturen kombiniert werden. Die Art und Weise, wie diese miteinander kombiniert werden sollen, können über die weiterführenden Eigenschaften bestimmt werden.
+	Um eine Textur zu laden, klicken sie auf die ComboBox nebem der Texturestate und wählen “Load from file ...” aus. Sind Texturloaderoutinen vorhanden, können nun Texturen ausgewählt und geladen werden. Standardmäßig mit dem mitgeliefertem Texturladeroutinen lassen sich BMP-, GIF-, JPEG-, JPG-, PBM-, PGM-, PNG-, PPM-, TGA-, XBM- und XPM-Dateien laden. Nach dem Laden befindet sich die neue Textur in der Liste und kann ausgewählt werden. Um eine Textur von einem Texturestate zu entfernen, wählen Sie “-No-” aus.<br />
+	<br />
+	Um die weiterführenden Eigenschaften aufzuzeigen, klicken Sie auf das Kreuz nebem der Texturestate. Folgende Werte können eingestellt werden:<br />
+	<br />
+	<table border="0">
+		<tr>
+			<td valign="top"><em>Color  Scaling:</em></td>
+			<td>Der  Faktor, mit dem der Farbwert multipliziert werden soll. Zur Verf&uuml;gung stehen  die Multiplikatoren 1, 2 und 4</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Combine  RGB:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Stellt  die Art ein, wie die RGB-Farbwerte miteinander kombiniert werden sollen</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Combine  Alpha:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Stellt  die Art ein, wie der Alpha-Farbwert miteinander kombiniert werden soll</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>ColorArg0-2:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Der  Wert f&uuml;r die Operatoren 0, 1 und 2 f&uuml;r die Farbberechnung</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>AlphaArg0-2:</em></td>
+			<td>Der  Wert f&uuml;r die Operatoren 0, 1 und 2 f&uuml;r die Alphaberechnung</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Blending  RGB0-2:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Die  Farbquelle f&uuml;r die RGB-Werte und die Operatoren 0, 1 und 2</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Blending  Alpha0-2:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Die  Farbquelle f&uuml;r die Alpha-Werte und die Operatoren 0, 1 und 2</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>RepeatU/RepeatV:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Gibt  an, wie die Textur auf Wiederholungen reagiert (Koordinaten gr&ouml;&szlig;er  1.0 und/oder kleiner 0.0) </td>
+		</tr>
+	</table>
+</div>
+<br />
+<div><span class="topic">Buttonfeld:</span><br />
+	Die Buttons dienen dazu, die Materialien zu verwalten:<br />
+	<br />
+	<table border="0">
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Delete:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				L&ouml;scht  das aktuell selektierte Material</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Create  new:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Erstellt  ein neues Material mit einem bestimmten Namen</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Load:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				L&auml;dt  ein Material aus einer Datei (*.bsmaterial)</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Save:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Speichert  das selektierte Material in eine Datei (*.bsmaterial)</td>
+		</tr>
+	</table>
+</div>
+<a name="07-02">
+<h2>7.2 Texturkoordinateneditor</h2>
+</a>
+<div class="shortcut">Menü -> Material ->  Texture coordinate editor</div><br />
+	Der Texturkoordinateneditor dient dazu, die Texturcoordinaten eines Models komfortabel zu bearbeiten.</div>
+<br />
+<div class="pic">
+	<div class="center"> <a href="../images/kap7/Material_TextureCoordinateEditor_1.png" target="_blank"><img src="../images/kap7/Material_TextureCoordinateEditor_1.png" alt="" height="303" width="390" border="0" /></a></div>
+	<div> Texturkoordinateneditor <a href="../images/kap7/Material_TextureCoordinateEditor_1.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div> <u>Der Editor besteht aus 4 Teilen:</u><br />
+	<table border="0">
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Mode:</em> </td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Bearbeitungsmodi</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Object:</em> </td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Einstellungen &uuml;ber aktuell  bearbeitendes Model</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>View:</em> </td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Einstellungen &uuml;ber die Darstellung</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Copy:</em> </td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Kopiert Texturkoordinaten</td>
+		</tr>
+	</table>
+	<br />
+	<span class="topic">Mode:</span><br />
+	Hier wird der Bearbeitungsmodus definiert:<br />
+	<br />
+	<table border="0">
+		<tr>
+			<td width="16%" valign="top"><em>Select:</em> </td>
+			<td width="84%">Selektierungsmodus. Per Maus kann ein  Selektionsrechteck gezogen werden, alle Punkte in diesem  Rechteck werden selektiert</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Move:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Bewegungsmodus. Per Maus k&ouml;nnen  die selektierten Punkte bewegt werden</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Rotate:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Rotierungsmodus. Per Maus k&ouml;nnen  sie selekterten Punkte um deren Zentrum rotiert werden</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Scale:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Skalierungsmodus. Per Maus k&ouml;nnen  sie selektierten Punkte von ihrem Zentrum aus skaliert werden</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Open material editor:</em></td>
+			<td valign="bottom"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Der Materialeditor kann hier&uuml;ber  ge&ouml;ffnet werden</td>
+		</tr>
+	</table>
+	<br />
+	<br />
+	<span class="topic">Object:</span><br />
+	Das Modell und die Texturkoordinatenschicht, die bearbeitet werden sollen, können hier gewählt werden:<br />
+	<br />
+	<table border="0">
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Mesh:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Das Modell das bearbeitet werden soll</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Texture stage:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Die Texturkoordinatenschicht die  bearbeitet werden soll</td>
+		</tr>
+	</table>
+	<br />
+	<span class="topic">View:</span><br />
+	Stellt die Darstellung ein:<br />
+	<br />
+	<table border="0">
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Show  grid:</em> </td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Aktiviert/Deaktiviert  die Darstellung des Gitternetzes</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Show  replication:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Aktiviert/Deaktiviert  die Darstellung von Texturwiederholungen. </td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Reset  view:</em> </td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Setzt  die Kameraeinstellungen zur&uuml;ck</td>
+		</tr>
+	</table>
+	<br />
+	<span class="topic">Copy:</span><br />
+	Kopiert eine Texturkoordinatenschicht:<br />
+	<br />
+	<table border="0">
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>From:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Gibt  die zu kopierende Texturkoordinatenschicht an</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>To:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Gibt  an, wohin die Texturkoordinaten kopiert werden sollen</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Copy:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Kopiert  die gew&auml;hlte Texturkoordinatenschicht</td>
+		</tr>
+	</table>
+</div>
+<br />
+<a name="07-03">
+<h2>7.3 Texturverschiebungen</h2>
+</a>
+<div class="shortcut">Menü -> Material -> Edit texture offsets/repeatings</div><br/>
+<p>Mithilfe diesem Dialogs kann eine Textur auf einem Mesh oder Polygon einerseits verschoben werden  und andererseits die Anzahl der Wiederholungen geändert werden.</p>
+<div class="pic">
+	<div class="center"> <a href="../images/kap7/texturverschiebung_dialog.png" target="_blank"><img src="../images/kap7/texturverschiebung_dialog.png" alt="" height="136" width="294" border="0" /></a></div>
+	<div> Texturverschiebung <a href="../images/kap7/texturverschiebung_dialog.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div>
+	<table border="0">
+		<tr>
+			<td valign="top"><em>Texture offset U:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Verschiebung  der gebundenen Textur in horizontaler Richtung</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>Texture offset V:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Verschiebung  der gebundenen Textur in senkrechter Richtung</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Texture repeat U:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Anzahl  der Wiederholungen der gebundenen Textur in horizontaler Richtung</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Texture repeat V:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Anzahl  der Wiederholungen der gebundenen Textur in senkrechter Richtung</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>OK:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Einstellungen  werden &uuml;bernommen</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Cancel:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Einstellungen  werden verworfen</td>
+		</tr>
+	</table>
+</div>
+<div class="pic">
+	<div class="center"> <a href="../images/kap7/texturverschiebung_offset1.png" target="_blank"><img src="../images/kap7/texturverschiebung_offset1.png" alt="" height="239" width="375" border="0" /></a></div>
+	<div> Änderung der Offseteigenschaften der Textur: U-Wert<br />
+		auf 5.1 und V-Wert auf -6.4 <a href="../images/kap7/texturverschiebung_offset1.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div class="picshori">
+	<div class="center"> <a href="../images/kap7/texturverschiebung_offset2.png" target="_blank"><img src="../images/kap7/texturverschiebung_offset2.png" alt="" height="239" width="375" border="0" /></a></div>
+	<div> Ergebnisbild der Offsetänderung <a href="../images/kap7/texturverschiebung_offset2.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a><br /><br /></div>
+</div>
+<div class="picshori">
+	<div class="center"> <a href="../images/kap7/texturverschiebung_repeat1.png" target="_blank"><img src="../images/kap7/texturverschiebung_repeat1.png" alt="" height="239" width="375" border="0" /></a></div>
+	<div> Änderung der Repeateigenschaften der Textur: U-Wert <br />
+		auf 5 und V-Wert auf 2 <a href="../images/kap7/texturverschiebung_repeat1.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div class="picshori">
+	<div class="center"> <a href="../images/kap7/texturverschiebung_repeat2.png" target="_blank"><img src="../images/kap7/texturverschiebung_repeat2.png" alt="" height="239" width="375" border="0" /></a></div>
+	<div> Ergebnisbild der Repeatänderung <a href="../images/kap7/texturverschiebung_repeat2.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a><br /><br /></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<meta name="BlackSun" content="Manual"/>
+		<title>BlackSun 3D-Editor</title>
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+	</head>
+
+	<body text="black" link="black" vlink="black" alink="black">
+		<a name="10"><h1>10. Einstellungen</h1></a><br />
+		<a name="10-01"><h2>10.1 Pluginmanager</h2></a>
+	<div class="shortcut">	Menü -> Settings -> <img src="../images/kap10/Einstellungen_Renderer_Icon.png" />Settings -> Pluginmanager <br />
+		Toolbar -> <img src="../images/kap10/Einstellungen_Renderer_Icon.png" />Settings -> Pluginmanager</div><br />
+	</div>
+		<div class="pic">
+			<div class="center">
+				<a href="../images/kap10/Settings.png" target="_blank"><img src="../images/kap10/Settings.png" alt="" height="238" width="373" border="0" /></a></div>
+			<div>
+				Settings-Pluginmanager
+				<a href="../images/kap10/Settings.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+		</div>
+		<div>
+			<table border="0">
+	<tr>
+		<td valign="top">Available  Plugins:</td>
+		<td>Hier werden alle Plugins mit der jeweiligen  Version aufgelistet, die zur Zeit installiert sind (Hier der Block-Generator).  Rechts davon wird eine kurze Beschreibung des markierten Plugins angezeigt.  Geladene Plugins haben einen grünen Hacken <img width="14" height="15" src="../images/kap10/ok.png" /> , vor  nicht geladene befindet sich ein rotes Stopp <img width="15" height="15" src="../images/kap10/stop.png" />.</td>
+	</tr>
+	<tr>
+		<td valign="top">Load:</td>
+		<td>Hiermit wird das unter <em>Available Plugins </em>selektierte  Plugin geladen. Das bedeutet, das die Funktionalität des Plugins im Editor oder  von anderen Plugins verwendet werden kann. Diese sind im allgemeinen über einen  Button oder über das Menü des Anwendungsfensters erreichbar.</td>
+	</tr>
+	<tr>
+		<td valign="top">Install:</td>
+		<td>Hier  öffnet sich ein Dateiauswahldialog, in dem man das zu installierende Plugin  auswählen kann. Um es dann zu benutzen muss es noch mit <em>Load</em> geladen  werden. Siehe dazu auch: '<em>alternative  Installation</em>'</td>
+	</tr>
+	<tr>
+		<td valign="top"><p>Uninstall:</p></td>
+		<td>Deinstalliert das markierte Plugin. Die Datei  wird <strong>nicht</strong> von der Festplatte gelöscht. Um auf die Funktionalität des  Plugins erneut zuzugreifen zu können, kann es über <em>Install</em> erneut  installiert werden.</td>
+	</tr>
+	<tr>
+		<td valign="top">Unload:</td>
+		<td><em>Unload</em> deaktiviert das  selektierte Plugin, das heißt, es kann nicht mehr verwendet werden. Es wird  aber <strong>nicht</strong> deinstalliert! Durch ein <em>Load</em> kann es wieder geladen  werden.</td>
+	</tr>
+	<tr>
+		<td valign="top">Autosearch  for Plugins:</td>
+		<td>Falls diese Option gesetzt ist, wird bei jedem  Start der Ordner <em>Path</em> nach gültigen Plugins durchsucht und diese  installiert.</td>
+	</tr>
+	<tr>
+		<td valign="top">Path:</td>
+		<td>Siehe <em>Autosearch for Plugins</em></td>
+	</tr>
+	<tr>
+		<td valign="top">Load  plugins automatically:</td>
+		<td>Diese Option zeigt an, ob die Plugins, die per <em>Autosearch</em> in <em>Path</em> gefunden werden, nicht nur installiert, sondern auch geladen  werden sollen.</td>
+	</tr>
+</table>
+
+		</div>
+		<br />
+		<div> <span class="topic">Alternative Installation:</span><br />
+Ein Plugin kann auch installiert werden, wenn die entsprechende Datei (.dll oder .so) in das Verzeichnis, das mit Path angegeben ist, kopiert wird (Standartmäßig: <Pfad zur Anwendung>/Plugins). Das Plugin wird dann beim nächsten Programmstart entsprechend den Optionen Autosearch for Plugins bzw. Load plugins automatically installiert bzw. geladen.</div><br />
+<div class="warning"><span class="topic">Achtung:</span><br />
+Falls der Pfad zum Plugin oder der Dateiname nicht-ASCII-Zeichen enthält, kann das Pluginsystem unvorhergesehen reagieren.
+</div>
+
+
+		<a name="10-02"><h2>10.2 Look &amp; Feel</h2></a><br />
+		<div class="pic">
+	<div class="center"> <img src="../images/kap10/lookandfeel.png" alt="" width="200" border="0" /> </div>
+	<div> Look &amp; Feel Settings </div>
+</div>
+
+<div>
+	<p>
+        Hier können sie den Stil für Blacksun festlegen. Normalerweise wählt Blacksun einen Stil aus der zu ihrer Arbeitsumgebung passt. Sollte dies nicht der Fall sein oder sollte er ihnen nicht gefallen können sie hier einen anderen festlegen. Falls sie einen zusätzlichen Qt4 Stil installiert haben können sie diesen hier auswählen.
+    </p>
+</div>
+
+		<a name="10-02"><h2>10.2 Look &amp; Feel</h2></a><br />
+		<div class="pic">
+	<div class="center"> <img src="../images/kap10/mouse.png" alt="" width="200" border="0" /> </div>
+	<div> Mouse </div>
+</div>
+
+<div>
+	<p>
+        Hier können sie die Einstellungen für die Maus jeweils für die 3D und 2D-Ansicht einstellen. Die einträge in en Comboboxen haben folgende Bedeutung:
+	<table border="0">
+	<tr>
+		<td valign="top">Selected Action:</td>
+		<td>Es wird die unter Actionmode ausgewählte Aktion durchgeführt.</td>
+	</tr>
+	<tr>
+		<td valign="top">Move:</td>
+		<td>Die Kamera wird verschoben.</td>
+	</tr>
+	<tr>
+		<td valign="top">Add to Selection:</td>
+		<td>Falls unter Actionmouse Select ausgewählt wurde werden neu markierte Objekte zur aktullen Selektion hinzugefügt.</td>
+	</tr>
+	<tr>
+		<td valign="top"><p>Remove from Selection:</p></td>
+		<td>Falls unter Actionmouse Select ausgewählt wurde werden neu markierte Objekte von der aktuellen  Selektion entfernt.</td>
+	</tr>
+	<tr>
+		<td valign="top">Rotate:</td>
+		<td>Die Kamera wird gedreht.</td>
+	</tr>
+	<tr>
+		<td valign="top">Nothing:</td>
+		<td>Es passiert nichts.</td>
+</table>
+    </p>
+</div>
+
+<br />
+		<br />
+		<a name="10-03"><h2>10.3 Renderer</h2></a>
+		
+			<div class="shortcut">Menü -> Settings ->        <img src="../images/kap10/Einstellungen_Renderer_Icon.png" width="32" height="32" />Settings -> Renderer
+			<br />
+			Toolbar ->        <img src="../images/kap10/Einstellungen_Renderer_Icon.png" width="32" height="32" />Settings</div>
+		<br />
+		<a name="10-03-01"><h3>10.3.1 Optionen</h3></a>
+		
+		
+<div class="pic">
+			<div class="center">
+				<a href="../images/kap10/Einstellungen_Renderer_1.png" target="_blank"><img src="../images/kap10/Einstellungen_Renderer_1.png" alt="" height="210" width="374" border="0" /></a></div>
+			<div>
+				View
+				<a href="../images/kap10/Einstellungen_Renderer_1.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+	</div>
+		<div>
+			<table border="0">
+	<tr>
+		<td width="226" valign="top"><em>Grid size (partitions per decade):</em> </td>
+		<td width="355">Die Anzahl der Unterteilungen des  Gitters je Dekade. Um eine Unterteilung in 0.2er Schritten zu  Erhalten, w&auml;hlt man beispielsweise 5.</td>
+	</tr>
+	<tr>
+		<td valign="top"><em>Line width:</em></td>
+		<td>Die Liniendicke f&uuml;r das Gitter,  Wireframe-Modus, ...</td>
+	</tr>
+	<tr>
+		<td valign="top"><em>Point size:</em> </td>
+		<td>Die Punktdicke f&uuml;r Wireframe-,  Point-Modus, ...</td>
+	</tr>
+	<tr>
+		<td valign="top"><em>Normal scaling:</em></td>
+		<td>Der Skalierungsfaktor f&uuml;r die  Darstellung der Normalen. In der Regel ist dieser Faktor gleich der  L&auml;nge der gezeichneten Linie, da die Normalenvektoren normalisiert  sind (bzw. sein sollten)</td>
+	</tr>
+	<tr>
+		<td valign="top"><em>Selection box scaling:</em> </td>
+		<td>Der Skalierungsfaktor f&uuml;r die  Selektionsbox, die nach dem Selektieren von Szenendaten  dargestellt wird</td>
+	</tr>
+	<tr>
+		<td valign="top"><em>Wireframe overlay scaling:</em></td>
+		<td>Der Skalierungsfaktor f&uuml;r den  Wireframe-Overlay-Modus. Er gibt an, inwieweit der  Wireframe-Anteil skaliert werden soll. Sollten die Linien nicht gut  erkennbar sein, sollte man den Faktor minimal erh&ouml;hen.</td>
+	</tr>
+	<tr>
+		<td valign="top"><em>Mousewhel zoomspeed:</em> </td>
+		<td>Die Geschwindigkeit des Zooms, der mit  dem Mausrad verbunden ist</td>
+	</tr>
+	<tr>
+		<td valign="top"><em>Field of view (in degrees):</em> </td>
+		<td>Das Sichtfeld der perspektivischen  (3D-)Kamera in Grad</td>
+	</tr>
+	<tr>
+		<td valign="top"><em>Near clipping plane:</em> </td>
+		<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">Die Near Clipping Plane. Alle Vertices,  die von der Kamera einen kleineren Abstand als dieser  Wert haben, werden nicht dargestellt.</td>
+	</tr>
+	<tr>
+		<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><em>Far clipping plane:</em> </td>
+		<td>Die Far Clipping Plane. Alle Vertices,  die von der Kamera einen gr&ouml;&szlig;eren Abstand  als dieser Wert haben, werden nicht dargestellt.</td>
+	</tr>
+	<tr>
+		<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><em>Culling (Frustum):</em> </td>
+		<td>Aktiviert/Deaktivert das  Frustum-Culling</td>
+	</tr>
+	<tr>
+		<td valign="top"><em>Line smoothing:</em> </td>
+		<td>Aktiviert/Deaktivert das Gl&auml;tten  der Linien</td>
+	</tr>
+	<tr>
+		<td valign="top"><em>Point smoothing:</em> </td>
+		<td>Aktiviert/Deaktivert das Gl&auml;tten  der Punkte</td>
+	</tr>
+	<tr>
+		<td valign="top"><em>Polygon smoothing:</em> </td>
+		<td>Aktiviert/Deaktivert das Gl&auml;tten  der Polygone (auf einigen Grafikkartenf&uuml;hrt dies aber zu  Darstellungsfehlern!!)
+			<p><br />
+			</p></td>
+	</tr>
+</table>
+
+		</div>
+			
+			
+<br />
+		<br />
+		<a name="10-03-02"><h3>10.3.2 Farbschema</h3></a><br />
+		
+		<div class="pic">
+			<div class="center">
+				<a href="../images/kap10/Einstellungen_Renderer_2.png" target="_blank"><img src="../images/kap10/Einstellungen_Renderer_2.png" alt="" height="210" width="374" border="0" /></a></div>
+			<div>
+				User Interface Colors
+				<a href="../images/kap10/Einstellungen_Renderer_2.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+		</div>
+		<div>
+			<table border="0">
+				<tr>
+					<td valign="top"><em>Line color:</em> </td>
+					<td>Farbe der Linien im Wireframe-Modus f&uuml;r <U>un</U>selektierte Faces</td>
+				</tr>
+				<tr>
+					<td valign="top"><em>Selected line color:</em></td>
+					<td>Farbe der Linien im Wireframe-Modus f&uuml;r  selektierte Faces</td>
+				</tr>
+				<tr>
+					<td valign="top"><em>Point color (Vertex, ...):</em></td>
+					<td>Farbe der Punkte im Wireframe- und  Punkt-Modus f&uuml;r <U>un</U>selektierte Faces</td>
+				</tr>
+				<tr>
+					<td valign="top"><em>Selected point color (Vertex, ...):</em></td>
+					<td>Farbe der Punkte im Wireframe- und  Punkt-Modus f&uuml;r selektierte Faces</td>
+				</tr>
+				<tr>
+					<td valign="top"><em>Freezed object's color:</em> </td>
+					<td>Farbe der Linien und Punkte im  Wireframe- und Punk-Modus, falls das Face gesperrt ist</td>
+				</tr>
+				<tr>
+					<td valign="top"><em>Normal color:</em></td>
+					<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">Farbe der grafisch darzustellenden  Normalenvektoren</td>
+				</tr>
+				<tr>
+					<td valign="top"><em>Selection box color:</em> </td>
+					<td>Farbe der Linien der Selektionsbox</td>
+				</tr>
+				<tr>
+					<td valign="top"><em>Selection rubber band color:</em></td>
+					<td>Farbe des Selektionsrechtecks bei der  Selektierung per Maus</td>
+				</tr>
+				<tr>
+					<td valign="top"><em>Overpainting color:</em> </td>
+					<td>Farbe der Szenen&uuml;bermalenden  Objekte (Schrift, ...)</td>
+				</tr>
+				<tr>
+					<td valign="top"><em>Orthogonal viewport color:</em></td>
+					<td>Hintergrundfarbe f&uuml;r die  orthogonale (2D-)Ansicht</td>
+				</tr>
+				<tr>
+					<td valign="top"><em>Perspective viewport color:</em></td>
+					<td>Hintergrundfarbe f&uuml;r die  perspektivische (3D-)Ansicht</td>
+				</tr>
+				<tr>
+					<td valign="top"><em>Major gridlines color:</em></td>
+					<td>Farbe f&uuml;r die Major-Gitterlinien</td>
+				</tr>
+				<tr>
+					<td valign="top"><em>Minor gridlines color:</em></td>
+					<td>Farbe f&uuml;r die Minor-Gitterlinien</td>
+				</tr>
+				<tr>
+					<td valign="top"><em>Load Color Scheme:</em></td>
+					<td>L&auml;dt alle Farben aus einem Datei  (das Farbschema)</td>
+				</tr>
+				<tr>
+					<td valign="top"><em>Save Color Scheme:</em></td>
+					<td>Speichert alle Farben in eine Datei  (Das Farbschema)</td>
+				</tr>
+				<tr>
+					<td valign="top"><em>Reset default colors:</em></td>
+					<td>Setzt alle Farben zur&uuml;ck zu ihrem  Standardwerten</td>
+				</tr>
+			</table>
+		</div>
+		
+		<br />
+		<br />
+		<a name="10-04"><h2>10.4 Logfenster</h2></a>
+		
+		<div class="pic">
+			<div class="center">
+				<a href="../images/kap10/logwindow.png" target="_blank"><img src="../images/kap10/logwindow.png" alt="" height="164" width="309" border="0" /></a></div>
+			<div>
+				Log-Fenster des Editors
+				<a href="../images/kap10/logwindow.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+		</div>
+		<div>
+			Während der Ausführung des Programms werden alle wichtigen Vorgänge in der Log-Datei gespeichert. Hierbei wird gesichert um welche Art von Log-Eintrag es sich handelt und dazu eine kurze Nachricht. <br />
+			<br />
+			Die Log-Einträge kann man sich im Editor selbst, <br />
+			<b>DEBUG -> Log Window</b><br />
+			oder in html Form in einem Browser<br />
+			<b>Installationsverzeichnis -> Logfile.html</b><br />
+			anzeigen lassen.
+	</div>
+		
+		
+<div class="pic">
+			<div class="center">
+				<a href="../images/kap10/loghtml.png" target="_blank"><img src="../images/kap10/loghtml.png" alt="" height="220" width="313" border="0" /></a></div>
+			<div>
+				Log-Datei in html
+				<a href="../images/kap10/loghtml.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+	</div>
+		<div>
+			Es gibt 4 verschiedene Arten von Log-Einträgen, die zusätzlich durch verschiedene Farben unterschieden werden:<br /><br />
+			<table border="1">
+	<tr>
+		<td valign="top">ERROR</td>
+		<td valign="top">Ein Fehler ist während der Aktion aufgetreten </td>
+		<td valign="top">Rot</td>
+	</tr>
+	<tr>
+		<td valign="top">OK</td>
+		<td valign="top">Die Aktion ist ordnungsgemäß abgelaufen </td>
+		<td valign="top">Grün</td>
+	</tr>
+	<tr>
+		<td valign="top">WARNING</td>
+		<td valign="top">Die Aktion wurde mit Abweichungen ausgeführt</td>
+		<td valign="top">Orange</td>
+	</tr>
+	<tr>
+		<td valign="top">OTHER</td>
+		<td valign="top">sonstige Informationen/Hinweise </td>
+		<td valign="top">Schwarz</td>
+	</tr>
+</table>
+
+		</div>
+		
+	</body>
+
+</html>

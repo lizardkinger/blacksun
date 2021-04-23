@@ -1,0 +1,518 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta name="BlackSun" content="Manual"/>
+<title>BlackSun 3D-Editor</title>
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+<body text="black" link="black" vlink="black" alink="black">
+<a name="04">
+<h1>4. Ein Objekt erstellen</h1>
+</a>
+<div class="pic">
+	<div class="center"> <img src="../images/kap4/objekt_erstellen01.png" alt="" height="463" width="250" border="0" /></a></div>
+	<div> Toolbox zur Objekterstellung </div>
+</div>
+<div> Zur Erstellung von Modellen stehen 3 verschiedene Möglichkeiten zur freien Verfügung, welche in ihrer Handhabung viele prinzipielle Ähnlichkeiten aber auch gewisse Unterschiede besitzen.</div>
+<a name="04-01">
+<h2>4.1 Vertex</h2>
+ </a><div class="shortcut"> Toolbox -> Common objects -> <img src="../images/kap4/objekt_erstellen_vertex_icon.png" />Vertex</div><br /> 
+<br />
+<div>Vertices (Mehrzahl von Vertex) stellen die elementarste Einheit im 3D-Modeller dar. 
+	Jedes noch so komplexe Szenenobjekt besteht auf elemntarer Ebene nur aus verbundenen Vertices</div>
+<br />
+<div class="pic">
+	<div class="center"> <img src="../images/kap4/objekt_erstellen_vertex_front.png" alt="" height="319" width="400" border="0" /></a></div>
+	<div> 
+		Einige Vertices welche soeben in der Front-Ansicht eingefügt<br />
+		worden sind, wobei das letzte Vertex noch selektiert </div>
+</div>
+<div><span class="topic">Grundsätzliches</span><br />
+	Vertices können einfach per manuellem Erstellen durch den Benutzer einer Szene hinzugefügt werden. Es gibt keine natürliche Höchstzahl für Vertices in einer Szene, nur ab einer gewissen Zahl hängt es von der Rechenleistung der eingesetzten Hardware ab, wieviele Vertices sich noch vernünftig bearbeiten lassen. </div>
+<br />
+<div><span class="topic">Parameter</span><br />
+	Bei der Erstellung eines Vertex werden keine weiteren Parameter benötigt, da nur die Position im Raum nötig ist, um ein Vertex in die Szene einzusetzen.</div>
+<br />
+<div><span class="topic">Anmerkung</span> Das Einfügen von Vertices ist nur in einem 2D-Fenster möglich, da in der perspektivischen Ansicht ein Klick vom Benutzer keinem eindeutigen Punkt in einer
+	Szenerie entsprechen würde.</div>
+<div class="pic">
+	<div class="center"> <img src="../images/kap4/objekt_erstellen_vertex_top.png" alt="" height="317" width="400" border="0" /></a></div>
+	<div> 
+		Dieselbe Liste von Vertices in der Top-Ansicht betrachtet </div>
+</div>
+<a name="04-02">
+<h2>4.2 Polygon</h2>
+</a> <div class="shortcut">Toolbox -> Common objects -> <img src="../images/kap4/objekt_erstellen_polygon_icon.png" />Polygon</div><br />
+<br />
+<div>Polygone bestehen aus Dreierpaaren von Vertices und sie bilden wiederum die Bauteile für Meshes.</div>
+<br />
+<div class="pic">
+	<div class="center"> <a href="../images/kap4/objekt_erstellen_polygon_schritt1.png" target="_blank"><img src="../images/kap4/objekt_erstellen_polygon_schritt1.png" alt="" height="219" width="274" border="0" /></a></div>
+	<div> 
+		Erstes Vertex des Polygons angelegt <a href="../images/kap4/objekt_erstellen_polygon_schritt1.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div> <span class="topic">Grundsätzliches</span><br />
+	Polygone können vom Benutzer selber erstellt werden. Dazu ist das manuelle Anlegen von 3 Vertices in einer der zweidimensionalen Ansichtsfenster vonnöten. Diese werden dann zu einem Polygon verbunden. Die Indexreihenfolge folgt dabei der Reihenfolge bei der Erstellung. <br />
+	<br />
+	<span class="topic">Parameter</span><br />
+	Bei der Erstellung eines Vertex werden keine weiteren Parameter benötigt, da nur die Position im Raum nötig ist, um ein Vertex in die Szene einzusetzen.
+	Allerdings können alle 2D-Ansichten bei der Konstruktion benutzt werden um auch etwaige Schieflagen eines Polygons zu modellieren. </div>
+<br />
+<br />
+<span class="topic">Anmerkung</span><br />
+Das Einfügen von Polygon ist nur in einem 2D-Fenster möglich, da in der perspektivischen Ansicht ein Klick vom Benutzer keinem eindeutigen Punkt in einer
+Szenerie entsprechen würde
+</div>
+<br />
+<div class="pic">
+	<div class="center"> <a href="../images/kap4/objekt_erstellen_polygon_schritt2.png" target="_blank"><img src="../images/kap4/objekt_erstellen_polygon_schritt2.png" alt="" height="219" width="273" border="0" /></a></div>
+	<div> 
+		Zweites Vertex des Polygons angelegt <a href="../images/kap4/objekt_erstellen_polygon_schritt2.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div class="pic">
+	<div class="center"> <a href="../images/kap4/objekt_erstellen_polygon_schritt3.png" target="_blank"><img src="../images/kap4/objekt_erstellen_polygon_schritt3.png" alt="" height="400" width="500" border="0" /></a></div>
+	<div> 
+		Drittes Vertex des Polygons angelegt und damit sogleich die Erstellung abgeschlossen <a href="../images/kap4/objekt_erstellen_polygon_schritt3.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<a name="04-03">
+<h2>4.3 Grundkörper</h2>
+</a><br />
+<div class="pic">
+	<div class="center"> <img src="../images/kap4/objekt_erstellen_grundkoerper.png" alt="" height="154" width="251" border="0" /></a></div>
+	<div>
+		Auswahlleiste aller vorgefertigten Grundkörper </div>
+</div>
+<div>Blacksun liefert bereits eine Vielzahl von vorgefertigten und teilweise sehr fortgeschrittenen Grundkörper-Plugins (=Erweiterungsmodule, siehe Kapitel 11) <br />
+	<br />
+	<span class="topic">Parameterlose Körper</span><br />
+	Grundkörper, die keiner weiteren Parameter bedürfen, werden direkt in die Szene eingefügt. <br />
+	<br />
+	<span class="topic">Parameterisierbare Körper</span><br />
+	Grundkörper, welche dynamisch vor der Erstellung mit Parametern versorgt werden müssen, klappen nach dem Klick auf das entsprechende Körpericon
+	ein individuelles Konfigurationsmenü auf.<br />
+	Die Detaileinstellungen pro parameterisierbaren Grundkörper werden nachfolgend erläutert. </div>
+<a name="04-03-01">
+<h3>4.3.1 Block</h3>
+</a>
+
+<div class="shortcut">Toolbox -> Common objects -> <img src="../images/kap4/Grundgoerper_block_icon.png" />Block</div><br />
+<br />
+<div class="pic">
+	<div class="center"> <a href="../images/kap4/Grundkoerper_block_beispiel.png" target="_blank"><img src="../images/kap4/Grundkoerper_block_beispiel.png" alt="" height="213" width="266" border="0" /></a></div>
+	<div> Beispiel <a href="../images/kap4/Grundkoerper_block_beispiel.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div> Erstellt einen Block. Unter einem Block versteht man einen Würfel mit beliebiger Länge,Breite und Höhe, welcher parallel zu den Ebenen in beliebig viele Teile untergliedert ist. </div>
+
+<div class="pic">
+	<div class="center"> <img src="../images/kap4/Plugin_Block_Parameter.png" alt="" height="331" width="270" border="0" /></a></div>
+	<div> Einstellungen/Parameter </div>
+</div>
+<div><table border="0">
+	<tr>
+		<td valign="top">Width:</td>
+		<td>Die Breite des Block´s </td>
+	</tr>
+	<tr>
+		<td valign="top">Height:</td>
+		<td>Die Höhe des Block´s </td>
+	</tr>
+	<tr>
+		<td valign="top">Depth:</td>
+		<td>Die Tiefe des Block´s </td>
+	</tr>
+	<tr>
+		<td valign="top">X:</td>
+		<td>Anzahl der Unterteilungen parallel der Y/Z-Ebene </td>
+	</tr>
+	<tr>
+		<td valign="top">Y:</td>
+		<td>Anzahl der Unterteilungen parallel der X/Z-Ebene </td>
+	</tr>
+	<tr>
+		<td valign="top">Z:</td>
+		<td>Anzahl der Unterteilungen parallel der X/Y-Ebene </td>
+	</tr>
+</table>
+</div>
+
+<a name="04-03-02">
+<h3>4.3.2 Box</h3>
+</a> 
+
+<div class="shortcut">Toolbox -> Common objects -> <img src="../images/kap4/Grundkoerper_box_icon.png" />Box</div><br />
+<br />
+<div class="pic">
+	<div class="center"> <a href="../images/kap4/Grundkoerper_box_beispiel.png" target="_blank"><img src="../images/kap4/Grundkoerper_box_beispiel.png" alt="" height="213" width="266" border="0" /></a></div>
+	<div> Beispiel <a href="../images/kap4/Grundkoerper_box_beispiel.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div> Erstellt eine Box mit den Maßen Breite,Höhe und Tiefe je 1. </div>
+
+<a name="04-03-03">
+<h3>4.3.3 Geosphere</h3>
+</a> <div class="shortcut">Toolbox -> Common objects -> <img src="../images/kap4/Grundkoerper_GeoSphere_Icon.png" />GeoSphere</div><br />
+<br />
+<div class="pic">
+	<div class="center"> <a href="../images/kap4/Grundkoerper_GeoSphere_Example.png" target="_blank"><img src="../images/kap4/Grundkoerper_GeoSphere_Example.png" alt="" height="208" width="244" border="0" /></a></div>
+	<div> Beispiel <a href="../images/kap4/Grundkoerper_GeoSphere_Example.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div> Erstellt eine komplette GeoSphere. Eine GeoSphere ist eine Sphere, die durch Verfeinerung eines Grundkörpers (Icosaeder = 20-Flächer) entsteht. Jede Verfeinerungsstufe teilt das Face in 4 Subfaces und verschiebt die Eckpunkte. Aufgrund dieser Art der Verfeinerung wirkt die GeoSphere plastischer, natürlicher und regelmäßiger als die 'normale' Sphere, da sie keine 'Pole' aufweist. </div>
+<div class="pic">
+	<div class="center"> <img src="../images/kap4/Grundkoerper_GeoSphere_Einstellungen.png" alt="" height="128" width="176" border="0" /></a></div>
+	<div> Einstellungen/Parameter </div>
+</div>
+<div class="fleft">
+	<table border="0">
+		<tr>
+			<td valign="top"><em>Radius:</em> </td>
+			<td>Der Radius der GeoSphere</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>Depth</em>:</td>
+			<td>Der Grad (Tiefe) der Verfeinerung.  Tiefe 0 entspricht der Grundform (Icosaeder - 20-Fl&auml;cher)</td>
+		</tr>
+	</table>
+</div>
+<br />
+<a name="04-03-04">
+<h3>4.3.4 Grid</h3>
+</a> <div class="shortcut">Toolbox -> Common objects -> <img src="../images/kap4/Grundkoerper_Grid_Icon.png" width="32" height="32" />Grid</div><br />
+<br />
+<div class="pic">
+	<div class="center"> <img src="../images/kap4/Grundkoerper_Grid_Example.png" alt="" height="239" width="250" border="0" /></a> </div>
+	<div> Beispiel </div>
+</div>
+<div> Ein Grid ist ein flaches Objekt, dass eine beliebig unterteilte Ebene darstellt. Das entstehende Grid liegt immer zentriert auf der XZ-Ebene. </div>
+<div class="pic">
+	<div class="center"> <img src="../images/kap4/Grundkoerper_Grid_Einstellungen.png" alt="" height="192" width="231" border="0" /></a> </div>
+	<div> Einstellungen/Parameter </div>
+</div>
+<div class="fleft">
+	<table border="0">
+		<tr>
+			<td valign="top"><em>Width:</em></td>
+			<td>Die Breite des Gitters (entlang der  X-Achse)</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>Height:</em> </td>
+			<td>Die H&ouml;he des Gitters (entlang der  Z-Achse)</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>Width-Segments:</em></td>
+			<td>Anzahl der Unterteilungen in der Breite</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>Height-Segments:</em></td>
+			<td>Anzahl der Unterteilungen in der H&ouml;he
+				<p><br />
+				</p></td>
+		</tr>
+	</table>
+</div>
+<br />
+<a name="04-03-05">
+<h3>4.3.5 Helix</h3>
+</a> <div class="shortcut">Toolbox -> Common objects -> <img src="../images/kap4/Grundkoerper_Helix_Icon.png" />Helix</div><br />
+<br />
+<div class="pic">
+	<div class="center"> <a href="../images/kap4/Grundkoerper_Helix_Example.png" target="_blank"><img src="../images/kap4/Grundkoerper_Helix_Example.png" alt="" height="189" width="248" border="0" /></a></div>
+	<div> Beispiel <a href="../images/kap4/Grundkoerper_Helix_Example.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div> Eine Helix ist eine 3-dimensionale Spirale. Je nach Einstellung können z.B. ebene, zylinder-umwickelnde oder kegel-umwickelnde Spiralen generiert werden. Ebenso lassen sich Körper erstellen werden, die zum Ende hin immer dicker/schlanker werden. Der Detailgrad kann über die Parameter 'Rings' und 'Segments' eingestellt werden. Die Enden der Helix sind immer offen. </div>
+<div class="pic">
+	<div class="center"> <img src="../images/kap4/Grundkoerper_Helix_Einstellungen.png" alt="" height="351" width="240" border="0" /></a></div>
+	<div> Einstellungen/Parameter: </div>
+</div>
+<div class="fleft">
+	<table border="0">
+		<tr>
+			<td valign="top"><em>Radius Outer Start:</em></td>
+			<td>Der &auml;u&szlig;ere Radius  (Wicklungsradius) am Anfang der Helix</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Radius Inner Start:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Der innere Radius (Ringradius) am  Anfang der Helix</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>Radius Outer End:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Der &auml;u&szlig;ere Radius  (Wicklungsradius) am Ende der Helix</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Radius Inner End:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Der innere Radius (Ringradius) am Ende  der Helix</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Height:</em> </td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Die H&ouml;he der Helix</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Rings:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Anzahl der Ringe</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Segments:</em> </td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Anzahl der Segmente/Ecken pro Ring</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Slice start:</em> </td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Startwinkel in Grad</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Slice end:</em> </td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Endwinkel in Grad</td>
+		</tr>
+	</table>
+</div>
+<div class="tip"><b>Tipps und Informationen:</b><br />
+	<div class="listleft">
+		<ul>
+			<li>Um mehrere Windungen zu erhalten, muss der Endwinkel entsprechend gesetzt werden. So wählt man beispielsweise für 5 Wicklungen und einem Startwinkel von 45.0° einen Endwinkel von 5*360.0°+45°=1845.0°.</li>
+			<li>Der Parameter 'Rings' gibt die Gesamtanzahl der Ringe aller Wicklungen der Helix an und ist nur indirekt eine Angabe für 'Ringe pro Wicklung'.</li>
+			<li>Ist der Startwinkel größer als der Endwinkel, so entsteht eine Helix, deren Face-Vorderseite innen liegen (nach innen gestülpte Helix)</li>
+		</ul>
+	</div>
+</div>
+<br />
+<a name="04-03-06">
+<h3>4.3.6 nBox</h3>
+</a> 
+
+<div class="shortcut">Toolbox -> Common objects -> <img src="../images/kap4/Grundkoerper_nbox_icon.png" />nBox</div><br />
+<br />
+<div class="pic">
+	<div class="center"> <a href="../images/kap4/Grundkoerper_nBox_beispiel.png" target="_blank"><img src="../images/kap4/Grundkoerper_nBox_beispiel.png" alt="" height="213" width="266 border="0" /></a></div>
+	<div> Beispiel <a href="../images/kap4/Grundkoerper_nBox_beispiel.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div> Erstellt eine Box bei welcher die Anzahl der Ecken angegeben wird. Durch das verwenden von hohen Werten für die Ecken, erreicht man die Erstellung eines Zylinders. Um den "Rundheitseffekt" durch das Licht zu verstärken dient der Parameter "Shared Vertices". Weiter Parameter sind: Parts für die Anzahl der Unterteilungen parallel der X-Achse, Radius für den Radius und Height für die Höhe der Box. Mit Centered kann man festlegen ob der "Deckel" und "Boden" der Box von deren Mitte oder einem Eckpunkt aus berechnet werden soll.</div>
+
+<div class="pic">
+	<div class="center"> <img src="../images/kap4/Plugin_NBox_Parameter.png" alt="" height="272" width="271" border="0" /></a></div>
+	<div> Einstellungen/Parameter </div>
+</div>
+<div><table border="0">
+	<tr>
+		<td width="18%" valign="top">Corners:</td>
+		<td width="82%">Anzahl der Ecken </td>
+	</tr>
+	<tr>
+		<td valign="top">Parts:</td>
+		<td>Anzahl der Unterteilungen parallel der X/Z-Ebene</td>
+	</tr>
+	<tr>
+		<td valign="top">Radius:</td>
+		<td>Der Radius zu den Ecken </td>
+	</tr>
+	<tr>
+		<td valign="top">Height:</td>
+		<td>Die Höhe der Box </td>
+	</tr>
+	<tr>
+		<td valign="top">Shared Vertices: </td>
+		<td>Lässt bei der Lichtberechnung die Box &quot;runder&quot; erscheinen </td>
+	</tr>
+	<tr>
+		<td valign="top">Centered:</td>
+		<td>Bestimmt ob der &quot;Deckel/Boden&quot; von deren Mittelpunkt oder einem Eckpunkt aus berechnet wird. </td>
+	</tr>
+</table>
+</div>
+
+<a name="04-03-07">
+<h3>4.3.7 Pyramid</h3>
+</a> 
+
+
+<div class="shortcut">Toolbox -> Common objects -> <img src="../images/kap4/Grundkoerper_pyramid_icon.png" />Pyramid</div><br />
+<br />
+<div class="pic">
+	<div class="center"> <a href="../images/kap4/Grundkoerper_pyramid_beispiel.png" target="_blank"><img src="../images/kap4/Grundkoerper_pyramid_beispiel.png" alt="" height="213" width="266" border="0" /></a></div>
+	<div> Beispiel <a href="../images/kap4/Grundkoerper_pyramid_beispiel.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div> Erstellt eine Pyramide bei welcher die Anzahl der Ecken angegeben wird. Durch das verwenden von hohen Werten für die Ecken, erreicht man die Erstellung eines Kegels. Um den "Rundheitseffekt" durch das Licht zu verstärken dient der Parameter "Shared Vertices". Weiter Parameter sind: Radius für den Radius und Height für die Höhe der Pyramide. Mit Centered kann man festlegen ob der "Boden" der Pyramide von der Mitte oder einem Eckpunkt aus berechnet werden soll.</div>
+
+<div class="pic">
+	<div class="center"> <img src="../images/kap4/Plugin_Pyramid_Parameter.png" alt="" height="245" width="270" border="0" /></a></div>
+	<div> Einstellungen/Parameter </div>
+</div>
+<div><table border="0">
+	<tr>
+		<td valign="top">Corners:</td>
+		<td>Anzahl der Ecken </td>
+	</tr>
+	<tr>
+		<td valign="top">Radius:</td>
+		<td>Der Radius zu den Ecken </td>
+	</tr>
+	<tr>
+		<td valign="top">Height:</td>
+		<td>Die Höhe der Pyramide </td>
+	</tr>
+	<tr>
+		<td valign="top">Shared Vertices: </td>
+		<td>Lässt bei der Lichtberechnung die Pyramide &quot;runder&quot; erscheinen</td>
+	</tr>
+	<tr>
+		<td valign="top">Centered:</td>
+		<td>Bestimmt ob der &quot;Boden&quot; vom Mittelpunkt oder einem Eckpunkt aus berechnet wird. </td>
+	</tr>
+</table>
+</div>
+
+<a name="04-03-08">
+<h3>4.3.8 Goblet</h3>
+</a> 
+
+
+Toolbox -> Common objects -> [ICON]Goblet<br />
+<br />
+<div class="pic">
+	<div class="center"> <a href="../images/kap4/Grundkoerper_goblet_beispiel.png" target="_blank"><img src="../images/kap4/Grundkoerper_goblet_beispiel.png" alt="" height="213" width="266" border="0" /></a></div>
+	<div> Beispiel <a href="../images/kap4/Grundkoerper_goblet_beispiel.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div> Erstellt einen Kelch.</div>
+
+
+
+
+<a name="04-03-09">
+<h3>4.3.9 Sphere</h3>
+</a> <div class="shortcut">Toolbox -> Common objects -> <img src="../images/kap4/Grundkoerper_Sphere_Icon.png" />Sphere</div><br />
+<br />
+<div class="pic">
+	<div class="center"> <img src="../images/kap4/Grundkoerper_Sphere_Example.png" alt="" height="355" width="400" border="0" /></a></div>
+	<div> Beispiel </div>
+</div>
+<div> Erstellt eine komplette Kugel. Der Detailgrad kann über die Parameter 'Rings' und 'Segments' eingestellt werden. </div>
+<br />
+<div class="pic">
+	<div class="center"> <img src="../images/kap4/Grundkoerper_Sphere_Einstellungen.png" alt="" height="160" width="190" border="0" /></a></div>
+	<div> Einstellungen/Parameter </div>
+</div>
+<div class="fleft">
+	<table border="0">
+		<tr>
+			<td valign="top"><em>Radius:</em></td>
+			<td>Der Radius der Kugel</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>Rings:</em></td>
+			<td>Anzahl der Ringe (Unterteilung in der  H&ouml;he)</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>Segments: </em></td>
+			<td>Anzahl der Segmente pro Ring (Radiale  Unterteilung)</td>
+		</tr>
+	</table>
+</div>
+<a name="04-03-10">
+<h3>4.3.10 Tube</h3>
+</a> 
+
+<div class="shortcut">Toolbox -> Common objects -> <img src="../images/kap4/Grundkoerper_tube_icon.png" />Tube</div><br />
+<br />
+<div class="pic">
+	<div class="center"> <a href="../images/kap4/Grundkoerper_tube_beispiel.png" target="_blank"><img src="../images/kap4/Grundkoerper_tube_beispiel.png" alt="" height="213" width="266" border="0" /></a></div>
+	<div> Beispiel <a href="../images/kap4/Grundkoerper_tube_beispiel.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div> Erstellt eine Röhre, bei der die Anzahl der Ecken angegeben wird. Je höher die Anzahl der Ecken angegeben wird, desto "runder" wird die Röhre. Um diesen Effekt durch das Licht noch zu verstärken, dient der Parameter "Shared Vertices". Des weiteren wird mit "Outer Radius" der Radius der Röhre und mit "Inner Radius" der des Loches angegeben. Weitere Paramteter sind: "Height" für die Höhe der Rühre und "Parts" für die Anzahl der Unterteilungen parallel der X/Z-Ebene.</div>
+<div class="pic">
+	<div class="center"> <img src="../images/kap4/Plugin_Tube_Parameter.png" alt="" height="279" width="272" border="0" /></a></div>
+	<div> Einstellungen/Parameter </div>
+</div>
+<div><table border="0">
+	<tr>
+		<td valign="top">Outer Radius: </td>
+		<td>Der Radius der Röhre </td>
+	</tr>
+	<tr>
+		<td valign="top">Inner Radius: </td>
+		<td>Der Radius des Loches des Röhre </td>
+	</tr>
+	<tr>
+		<td valign="top">Height:</td>
+		<td>Die Höhe der Röhre </td>
+	</tr>
+	<tr>
+		<td valign="top">Corners:</td>
+		<td>Anzahl der Ecken der Röhre </td>
+	</tr>
+	<tr>
+		<td valign="top">Parts:</td>
+		<td>Anzahl der Unterteilungen parallel der X/Z-Ebene </td>
+	</tr>
+	<tr>
+		<td valign="top">Shared Vertices: </td>
+		<td>Lässt bei der Lichtberechnung die Röhre &quot;runder&quot; erscheinen</td>
+	</tr>
+</table>
+</div>
+
+
+
+<a name="04-03-11">
+<h3>4.3.11 Torus</h3>
+</a> <div class="shortcut">Toolbox -> Common objects -> <img src="../images/kap4/Grundkoerper_Torus_Icon.png" />Torus</div><br />
+<br />
+<div class="pic">
+	<div class="center"> <a href="../images/kap4/Grundkoerper_Torus_Example.png" target="_blank"><img src="../images/kap4/Grundkoerper_Torus_Example.png" alt="" height="188" width="248" border="0" /></a></div>
+	<div> Beispiel <a href="../images/kap4/Grundkoerper_Torus_Example.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div> Erstellt eine komplette bzw. einen Teil eines Torus. Sollte nur ein Teil des Torus generiert werden, so hat dieser offene Enden. Der Detailgrad kann über die Parameter 'Rings' und 'Segments' eingestellt werden. </div>
+<div class="pic">
+	<div class="center"> <img src="../images/kap4/Grundkoerper_Torus_Einstellungen.png" alt="" height="256" width="207" border="0" /></a></div>
+	<div> Einstellungen/Parameter </div>
+</div>
+<div class="fleft">
+	<table border="0">
+		<tr>
+			<td valign="top"><em>Radius Outer:</em></td>
+			<td>Der &auml;u&szlig;ere Radius  (Gesamtradius)</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>Radius Inner:</em></td>
+			<td>Der innere Radius (Ringradius)</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>Rings:</em></td>
+			<td>Anzahl der Ringe</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>Segments:</em> </td>
+			<td>Anzahl der Segmente/Ecken pro Ring</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>Slice start:</em> </td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Startwinkel in Grad</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Slice end:</em> </td>
+			<td>Endwinkel in Grad</td>
+		</tr>
+	</table>
+</div>
+<div class="tip"><b>Tipps und Informationen:</b>
+	<ul>
+		<li>Werden mehrer Parameter benötigt (z.b. Wicklungsanzahl, Höhe, ...), so sollte zur Generierung die Helix herangezogen werden</li>
+		<li>Der Parameter 'Rings' gibt die Gesamtanzahl der Ringe des gesamten Torus an (ein halber und ein voller Torus haben damit die gleiche Anzahl der Ringe)</li>
+		<li>Ist der Startwinkel größer als der Endwinkel, so entsteht ein Torus, deren Face-Vorderseite innen liegen (nach innen gestülpter Torus)</li>
+	</ul>
+</div>
+</body>
+</html>

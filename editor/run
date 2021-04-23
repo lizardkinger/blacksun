@@ -1,0 +1,4 @@
+make debuglinux
+cd ./Linux/debug
+export LD_LIBRARY_PATH=./:${LD_LIBRARY_PATH};
+./BlackSun

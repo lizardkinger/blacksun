@@ -1,0 +1,1193 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<meta name="BlackSun" content="Manual"/>
+		<title>BlackSun 3D-Editor</title>
+		<link rel="stylesheet" type="text/css" href="../css/main.css">		
+	</head>
+
+	<body text="black" link="black" vlink="black" alink="black">
+		<a name="11"><h1>11. Pluginerstellung</h1></a>
+		<div class="warning">Achtung: <br />Das Pluginsystem ist im Allgemeinen (noch) nicht abwärts- bzw. aufwärtskompatibel! Plugins können deshalb meistens nur für die Editor – Version benutzt werden, für die sie entwickelt worden sind.</div>
+		<a name="03-01"><h2>11.1 Vorraussetzugen</h2></a>
+		
+		<ul class="listleft">
+			<li>Installierte C/C++ Entwicklungstools und die Standardbibliotheken (z.B. GCC, MinGW)</li>
+			<li>Installiertes QT – Framework (mind. Version 4.2.3)</li>
+			<li>Grundlegende Erfahrungen mit den oben genannten Werkzeugen / Bibliotheken</li>
+		</ul>
+		<a name="11-02"><h2>11.2 Vorbereitungen</h2></a>
+		<p><span class="topic">Vorbereitungen</span></p>
+		<ol type="1">
+		<li>Für die Pluginentwicklung muss der Quellcode heruntergeladen werden. Zu finden ist dies unter der <strong>BlackSun -> Project download</strong> unter Sourceforge im Release 1.0.0-Final die Datei <strong>1.0.0_Final_Source_Editor.zip</strong>
+		<div class="tip">Tipp:<br />Die Datei 1.0.0_Final_Source_Plugins.zip enthält den Quellcode der mitgelieferten Plugins. Diese können als Vorlage für eigene verwendet werden.<br /><br />
+Tipp: <br />Die API-Dokumentation mit der Datei 1.0.0_Final_API.zip herunterladen. Diese enthält eine übersichtliche Beschreibung der einzelnen Komponenten und ihrer Schnittstellen.
+</div><br /></li>
+		<li>Die .zip – Datei in ein Verzeichnis entpacken.</li>
+		<li>Mit einem Kommandozeileninterpreter in das Verzeichnis wechseln und für <table border="0">
+	<tr>
+		<td width="90" height="19">Unix</td>
+		<td width="261">make  debuglinux</td>
+	</tr>
+	<tr>
+		<td>Windows</td>
+		<td>make  debugwin</td>
+	</tr>
+</table>eingeben. 
+<div class="tip">Hinweis: <br />Mit make wird eine Übersicht über alle verfügbaren Build - Ziele ausgegeben</div><br />
+</li>
+		<li>Die ausführbaren Dateien und die Programmbibliotheken liegen unter
+		<table width="260" border="0">
+	<tr>
+		<td width="33%">Unix</td>
+		<td width="67%">./editor/Linux/debug</td>
+	</tr>
+	<tr>
+		<td>Windows</td>
+		<td>.\editor\Win32\debug</td>
+	</tr>
+</table>
+Durch Susführen der Datei BlackSun(.exe) wird der Editor gestartet.
+<div class="tip">Hinweis: <br />Bei Unix muss vor dem Start noch der LD_LIBRARY_PATH mit z.B. export LD_LIBRARY_PATH=./:${LD_LIBRARY_PATH}; gesetzt werden, wobei './' das Verzeichnis ist, wo BlackSun liegt.</div>
+<div class="tip">Tipp: <br />Das Plugin <b>Autosearch</b> sucht standardmäßig im Verzeichnis ./Plugins nach zu installierenden Plugins, findet es dort keines, liefert es Fehlermeldungen. Der Autosearch kann in den Einstellungen  deaktiviert werden (siehe 10.1).
+<br /><br />
+Tipp: <br />Die ausführbaren Dateien und die Programmbibliotheken in ein neues Verzeichnis verschieben und dort einen Unterordner Plugins anlengen. Falls Plugin <b>Autosearch</b> aktiviert ist, werden Plugins die dort hineinkopiert werden, automatisch installiert.
+</div>
+</li>
+		</ol>
+		<a name="11-03"><h2>Plugin entwickeln (Theorie)</h2></a>
+		<p class="topic">Architektur</p>
+		<table width="100%" border="1">	
+	<tr>
+		<td><img src="../images/kap11/UML_general.png" alt="" border="0" /></td>
+		<td><img src="../images/kap11/UML_Interface.png" alt=" border="0" /></td>
+		<td><img src="../images/kap11/UML_QT.png" alt="" border="0" /></td>
+	</tr>
+	<tr>
+		<td>Jedes Plugin, das später in Blacksun verwendet werden soll, muss von PlgInt  abgeleitet sein.</td>
+		<td>Plugins sollten (müssen nicht) ein Interface besitzen, um das Plugin besser zu  kapseln und die Zwischenpluginkommunikation   zu vereinfachen.</td>
+		<td>Die meisten Plugins sind außerdem von QObject abgeleitet, damit das  Plugin später mit der GUI interagieren kann.</td>
+	</tr>
+</table>
+<p>
+Das Plugin kann auf die Schnittstellen der einzelnen Komponenten zugreifen (siehe API)
+</p>
+<p>Funktionen im PluginInterface.hh (diese muss jedes Plugin Implementieren)<br />
+<table width="100%" border="1">
+	<tr>
+		<td width="17%">Funktionen</td>
+		<td width="83%">Erklährung</td>
+	</tr>
+	<tr>
+		<td valign="top">UID  getUID()</td>
+		<td>Liefert die “unique ID” (UID) des Plugins. Siehe  Zwischenpluginkommunikation, Unique ID (UID)</td>
+	</tr>
+	<tr>
+		<td valign="top">QString  getName()</td>
+		<td>Liefert den Namen des Plugins. Dieser wird dann  im Pluginmanager angezeigt.</td>
+	</tr>
+	<tr>
+		<td valign="top">QString  getAutor()</td>
+		<td>Der Autor des Plugins.</td>
+	</tr>
+	<tr>
+		<td valign="top">QString  getDescription()</td>
+		<td>Die Beschreibung des Plugins. Diese wird  ebenfalls im Pluginmanager angezeigt.</td>
+	</tr>
+	<tr>
+		<td valign="top">Version  getVersion()</td>
+		<td>Die Versionsnummer des Plugins. Wichtig für die  Kompatibilität. Siehe Zwischenpluginkommunikation</td>
+	</tr>
+	<tr>
+		<td valign="top">bool  installPlg()</td>
+		<td>Wird vom Pluginsystem aufgerufen, wenn das  Plugin installiert wird. Wird '<em>false</em>' zurückgegeben, wird das Plugin  nicht installiert.</td>
+	</tr>
+	<tr>
+		<td valign="top">bool  uninstallPlg()</td>
+		<td>Wird vom Pluginsystem aufgerufen, wenn das Plugin  deinstalliert wird. Wird '<em>false</em>' zurückgegeben, wird das Plugin nicht  deinstalliert.</td>
+	</tr>
+	<tr>
+		<td valign="top">bool  loadPlg()</td>
+		<td>Wird vom Pluginsystem aufgerufen, wenn das  Plugin geladen wird. Wird '<em>false</em>' zurückgegeben, wird das Plugin nicht  geladen. Hier kann das Plugin überprüfen, ob die von ihm benötigten Plugins  vorhanden sind, die Schaltflächen in der GUI registrieren, ...</td>
+	</tr>
+	<tr>
+		<td valign="top">bool  unloadPlg()</td>
+		<td>Wird vom Pluginsystem aufgerufen, wenn das  Plugin entladen wird. Wird '<em>false</em>' zurückgegeben, wird das Plugin nicht  entladen. Hier kann das Plugin 'aufräumen', d.h. Schaltflächen entfernen,  Objekte löschen, ...</td>
+	</tr>
+	<tr>
+		<td>void  closePlg()</td>
+		<td>Wird vom Pluginsystem aufgerufen, wenn der  Editor beendet wird.</td>
+	</tr>
+</table>
+</p>
+<div class="topic">Zwischenpluginkommunikation</div>
+<div>
+Für die Zwischenpluginkommunikation sind Version und UID wichtig. Den Zeiger auf ein benötigtes Plugin erhält man mit:
+PlgInt* BSPlgMgr::PlgMgr::getInstance()->getPlgInstance(UID uid, const Version& version);
+</div>
+<p>Jedes Plugin muss die folgende Spezifikation erfüllen:<br />
+<table width="100%" border="1">
+	<tr>
+		<td align="center">Plugin mit UID vorhaden</td>
+		<td align="center">Version vom installierten Plugin &lt;= als die  geforderte</td>
+		<td align="center">ErrorFlag</td>
+		<td align="center">Plugin kann auf das benötigte Plugin zugreifen</td>
+	</tr>
+	<tr>
+		<td align="center">ja</td>
+		<td align="center">ja</td>
+		<td align="center">OK</td>
+		<td align="center">ja</td>
+	</tr>
+	<tr>
+		<td align="center">ja</td>
+		<td align="center">nein</td>
+		<td align="center">VERSION_DISPUTE</td>
+		<td align="center">nein</td>
+	</tr>
+	<tr>
+		<td align="center">nein</td>
+		<td align="center">-</td>
+		<td align="center">NOT_INSTALLED</td>
+		<td align="center">nein</td>
+	</tr>
+</table>
+Das bedeutet, das alle Plugins mit gleicher UID abwärtskompatibel sein müssen. Das heißt, falls etwas an der Schnittstelle geänder wird, muss das Plugin auch eine neue UID erhalten.
+</p>
+<p><span class="topic">Unique ID (UID)</span><br />
+Die UID spielt im Zusammenhang mit der Zwischenpluginkommunikation (Siehe Zwischenpluginkommunikation) und der eindeutigen Identifizierung der Plugins eine Rolle. Eine UID muss in einem System eindeutig sein. Zwei Plugins mit gleicher UID können nicht installiert werden.</p>
+		<a name="11-04"><h2>11.4 Plugin entwickeln (Beispiel)</h2></a>
+		<div class="warning">Achtung: <br />Hier wird mehr auf den grundsätzlichen Aufbau eingegangen, nicht was die einzelnen Schnittstellen der Module genau machen. Hierzu die API lesen.
+<br /><br />
+Achtung: <br />Die Pfade zu den einzelnen Dateien müssen gegebenenfalls angepasst werden.
+</div>
+
+<p><span class="topic">Grundgerüst des Plugins</span><br />
+Jedes Plugin besteht im eigentlichen aus mindestens diesen Dateien, wobei das Interface (*.hh) nicht unbedingt nötig ist.
+<div class="code">#ifndef MEINERSTESPLUGININTERFACE_HH_<br />
+#define MEINERSTESPLUGININTERFACE_HH_<br />
+<br />
+// Datei MeinErstesPluginInterface.hh<br />
+<br />
+#include &lt;PluginInterface.hh&gt;<br />
+<br />
+class MeinErstesPluginInterface : public PlgInt<br />
+{<br />
+public:<br />
+	static const UID uid = 14033;<br />
+	<br />
+	MeinErstesPluginInterface() {}<br />
+	<br />
+	virtual ~MeinErstesPluginInterface() {}<br />
+};<br />
+#endif
+</div>
+<div class="code">
+#ifndef MEINERSTESPLUGIN_H_<br />
+#define MEINERSTESPLUGIN_H_<br />
+<br />
+// Datei MeinErstesPlugin.h<br />
+<br />
+#include "MeinErstesPluginInterface.hh"<br />
+<br />
+#ifdef WIN32 <br />
+#define DECLSPEC __declspec(dllexport)<br />
+#else<br />
+#define DECLSPEC<br />
+#endif<br />
+<br />
+class MeinErstesPlugin : public  MeinErstesPluginInterface<br />
+{<br />
+public:<br />
+	MeinErstesPlugin();<br />
+<br />
+	virtual ~MeinErstesPlugin();<br />
+<br />
+	UID getUID()<br />
+	{<br />
+		return uid;<br />
+	}<br />
+<br />
+	QString getName()<br />
+	{<br />
+		return "Mein erstes Plugin";<br />
+	}<br />
+<br />
+	QString getAutor()<br />
+	{<br />
+		return "Stefan";<br />
+	}<br />
+<br />
+	QString getDescription()<br />
+	{<br />
+		return "Mein erstes Plugin";<br />
+	}<br />
+<br />
+	Version getVersion()<br />
+	{<br />
+		return Version(1,0,0);<br />
+	}<br />
+<br />
+	bool loadPlg();<br />
+<br />
+	bool installPlg();<br />
+<br />
+	bool uninstallPlg();<br />
+<br />
+	bool unloadPlg();<br />
+<br />
+	void closePlg();<br />
+<br />
+};<br />
+#endif
+
+</div>
+<div class="code">
+// Datei MeinErstesPlugin.cpp<br />
+<br />
+#include "MeinErstesPlugin.h"<br />
+static MeinErstesPlugin* _instance = 0;<br />
+<br />
+extern "C" DECLSPEC PlgInt* createInstance()<br />
+{<br />
+	if(_instance == 0)<br />
+		_instance = new MeinErstesPlugin();<br />
+<br />
+	return static_cast&lt;PlgInt*&gt;(_instance);<br />
+}<br /><br />
+MeinErstesPlugin::MeinErstesPlugin() {}<br />
+<br />
+MeinErstesPlugin::~MeinErstesPlugin() {}<br />
+<br />
+bool MeinErstesPlugin::loadPlg()<br />
+{<br />
+    return true;<br />
+}<br />
+<br />
+bool MeinErstesPlugin::installPlg()<br />
+{<br />
+    return true;<br />
+}<br />
+<br />
+bool MeinErstesPlugin::uninstallPlg()<br />
+{<br />
+    return true;<br />
+}<br />
+<br />
+bool MeinErstesPlugin::unloadPlg()<br />
+{<br />
+    return true;<br />
+}<br />
+<br />
+void MeinErstesPlugin::closePlg()<br />
+{<br />
+}
+</div>
+<div class="code">
+# Datei MeinErstesPlugin.pro<br />
+<br />
+# Headers:<br />
+HEADERS += MeinErstesPlugin.h<br />
+HEADERS += MeinErstesPluginInterface.hh<br />
+<br />
+# Sources:<br />
+SOURCES += MeinErstesPlugin.cpp<br />
+<br />
+# Name des Plugins<br />
+TARGET = MeinErstesPlugin<br />
+<br />
+# Pfad zu den Quelldateien<br />
+INCPATH += ./../../ProjektBlackSun/editor/pluginsystem/include/<br />
+<br />
+# Der Typ<br />
+TEMPLATE = lib<br />
+CONFIG += dll
+
+</div>
+</p>
+<p>Übersetzt wird das ganze jetzt mit<br />
+qmake MeinErstesPlugin.pro<br />
+make
+</p>
+<p>Jetzt kann das Plugin im Pluginmanager erfolgreich installiert und geladen werden. Dieses Minimalplugin hat noch keine Funktionalität. Jetzt wollen wir eine einfache Ausgabe durch den Logger einbauen.
+</p>
+<div class="pic">
+	<div class="center">
+		<a href="../images/kap11/SimplePlugin.png" target="_blank"><img src="../images/kap11/SimplePlugin.png" alt="" height="238" width="373" border="0" /></a></div>
+	<div>
+		MeinErstesPlugin erfolgreich geladen
+		<a href="../images/kap11/SimplePlugin.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div><br />
+<p><span class="topic">Zugriff auf die Kernmodule</span><br />
+Dazu müssen wir folgendes ändern:
+<div class="code">// Datei MeinErstesPlugin.cpp<br />
+<br />
+#include "MeinErstesPlugin.h"<br />
+#include &lt;Log.h&gt;<br />
+...<br />
+bool MeinErstesPlugin::loadPlg()<br />
+{<br />
+    LOG_Ok("Plugin geladen");<br />
+    return true;<br />
+}<br />
+<br />
+bool MeinErstesPlugin::installPlg()<br />
+{<br />
+    LOG_Ok("Plugin installiert");<br />
+    return true;<br />
+}<br />
+<br />
+bool MeinErstesPlugin::uninstallPlg()<br />
+{<br />
+    LOG_Ok("Plugin deinstalliert");<br />
+    return true;<br />
+}<br />
+<br />
+bool MeinErstesPlugin::unloadPlg()<br />
+{<br />
+    LOG_Ok("Plugin entladen");<br />
+    return true;<br />
+}<br />
+<br />
+void MeinErstesPlugin::closePlg()<br />
+{<br />
+    LOG_Ok("Editor wird geschlossen");<br />
+}
+</div>
+<div class="code">
+# Datei MeinErstesPlugin.pro<br />
+...<br />
+# Pfad zu den Quelldateien<br />
+INCPATH += ./../../ProjektBlackSun/editor/pluginsystem/include/<br />
+INCPATH += ./../../ProjektBlackSun/editor/core/include/<br />
+<br />
+# Der Typ<br />
+TEMPLATE = lib<br />
+CONFIG += dll<br />
+<br />
+# Zurücksetzen der debug/release Option und setzen auf debug<br />
+CONFIG -= debug_and_release<br />
+CONFIG -= debug<br />
+CONFIG -= release<br />
+<br />
+CONFIG += debug<br />
+<br />
+win32 {<br />
+    LIBS += ./../../ProjektBlackSun/editor/Win32/debug/Core.dll<br />
+}<br />
+unix {<br />
+    LIBS += ./../../ProjektBlackSun/editor/Linux/debug/libCore.so<br />
+}
+</div>
+</p>
+<p>Wenn wir jetzt unser Plugin installieren, dann laden, dann den Editor beenden, ihn neu starten, das Plugin entladen und dann deinstallieren und uns dann das Logfile (&lt;Programmpfad&gt;/Logfile.html) anschauen, entdecken wir unsere Meldungen:
+<br />
+<br />
+<div class="pic">
+	<div class="center">
+		<a href="../images/kap11/Log1.png" target="_blank"><img src="../images/kap11/Log1.png" alt="" width="373" border="0" /></a></div>
+	<div class="center">
+		<a href="../images/kap11/Log2.png" target="_blank"><img src="../images/kap11/Log2.png" alt="" width="373" border="0" /></a></div>
+		
+	<div>
+		Die Ausgabe im Logger.
+	</div>
+</div><br />
+</p>
+<p>Zusammenfassung (für die Benutzung der Kernmodul – Schnittstellen):
+<ul class="listleft">
+	<li>Schnittstelle einbinden (in dem Fall Log.h)</li>
+	<li>Sie können gemäß des Interfaces benutzt werden (hier LOG_OK(“...”) )</li>
+	<li>Und die verwendeten Module müssen mit LIBS += ... verlinkt werden</li>
+</ul>
+<div class="tip">Hinweis: <br />
+Für die Libs unter Windows &lt;Name&gt;.dll, unter Unix lib&lt;Name&gt;
+.so</div>
+</p>
+<p>Auflistung der Kernmodule und den Zugriff darauf:
+<table width="100%" border="1">
+	<tr>
+		<td valign="top">Modul</td>
+		<td valign="top">Zugriff</td>
+		<td valign="top">include</td>
+		<td valign="top">Lib - Name</td>
+	</tr>
+	<tr>
+		<td valign="top">Logger</td>
+		<td valign="top">BSCore::Log::getInstance() oder über Macros wie z.B. LOG_OK(“...”)</td>
+		<td valign="top">Log.h</td>
+		<td valign="top">Core</td>
+	</tr>
+	<tr>
+		<td valign="top"><table border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="108" valign="top"><p>Pluginmanager</p></td>
+			</tr>
+		</table></td>
+		<td valign="top">BSPlgMgr::PlgMgr::getInstance()</td>
+		<td valign="top">PlgMgr.h</td>
+		<td valign="top">PlgMgr</td>
+	</tr>
+	<tr>
+		<td valign="top">Gui</td>
+		<td valign="top">BSGui::MainWindow::getInstance()</td>
+		<td valign="top">mainwindow.h</td>
+		<td valign="top">GUI</td>
+	</tr>
+	<tr>
+		<td valign="top">Renderer</td>
+		<td valign="top">BSRenderer::Renderer::getInstance()</td>
+		<td valign="top">Renderer.h</td>
+		<td valign="top">Renderer</td>
+	</tr>
+	<tr>
+		<td valign="top">Scenemanager</td>
+		<td valign="top">SceneManager::getInstance()</td>
+		<td valign="top">SceneGraph.h</td>
+		<td valign="top">Scenegraph</td>
+	</tr>
+</table>
+</p>
+
+<p><span class="topic">Anlegen von Buttons im Programmfenster</span><br />
+
+Jetzt wollen wir einen Button im im Programmfenster erzeugen, über den man einen Würfel erzeugen kann.
+<br /><br />
+1. Den Button erzeugen
+<div class="code">#ifndef MEINERSTESPLUGININTERFACE_HH_<br />
+#define MEINERSTESPLUGININTERFACE_HH_<br />
+<br />
+// Datei MeinErstesPluginInterface.hh<br />
+<br />
+#include &lt;PluginInterface.hh&gt;<br />
+#include &lt;QtGui&gt;<br />
+<br />
+class MeinErstesPluginInterface : public PlgInt, public QObject<br />
+...
+</div>
+<div class="code">
+#ifndef MEINERSTESPLUGIN_H_<br />
+#define MEINERSTESPLUGIN_H_<br />
+<br />
+// Datei MeinErstesPlugin.h<br />
+...<br />
+class MeinErstesPlugin : public  MeinErstesPluginInterface<br />
+{<br />
+	Q_OBJECT<br />
+<br />
+private:<br />
+	QPushButton* button;<br />
+<br />
+public:<br />
+	MeinErstesPlugin();
+</div>
+<div class="code">
+// Datei MeinErstesPlugin.cpp<br />
+<br />
+#include "MeinErstesPlugin.h"<br />
+#include &lt;Log.h&gt;<br />
+#include &lt;mainwindow.h&gt;<br />
+...<br />
+MeinErstesPlugin::MeinErstesPlugin()<br />
+{<br />
+    button = NULL;<br />
+}<br />
+<br />
+MeinErstesPlugin::~MeinErstesPlugin() {}<br />
+<br />
+bool MeinErstesPlugin::loadPlg()<br />
+{<br />
+    BSGui::MainWindow* mw = BSGui::MainWindow::getInstance();<br />
+        <br />
+    int nButtonSize = 32;<br />
+    int nIconSize = 24;<br />
+	<br />
+    button = new QPushButton("[]");<br />
+    button->setMaximumSize(nButtonSize, nButtonSize);<br />
+    button->setMinimumSize(nButtonSize, nButtonSize);<br />
+    button->setToolTip("Erzeugt einen Würfel");<br />
+    button->setCheckable(true);<br />
+    button->setAutoExclusive(true);<br />
+<br />
+    mw->getAvailableToolBoxItems().at(0)->addWidgetToGroupBox<br />
+        ("commonObjectsGroupBox", button);<br />
+<br />
+    LOG_Ok("Plugin geladen");<br />
+    return true;<br />
+}<br />
+...<br />
+bool MeinErstesPlugin::uninstallPlg()<br />
+{<br />
+    if(button != NULL)<br />
+    {<br />
+        delete button;<br />
+        button = NULL;<br />
+    }    <br />
+<br />
+    LOG_Ok("Plugin deinstalliert");<br />
+    return true;<br />
+}<br />
+<br />
+bool MeinErstesPlugin::unloadPlg()<br />
+{<br />
+    if(button != NULL)<br />
+    {<br />
+        delete button;<br />
+        button = NULL;<br />
+    }<br />
+<br />
+    LOG_Ok("Plugin entladen");<br />
+    return true;<br />
+}<br />
+...
+</div>
+<div class="code">
+# Datei MeinErstesPlugin.pro<br />
+...<br />
+# For the QT - Libs:<br />
+CONFIG += QT<br />
+<br />
+# For the OpenGl support:<br />
+QT += opengl<br />
+<br />
+# For the XML support:<br />
+QT += xml<br />
+<br />
+# Pfad zu den Quelldateien<br />
+INCPATH += ./../../ProjektBlackSun/editor/pluginsystem/include/<br />
+INCPATH += ./../../ProjektBlackSun/editor/core/include/<br />
+INCPATH += ./../../ProjektBlackSun/editor/gui/include/<br />
+...<br />
+win32 {<br />
+    LIBS += ./../../ProjektBlackSun/editor/Win32/debug/Core.dll<br />
+    LIBS += ./../../ProjektBlackSun/editor/Win32/debug/GUI.dll<br />
+}<br />
+unix {<br />
+    LIBS += ./../../ProjektBlackSun/editor/Linux/debug/libCore.so<br />
+    LIBS += ./../../ProjektBlackSun/editor/Linux/debug/libGUI.so<br />
+}
+</div>
+Der Button erscheint jetzt beim laden im Anwendungsfenster unter common Objects. Beim entladen verschwindet er wieder.
+</p>
+<p>2. Eine Funktion, um den Würfel zu zeichnen<br />
+<div class="code">#ifndef MEINERSTESPLUGIN_H_<br />
+#define MEINERSTESPLUGIN_H_<br />
+<br />
+// Datei MeinErstesPlugin.h<br />
+#include &lt;SceneGraph.h&gt;<br />
+...<br />
+public:<br />
+	void zeichne(Color color, double dX, double dY, double dZ);
+</div>
+<div class="code">// Datei MeinErstesPlugin.cpp<br />
+...<br />
+void MeinErstesPlugin::zeichne(Color color, double dX, double dY, double dZ)<br />
+{<br />
+    int nMaterialBox = Renderer::getInstance()->getMaterialManager()<br />
+        ->createNewMaterial();<br />
+    Material* pMat = Renderer::getInstance()->getMaterialManager()<br />
+        ->getMaterial(nMaterialBox);<br />
+    pMat->setColor(color);<br />
+		<br />
+    SceneManager *sm = SceneManager::getInstance();<br />
+	<br />
+    Mesh box;<br />
+<br />
+    box.setName("Wuerfel");<br />
+		<br />
+    BSScene::Polygon front;<br />
+		<br />
+    vector&lt;Vertex&gt; vFront;<br />
+    vFront.push_back(Vertex(Vector(-0.5 + dX,	-0.5 + dY,	0.5 + dZ),<br />
+        Vector( 0.0,  0.0,  1.0),0.0,0.0));<br />
+    vFront.push_back(Vertex(Vector( 0.5 + dX,	-0.5 + dY,	0.5 + dZ),<br />
+        Vector( 0.0,  0.0,  1.0),0.0,0.0));<br />
+    vFront.push_back(Vertex(Vector( 0.5 + dX,	 0.5 + dY,	0.5 + dZ),<br />
+        Vector( 0.0,  0.0,  1.0),0.0,0.0));<br />
+    vFront.push_back(Vertex(Vector(-0.5 + dX,	 0.5 + dY,	0.5 + dZ),<br />
+        Vector( 0.0,  0.0,  1.0),0.0,0.0));<br />
+		<br />
+    vector&lt;int&gt; iFront;<br />
+    iFront.push_back(0);<br />
+    iFront.push_back(1);<br />
+    iFront.push_back(3);<br />
+    iFront.push_back(1);<br />
+    iFront.push_back(2);<br />
+    iFront.push_back(3);<br />
+		<br />
+    front.setVertices(vFront);<br />
+    front.setIndices(iFront);<br />
+		<br />
+    front.setMaterialID(nMaterialBox);<br />
+    box.addPolygon(front);	<br />
+		<br />
+		<br />
+    BSScene::Polygon top;<br />
+    vector&lt;Vertex&gt; vTop;<br />
+    vTop.push_back(Vertex(Vector(-0.5 + dX,	0.5 + dY,	 0.5 + dZ),<br />
+        Vector( 0.0,  1.0,  0.0),0.0,0.0));<br />
+    vTop.push_back(Vertex(Vector( 0.5 + dX,	0.5 + dY,	 0.5 + dZ),<br />
+        Vector( 0.0,  1.0,  0.0),0.0,0.0));<br />
+    vTop.push_back(Vertex(Vector( 0.5 + dX,	0.5 + dY,	-0.5 + dZ),<br />
+        Vector( 0.0,  1.0,  0.0),0.0,0.0));<br />
+    vTop.push_back(Vertex(Vector(-0.5 + dX,	0.5 + dY,	-0.5 + dZ),<br />
+        Vector( 0.0,  1.0,  0.0),0.0,0.0));<br />
+		<br />
+    vector&lt;int&gt; iTop;<br />
+    iTop.push_back(0);<br />
+    iTop.push_back(1);<br />
+    iTop.push_back(3);<br />
+    iTop.push_back(1);<br />
+    iTop.push_back(2);<br />
+    iTop.push_back(3);<br />
+		<br />
+    top.setVertices(vTop);<br />
+    top.setIndices(iTop);<br />
+    top.setMaterialID(nMaterialBox);<br />
+    box.addPolygon(top);<br />
+		<br />
+    BSScene::Polygon left;<br />
+    vector&lt;Vertex&gt; vLeft;<br />
+    vLeft.push_back(Vertex(Vector(-0.5 + dX,	-0.5 + dY,	-0.5 + dZ),<br />
+        Vector( -1.0,  0.0,  0.0),0.0,0.0));<br />
+    vLeft.push_back(Vertex(Vector(-0.5 + dX,	-0.5 + dY,	 0.5 + dZ),<br />
+        Vector( -1.0,  0.0,  0.0),0.0,0.0));<br />
+    vLeft.push_back(Vertex(Vector(-0.5 + dX,	 0.5 + dY,	 0.5 + dZ),<br />
+        Vector( -1.0,  0.0,  0.0),0.0,0.0));<br />
+    vLeft.push_back(Vertex(Vector(-0.5 + dX,	 0.5 + dY,	-0.5 + dZ),<br />
+        Vector( -1.0,  0.0,  0.0),0.0,0.0));<br />
+		<br />
+    vector&lt;int&gt; iLeft;<br />
+    iLeft.push_back(0);<br />
+    iLeft.push_back(1);<br />
+    iLeft.push_back(3);<br />
+    iLeft.push_back(1);<br />
+    iLeft.push_back(2);<br />
+    iLeft.push_back(3);<br />
+		<br />
+    left.setVertices(vLeft);<br />
+    left.setIndices(iLeft);<br />
+    left.setMaterialID(nMaterialBox);<br />
+    box.addPolygon(left);<br />
+		<br />
+		<br />
+    BSScene::Polygon right;<br />
+    vector&lt;Vertex&gt; vRight;<br />
+    vRight.push_back(Vertex(Vector(0.5 + dX,	-0.5 + dY,	 0.5 + dZ),<br />
+        Vector( 1.0,  0.0,  0.0),0.0,0.0));<br />
+    vRight.push_back(Vertex(Vector(0.5 + dX,	-0.5 + dY,	-0.5 + dZ),<br />
+        Vector( 1.0,  0.0,  0.0),0.0,0.0));<br />
+    vRight.push_back(Vertex(Vector(0.5 + dX,	 0.5 + dY,	-0.5 + dZ),<br />
+        Vector( 1.0,  0.0,  0.0),0.0,0.0));<br />
+    vRight.push_back(Vertex(Vector(0.5 + dX,	 0.5 + dY,	 0.5 + dZ),<br />
+        Vector( 1.0,  0.0,  0.0),0.0,0.0));<br />
+		<br />
+    vector&lt;int&gt; iRight;<br />
+    iRight.push_back(0);<br />
+    iRight.push_back(1);<br />
+    iRight.push_back(3);<br />
+    iRight.push_back(1);<br />
+    iRight.push_back(2);<br />
+    iRight.push_back(3);<br />
+		<br />
+    right.setVertices(vRight);<br />
+    right.setIndices(iRight);<br />
+    right.setMaterialID(nMaterialBox);<br />
+    box.addPolygon(right);<br />
+		<br />
+		<br />
+    BSScene::Polygon back;<br />
+    vector&lt;Vertex&gt; vBack;<br />
+    vBack.push_back(Vertex(Vector( 0.5 + dX,	-0.5 + dY,	-0.5 + dZ),<br />
+        Vector( 0.0,  0.0,  -1.0),0.0,0.0));<br />
+    vBack.push_back(Vertex(Vector(-0.5 + dX,	-0.5 + dY,	-0.5 + dZ),<br />
+        Vector( 0.0,  0.0,  -1.0),0.0,0.0));<br />
+    vBack.push_back(Vertex(Vector(-0.5 + dX,	 0.5 + dY,	-0.5 + dZ),<br />
+        Vector( 0.0,  0.0,  -1.0),0.0,0.0));<br />
+    vBack.push_back(Vertex(Vector( 0.5 + dX,	 0.5 + dY,	-0.5 + dZ),<br />
+        Vector( 0.0,  0.0,  -1.0),0.0,0.0));<br />
+		<br />
+    vector&lt;int&gt; iBack;<br />
+    iBack.push_back(0);<br />
+    iBack.push_back(1);<br />
+    iBack.push_back(3);<br />
+    iBack.push_back(1);<br />
+    iBack.push_back(2);<br />
+    iBack.push_back(3);<br />
+		<br />
+    back.setVertices(vBack);<br />
+    back.setIndices(iBack);<br />
+    back.setMaterialID(nMaterialBox);<br />
+    box.addPolygon(back);
+		<br /><br />
+		
+    BSScene::Polygon bottom;<br />
+    vector&lt;Vertex&gt; vBottom;<br />
+    vBottom.push_back(Vertex(Vector(-0.5 + dX,	-0.5 + dY,	 0.5 + dZ),<br />
+        Vector( 0.0,  -1.0,  0.0),0.0,0.0));<br />
+    vBottom.push_back(Vertex(Vector( 0.5 + dX,	-0.5 + dY,	 0.5 + dZ),<br />
+        Vector( 0.0,  -1.0,  0.0),0.0,0.0));<br />
+    vBottom.push_back(Vertex(Vector( 0.5 + dX,	-0.5 + dY,	-0.5 + dZ),<br />
+        Vector( 0.0,  -1.0,  0.0),0.0,0.0));<br />
+    vBottom.push_back(Vertex(Vector(-0.5 + dX,	-0.5 + dY,	-0.5 + dZ),<br />
+        Vector( 0.0,  -1.0,  0.0),0.0,0.0));<br />
+		<br />
+    vector&lt;int&gt; iBottom;<br />
+    iBottom.push_back(3);<br />
+    iBottom.push_back(1);<br />
+    iBottom.push_back(0);<br />
+    iBottom.push_back(1);<br />
+    iBottom.push_back(3);<br />
+    iBottom.push_back(2);<br />
+		<br />
+    bottom.setVertices(vBottom);<br />
+    bottom.setIndices(iBottom);<br />
+    bottom.setMaterialID(nMaterialBox);<br />
+    box.addPolygon(bottom);<br />
+		<br />
+    sm->insertObject(box);<br />
+}
+</div>
+</p>
+<p>
+3. Die Funktion 'zeichne' mit der Schaltfläche verbinden
+<div class="code">
+#ifndef MEINERSTESPLUGIN_H_<br />
+#define MEINERSTESPLUGIN_H_<br />
+<br />
+// Datei MeinErstesPlugin.h<br />
+...<br />
+public slots:<br />
+    void buttonGedrueckt();
+</div>
+<div class="code">// Datei MeinErstesPlugin.cpp<br />
+...<br />
+bool MeinErstesPlugin::loadPlg()<br />
+{<br />
+...<br />
+    mw->getAvailableToolBoxItems().at(0)->addWidgetToGroupBox<br />
+        ("commonObjectsGroupBox", button);<br />
+    <br />
+    connect(button, SIGNAL(clicked()), this, SLOT(buttonGedrueckt()));<br />
+<br />
+    LOG_Ok("Plugin geladen");<br />
+    return true;<br />
+}<br />
+...<br />
+<br />
+void MeinErstesPlugin::buttonGedrueckt()<br />
+{<br />
+    zeichne(Color(1.0, 1.0, 1.0), 0.0, 0.0, 0.0);<br />
+}
+</div>
+<div class="code"># Datei MeinErstesPlugin.pro<br />
+...<br />
+# Pfad zu den Quelldateien<br />
+INCPATH += ./../../ProjektBlackSun/editor/pluginsystem/include/<br />
+INCPATH += ./../../ProjektBlackSun/editor/core/include/<br />
+INCPATH += ./../../ProjektBlackSun/editor/gui/include/<br />
+INCPATH += ./../../ProjektBlackSun/editor/scenegraph/include/<br />
+...<br />
+win32 {<br />
+    LIBS += ./../../ProjektBlackSun/editor/Win32/debug/Core.dll<br />
+    LIBS += ./../../ProjektBlackSun/editor/Win32/debug/GUI.dll<br />
+    LIBS += ./../../ProjektBlackSun/editor/Win32/debug/Scenegraph.dll<br />
+    LIBS += ./../../ProjektBlackSun/editor/Win32/debug/Renderer.dll<br />
+}<br />
+unix {<br />
+    LIBS += ./../../ProjektBlackSun/editor/Linux/debug/libCore.so<br />
+    LIBS += ./../../ProjektBlackSun/editor/Linux/debug/libGUI.so<br />
+    LIBS += ./../../ProjektBlackSun/editor/Linux/debug/libScenegraph.so<br />
+}
+</div>
+Beim Klicken auf den Button erscheint jetzt in der Mitte der Szene ein weißer Würfel mit der Kantenlänge 1.
+</p>
+
+<p>
+<span class="topic">Zwischenpluginkommunikation</span><br />
+Jetzt wollen wir ein Plugin erstellen, das mithilfe des 1. Plugins einen goßen Würfel erstellt, der aus lauter kleinen Würfeln verschiedener Farbe besteht.<br />
+<br />
+1. Die Zugriffsfunktion in das Interface integrieren
+<div class="code">#ifndef MEINERSTESPLUGININTERFACE_HH_<br />
+#define MEINERSTESPLUGININTERFACE_HH_<br />
+<br />
+// Datei MeinErstesPluginInterface.hh<br />
+#include &lt;SceneGraph.h&gt;<br />
+...<br />
+	virtual ~MeinErstesPluginInterface() {}<br />
+<br />
+	virtual void zeichne(Color color, double dX, double dY, double dZ) = 0;<br />
+};<br />
+#endif
+</div>
+</p>
+<p>
+2. Ein neues Plugin erstellen (dazu kann der Code vom Ersten großteils kopiert werden)<br />
+<div class="code">
+#ifndef MEINZWEITESPLUGININTERFACE_HH_<br />
+#define MEINZWEITESPLUGININTERFACE_HH_<br />
+<br />
+// Datei MeinZweitesPluginInterface.hh<br />
+<br />
+#include &lt;PluginInterface.hh&gt;<br />
+#include &lt;QtGui&gt;<br />
+<br />
+class MeinZweitesPluginInterface : public PlgInt, public QObject<br />
+{<br />
+    public:<br />
+	static const UID uid = 14034;<br />
+	<br />
+        MeinZweitesPluginInterface() {}<br />
+	<br />
+        virtual ~MeinZweitesPluginInterface() {}<br />
+};<br />
+#endif
+</div>
+<div class="code">
+#ifndef MEINZWEITESPLUGIN_H_<br />
+#define MEINZWEITESPLUGIN_H_<br />
+<br />
+// Datei MeinZweitesPlugin.h<br />
+#include "MeinZweitesPluginInterface.hh"<br />
+#include "MeinErstesPluginInterface.hh"<br />
+<br />
+#ifdef WIN32<br />
+#define DECLSPEC __declspec(dllexport)<br />
+#else<br />
+#define DECLSPEC<br />
+#endif<br />
+<br />
+class MeinZweitesPlugin : public  MeinZweitesPluginInterface<br />
+{<br />
+    Q_OBJECT<br />
+<br />
+    private:<br />
+        QPushButton* button;<br />
+        MeinErstesPluginInterface* wuerfel;<br />
+<br />
+    public:<br />
+        MeinZweitesPlugin();<br />
+<br />
+        virtual ~MeinZweitesPlugin();<br />
+<br />
+        UID getUID()<br />
+        {<br />
+            return uid;<br />
+        }<br />
+<br />
+        QString getName()<br />
+        {<br />
+            return "Mein Zweites Plugin";<br />
+        }<br />
+<br />
+        QString getAutor()<br />
+        {<br />
+            return "Stefan";<br />
+        }<br />
+<br />
+        QString getDescription()<br />
+        {<br />
+            return "Mein Zweites Plugin";<br />
+        }<br />
+<br />
+        Version getVersion()<br />
+        {<br />
+            return Version(1,0,0);<br />
+        }<br />
+<br />
+        bool loadPlg();<br />
+<br />
+        bool installPlg();<br />
+<br />
+        bool uninstallPlg();<br />
+<br />
+        bool unloadPlg();<br />
+<br />
+        void closePlg();<br />
+        <br />
+        void zeichne(int laenge);<br />
+<br />
+public slots:<br />
+        void buttonGedrueckt();<br />
+};<br />
+#endif 
+</div>
+<div class="code">
+// Datei MeinZweitesPlugin.cpp<br />
+<br />
+#include "MeinZweitesPlugin.h"<br />
+#include &lt;mainwindow.h&gt;<br />
+#include &lt;PlgMgr.h&gt;<br />
+#include &lt;QMessageBox&gt;<br />
+<br />
+static MeinZweitesPlugin* _instance = 0;<br />
+<br />
+extern "C" DECLSPEC PlgInt* createInstance()<br />
+{<br />
+    if(_instance == 0)<br />
+        _instance = new MeinZweitesPlugin();<br />
+
+    return static_cast&lt;PlgInt*&gt;(_instance);<br />
+}<br />
+<br />
+MeinZweitesPlugin::MeinZweitesPlugin()<br />
+{<br />
+    button = NULL;<br />
+}<br />
+<br />
+MeinZweitesPlugin::~MeinZweitesPlugin() {}<br />
+<br />
+bool MeinZweitesPlugin::loadPlg()<br />
+{<br />
+    wuerfel = static_cast&lt;MeinErstesPluginInterface*&gt;(<br />
+        BSPlgMgr::PlgMgr::getInstance()->getPlgInstance<br />
+        (MeinErstesPluginInterface::uid, BSPlgMgr::Version(1,0,0)));<br />
+    <br />
+    if(wuerfel == NULL)<br />
+    {<br />
+        QMessageBox::critical(NULL, "Fehler",<br />
+           "Das Plugin 'MeinErstesPlugin', Version 1.0.0 wurde nicht gefunden!<br />
+            Das Plugin kann nicht geladen werden");<br />
+        return false;<br />
+    }<br />
+    <br />
+    BSGui::MainWindow* mw = BSGui::MainWindow::getInstance();<br />
+        <br />
+    int nButtonSize = 32;<br />
+    int nIconSize = 24;<br />
+	<br />
+    button = new QPushButton("[][]");<br />
+    button->setMaximumSize(nButtonSize, nButtonSize);<br />
+    button->setMinimumSize(nButtonSize, nButtonSize);<br />
+    button->setIconSize(QSize(nIconSize, nIconSize));<br />
+    button->setToolTip("Erzeugt einen WÃ¼rfel aus WÃ¼rfeln");<br />
+    button->setCheckable(true);<br />
+    button->setAutoExclusive(true);<br />
+    <br />
+    mw->getAvailableToolBoxItems().at(0)->addWidgetToGroupBox<br />
+        ("commonObjectsGroupBox", button);<br />
+    <br />
+    connect(button, SIGNAL(clicked()), this, SLOT(buttonGedrueckt()));<br />
+    <br />
+    return true;<br />
+}<br />
+<br />
+bool MeinZweitesPlugin::installPlg()<br />
+{<br />
+    return true;<br />
+}<br />
+<br />
+bool MeinZweitesPlugin::uninstallPlg()<br />
+{<br />
+    if(button != NULL)<br />
+    {<br />
+        delete button;<br />
+        button = NULL;<br />
+    }<br />
+    <br />
+    return true;<br />
+}<br />
+<br />
+bool MeinZweitesPlugin::unloadPlg()<br />
+{<br />
+    if(button != NULL)<br />
+    {<br />
+        delete button;<br />
+        button = NULL;<br />
+    }<br />
+    <br />
+    return true;<br />
+}<br />
+<br />
+void MeinZweitesPlugin::closePlg()<br />
+{}<br />
+<br />
+void MeinZweitesPlugin::zeichne(int laenge)<br />
+{<br />
+    if((BSPlgMgr::PlgMgr::getInstance()->getInformation(<br />
+        MeinErstesPluginInterface::uid, BSPlgMgr::Version(1,0,0))<br />
+        & BSPlgMgr::IS_INSTALLED) == 0)<br />
+    {<br />
+        QMessageBox::critical(NULL, "Fehler", "Das Plugin 'MeinErstesPlugin',<br />
+        Version 1.0.0 wurde nicht gefunden! Das Plugin kann nicht geladen<br />
+        werden");<br />
+        <br />
+        return;<br />
+    }<br />
+    <br />
+    for(int i = 1; i <= laenge; i++)<br />
+        for(int j = 1; j <= laenge; j++)<br />
+            for(int k = 1; k <= laenge; k++)<br />
+                if(i == 1 || i == laenge || <br />
+                   j == 1 || j == laenge || <br />
+                   k == 1 || k == laenge)<br />
+                    wuerfel->zeichne<br />
+                        (BSMath::Color(1.0/i, 1.0/j, 1.0/k), i, j, k);<br />
+}<br />
+<br />
+void MeinZweitesPlugin::buttonGedrueckt()<br />
+{<br />
+    zeichne(5);<br />
+}
+</div>
+<div class="code">
+# Datei MeinZweitesPlugin.pro<br />
+<br />
+# Headers:<br />
+HEADERS += MeinZweitesPlugin.h<br />
+HEADERS += MeinZweitesPluginInterface.hh<br />
+<br />
+# Sources:<br />
+SOURCES += MeinZweitesPlugin.cpp<br />
+<br />
+# For the QT - Libs:<br />
+CONFIG += QT<br />
+<br />
+# For the OpenGl support:<br />
+QT += opengl<br />
+<br />
+# For the XML support:<br />
+QT += xml<br />
+<br />
+# Name des Plugins<br />
+TARGET = MeinZweitesPlugin<br />
+<br />
+# Pfad zu den Quelldateien<br />
+INCPATH += ./../../ProjektBlackSun/editor/pluginsystem/include/<br />
+INCPATH += ./../../ProjektBlackSun/editor/gui/include/<br />
+INCPATH += ./../../ProjektBlackSun/editor/scenegraph/include/<br />
+<br />
+# Der Typ<br />
+TEMPLATE = lib<br />
+CONFIG += dll<br />
+<br />
+# Zurücksetzen der debug/release Option und setzen auf debug<br />
+CONFIG -= debug_and_release<br />
+CONFIG -= debug<br />
+CONFIG -= release<br />
+<br />
+CONFIG += debug<br />
+<br />
+win32 {<br />
+    LIBS += ./../../ProjektBlackSun/editor/Win32/debug/GUI.dll<br />
+    LIBS += ./../../ProjektBlackSun/editor/Win32/debug/PlgMgr.dll<br />
+}<br />
+unix {<br />
+    LIBS += ./../../ProjektBlackSun/editor/Linux/debug/libGUI.so<br />
+    LIBS += ./../../ProjektBlackSun/editor/Linux/debug/libPlgMgr.so<br />
+}<br />
+</div>
+<div class="tip">
+Hinweis: <br />Vor einem Aufruf einer Funktion eines anderen Plugins sollte immer überprüft werden, ob das jeweilige Plugin überhaupt noch installiert ist bzw. in manchen Fällen auch, ob es geladen ist.</div>
+</p>
+<p>
+<span class="topic">Optionen</span><br />
+Um den Plugin Parameter mitzugeben, kann man eine Schnittstelle benutzen. Dazu fügen wir folgendes hinzu:
+<div class="code">
+#ifndef MEINZWEITESPLUGIN_H_<br />
+#define MEINZWEITESPLUGIN_H_<br />
+<br />
+// Datei MeinZweitesPlugin.h<br />
+...<br />
+class MeinZweitesPlugin : public  MeinZweitesPluginInterface<br />
+{<br />
+    Q_OBJECT<br />
+<br />
+    private:<br />
+        QPushButton* button;<br />
+        QWidget* optionen;<br />
+        QSpinBox* spinBox;<br />
+        MeinErstesPluginInterface* wuerfel;<br />
+...
+</div>
+<div class="code">
+// Datei MeinZweitesPlugin.cpp<br />
+...<br />
+bool MeinZweitesPlugin::loadPlg()<br />
+{<br />
+...<br />
+    mw->getAvailableToolBoxItems().at(0)->addWidgetToGroupBox("commonObjectsGroupBox", button);<br />
+    <br />
+    <del>connect(button, SIGNAL(clicked()), this, SLOT(buttonGedrueckt()));</del><br />
+    <br />
+    optionen = new QWidget;<br />
+    QHBoxLayout* hLayout = new QHBoxLayout;<br />
+    spinBox = new QSpinBox(optionen);<br />
+    QLabel* label = new QLabel("Anzahl WÃ¼rfel", optionen);<br />
+    QPushButton* startButton = new QPushButton("zeichne!", optionen);<br />
+    <br />
+    optionen->hide();<br />
+    <br />
+    hLayout->addWidget(spinBox);<br />
+    hLayout->addWidget(label);<br />
+    hLayout->addWidget(startButton);<br />
+    <br />
+    optionen->setLayout(hLayout);<br />
+    <br />
+    BSGui::BSToolBoxItem* toolBox = mw->getAvailableToolBoxItems().at(0);<br />
+    toolBox->insertPluginWidget(optionen);<br />
+    <br />
+    connect(button, SIGNAL(toggled(bool)), optionen, SLOT(setShown(bool)));<br />
+    connect(startButton, SIGNAL(clicked()), this, SLOT(buttonGedrueckt()));<br />
+    <br />
+<br />
+    return true;<br />
+}<br />
+...<br />
+<br />
+MeinZweitesPlugin::MeinZweitesPlugin()<br />
+{<br />
+    button = NULL;<br />
+    optionen = NULL;<br />
+}<br />
+...<br />
+bool MeinZweitesPlugin::uninstallPlg()<br />
+{<br />
+    if(button != NULL)<br />
+    {<br />
+        delete button;<br />
+        button = NULL;<br />
+    }<br />
+    <br />
+    if( optionen != NULL)<br />
+    {<br />
+        delete optionen;<br />
+        optionen = NULL;<br />
+    }<br />
+<br />
+    return true;<br />
+}<br /><br />
+
+bool MeinZweitesPlugin::unloadPlg()<br />
+{<br />
+    if(button != NULL)<br />
+    {<br />
+        delete button;<br />
+        button = NULL;<br />
+    }<br />
+    <br />
+    if( optionen != NULL)<br />
+    {<br />
+        delete optionen;<br />
+        optionen = NULL;<br />
+    }<br />
+    <br />
+    return true;<br />
+}<br />
+<br />
+...<br />
+void MeinZweitesPlugin::buttonGedrueckt()<br />
+{<br />
+    <del>zeichne(5);</del><br />
+    zeichne(spinBox->value());<br />
+}
+</div>
+Mit diesen Änderungen erscheint jetzt beim Klick auf den Button “[][]” eine Auswahlmöglichkeit für die Anzahl der Seiten pro Würfel. Dann mit dem Klick auf “zeichne!” wird der Würfel gezeichnet.
+</p>
+
+	</body>
+
+</html>

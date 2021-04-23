@@ -1,0 +1,38 @@
+#ifndef Q_CC_BOR
+# if defined(UNDER_CE) && UNDER_CE >= 400
+#  include <winbase.h>
+# else
+#  include <winver.h>
+# endif
+#endif
+
+IDI_ICON1	ICON	DISCARDABLE		"media\BlackSun.ico"
+
+VS_VERSION_INFO VERSIONINFO
+	FILEVERSION 1,0,0,0
+	PRODUCTVERSION 1,0,0,0
+	FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+	FILEFLAGS VS_FF_DEBUG
+#else
+	FILEFLAGS 0x0L
+#endif
+	FILEOS VOS__WINDOWS32
+	FILETYPE VFT_APP
+	FILESUBTYPE 0x0L
+	BEGIN
+		BLOCK "StringFileInfo"
+		BEGIN
+			BLOCK "040904B0"
+			BEGIN
+				VALUE "CompanyName", "FH Landshut\0"
+				VALUE "FileDescription", "Blacksun, a 3D Modeller\0"
+				VALUE "FileVersion", "1.0.0.0\0"
+				VALUE "LegalCopyright", "(Copyleft) Blacksun project team\0"
+				VALUE "OriginalFilename", "Blacksun.exe\0"
+				VALUE "ProductName", "Blacksun\0"
+			END
+		END
+	END
+/* End of Version info */
+

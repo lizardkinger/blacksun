@@ -1,0 +1,53 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>media/addPolygon_32.png</file>
+        <file>media/addVertex_32.png</file>
+        <file>media/move_32.png</file>
+        <file>media/rotate_32.png</file>
+        <file>media/scale_32.png</file>
+        <file>media/selModeFace_32.png</file>
+        <file>media/selModeMesh_32.png</file>
+        <file>media/selModeVertex_32.png</file>
+        <file>media/select_32.png</file>
+    </qresource>
+    <qresource prefix="/(re)load" >
+        <file>media/reload.png</file>
+        <file>media/revert.png</file>
+    </qresource>
+    <qresource prefix="/add-delete" >
+        <file>media/add.png</file>
+        <file>media/edit_remove.png</file>
+    </qresource>
+    <qresource prefix="/configdialog" >
+        <file>media/exec.png</file>
+    </qresource>
+    <qresource prefix="/edit" >
+        <file>media/editcopy.png</file>
+        <file>media/editcut.png</file>
+        <file>media/editpaste.png</file>
+    </qresource>
+    <qresource prefix="/exit" >
+        <file>media/exit.png</file>
+    </qresource>
+    <qresource prefix="/file managment" >
+        <file>media/filenew.png</file>
+        <file>media/fileopen.png</file>
+        <file>media/filesave.png</file>
+        <file>media/filesaveas.png</file>
+    </qresource>
+    <qresource prefix="/left/right" >
+        <file>media/back.png</file>
+        <file>media/next.png</file>
+    </qresource>
+    <qresource prefix="/settings" >
+        <file>media/configure.png</file>
+    </qresource>
+    <qresource prefix="/stop-go" >
+        <file>media/ok.png</file>
+        <file>media/stop.png</file>
+    </qresource>
+    <qresource prefix="/undo/redo" >
+        <file>media/redo.png</file>
+        <file>media/undo.png</file>
+    </qresource>
+</RCC>

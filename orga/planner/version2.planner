@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<project name="Blacksun" company="" manager="Thomas Kuhnd&#xF6;rfer" phase="" project-start="20070326T000000Z" mrproject-version="2" calendar="1">
+  <properties/>
+  <phases/>
+  <calendars>
+    <day-types>
+      <day-type id="0" name="Arbeiten" description="Ein Vorgabe-Arbeitstag"/>
+      <day-type id="1" name="Nicht Arbeiten" description="Ein Vorgabetag, an dem nicht gearbeitet wird"/>
+      <day-type id="2" name="Basis verwenden" description="Tag vom Basiskalender verwenden"/>
+    </day-types>
+    <calendar id="1" name="Vorgabe">
+      <default-week mon="0" tue="0" wed="0" thu="0" fri="0" sat="1" sun="0"/>
+      <overridden-day-types>
+        <overridden-day-type id="0">
+          <interval start="0800" end="1200"/>
+          <interval start="1300" end="1700"/>
+        </overridden-day-type>
+      </overridden-day-types>
+      <days>
+        <day date="20061104" type="day-type" id="0"/>
+        <day date="20061125" type="day-type" id="0"/>
+      </days>
+    </calendar>
+  </calendars>
+  <tasks>
+    <task id="1" name="Release Candidate" note="Geplanter Termin: 3.05." work="0" start="20070503T140000Z" end="20070503T140000Z" work-start="20070503T140000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
+      <predecessors>
+        <predecessor id="1" predecessor-id="30" type="FS"/>
+        <predecessor id="1" predecessor-id="29" type="FS"/>
+        <predecessor id="1" predecessor-id="26" type="FS"/>
+        <predecessor id="1" predecessor-id="23" type="FS"/>
+        <predecessor id="1" predecessor-id="17" type="FS"/>
+        <predecessor id="1" predecessor-id="13" type="FS"/>
+        <predecessor id="1" predecessor-id="9" type="FS"/>
+        <predecessor id="1" predecessor-id="4" type="FS"/>
+        <predecessor id="1" predecessor-id="19" type="FS"/>
+      </predecessors>
+    </task>
+    <task id="2" name="Final" note="Geplanter Termin: 31.05" work="0" start="20070531T170000Z" end="20070531T170000Z" work-start="20070531T170000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
+      <predecessors>
+        <predecessor id="1" predecessor-id="33" type="FS"/>
+        <predecessor id="1" predecessor-id="32" type="FS"/>
+        <predecessor id="1" predecessor-id="14" type="FS"/>
+        <predecessor id="1" predecessor-id="1" type="FS"/>
+      </predecessors>
+    </task>
+    <task id="3" name="GUI" note="" work="168300" start="20070326T000000Z" end="20070401T154500Z" work-start="20070326T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="4" name="Men&#xFC;struktur erstellen" note="Erstellung des Men&#xFC;s anhand der menu.txt" work="168300" start="20070326T000000Z" end="20070401T154500Z" work-start="20070326T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    </task>
+    <task id="5" name="Plugins" note="" work="2641500" start="20070326T000000Z" end="20070520T084500Z" work-start="20070326T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="6" name="Texturmanager" note="Texturerweiterungsplugin f&#xFC;r den Materialeditor um Grafiken aus den verschiedensten Formaten nachzuladen" work="201600" start="20070326T000000Z" end="20070402T170000Z" work-start="20070326T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="7" name="Konvexe H&#xFC;lle" note="Eine konvexe H&#xFC;lle um eine gegebene Punktmenge erstellen" work="288000" start="20070402T170000Z" end="20070413T170000Z" work-start="20070403T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="6" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="8" name="Loch" note="Ein Loch in ein selektiertes Polygon stanzen" work="230400" start="20070413T170000Z" end="20070423T170000Z" work-start="20070415T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="7" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="9" name="Stachel" note="Einen Stachel aus einem selektiertem Polygon herauswachsen lassen" work="230400" start="20070423T170000Z" end="20070502T170000Z" work-start="20070424T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="8" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="10" name="Block" note="" work="172800" start="20070326T000000Z" end="20070401T170000Z" work-start="20070326T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="11" name="Rotationsk&#xF6;rper" note="Aus einem selektierten Polygon einen 3D-K&#xF6;rper durch Rotation erstellen" work="267300" start="20070401T170000Z" end="20070412T101500Z" work-start="20070402T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="10" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="12" name="Explosion" note="Selektierte Vertexmenge eines Polygons explosionsartig verschieben" work="236700" start="20070412T101500Z" end="20070422T120000Z" work-start="20070412T101500Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="11" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="13" name="Weiche Ecken" note="Harte Ecken wie etwa bei Quadern durch zus&#xE4;tzliche Punkte rundlicher gestalten" work="238500" start="20070422T120000Z" end="20070501T151500Z" work-start="20070422T120000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="12" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="14" name="Subdivision" note="Aus gegebenen Geometrien augenscheinlich weichere Geometrien erstellen" work="775800" start="20070503T140000Z" end="20070520T084500Z" work-start="20070503T140000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="1" type="FS"/>
+        </predecessors>
+      </task>
+    </task>
+    <task id="15" name="Systemkern" note="" work="864000" start="20070326T000000Z" end="20070429T170000Z" work-start="20070326T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="16" name="Undosystem" note="Kompaktes Undo-/Redosystem mithilfe von QUndoCommand" work="489600" start="20070326T000000Z" end="20070413T170000Z" work-start="20070326T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="17" name="Onlineupdate" note="M&#xF6;glichkeit auf Aktualit&#xE4;t der derzeit installierten Version zu pr&#xFC;fen" work="374400" start="20070413T170000Z" end="20070429T170000Z" work-start="20070415T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="16" type="FS"/>
+        </predecessors>
+      </task>
+    </task>
+    <task id="18" name="Datenstruktur" note="" work="892800" start="20070326T000000Z" end="20070422T170000Z" work-start="20070326T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="19" name="Import/Export" note="Erstellen von Import- und Exportfiltern. Beispielhaft am MDx-Format zu vollziehen" work="691200" start="20070326T000000Z" end="20070422T170000Z" work-start="20070326T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="20" name="Szenenserialisierung" note="Laden und Speichern einer Szene mit allen erstellten K&#xF6;rpern" work="201600" start="20070326T000000Z" end="20070402T170000Z" work-start="20070326T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+    </task>
+    <task id="21" name="Integration" note="" work="1906200" start="20070326T000000Z" end="20070503T084500Z" work-start="20070326T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="22" name="Materialeditor&lt;-&gt;Scenegraph" note="Beim Speichern die erstellten Materialien ebenfalls mitspeichern, sowie Zuweisung von Materialien an Szenenobjekte" work="316800" start="20070326T000000Z" end="20070401T120000Z" work-start="20070326T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="23" name="Scenegraph&lt;-&gt;GUI" note="Integration aller internen Szenenverwaltungsm&#xF6;glichkeiten in die GUI" work="1589400" start="20070401T120000Z" end="20070503T084500Z" work-start="20070401T120000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="22" type="FS"/>
+        </predecessors>
+      </task>
+    </task>
+    <task id="24" name="Modifikatoren" note="" work="1453500" start="20070326T000000Z" end="20070524T084500Z" work-start="20070326T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="25" name="Vertex-Modifikatoren" note="Objektmodifikatoren auf Vertexebene." work="489600" start="20070326T000000Z" end="20070413T170000Z" work-start="20070326T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="26" name="Face-Modifikatoren" note="Objektmodifikatoren auf Faceebene." work="460800" start="20070413T170000Z" end="20070502T170000Z" work-start="20070415T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="25" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="27" name="Gruppen-Modifikatoren" note="Objektmodifikatoren auf Gruppenebene." work="503100" start="20070503T140000Z" end="20070524T084500Z" work-start="20070503T140000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="1" type="FS"/>
+        </predecessors>
+      </task>
+    </task>
+    <task id="28" name="Infrastruktur" note="" work="2979000" start="20070326T000000Z" end="20070531T170000Z" work-start="20070326T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="29" name="Handbuch" note="Erstellung eines Handbuchs zur Dokumentation f&#xFC;r Anwender." work="968400" start="20070326T000000Z" end="20070503T140000Z" work-start="20070326T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="30" name="Installer" note="Einbettung des Programms sowie der Plugins in einen Installer, der sowohl unter Linux als auch Windows lauff&#xE4;hig ist." work="620100" start="20070409T000000Z" end="20070503T131500Z" work-start="20070409T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <constraint type="start-no-earlier-than" time="20070409T000000Z"/>
+      </task>
+      <task id="31" name="Codedokumentation" note="Nachtragen von Quellcodedokumentation aller bisher nicht dokumentierten Funktionen" work="215100" start="20070503T140000Z" end="20070513T084500Z" work-start="20070503T140000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="1" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="32" name="Fehlerbereinigung" note="Bereinigungsphase f&#xFC;r Ausmerzung der gr&#xF6;bsten Programmfehler" work="473400" start="20070513T084500Z" end="20070531T131500Z" work-start="20070513T084500Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="31" type="FS"/>
+          <predecessor id="1" predecessor-id="1" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="33" name="Entwicklerdokumentation" note="Erstellung der pers&#xF6;nlichen Entwicklerdokumentationen zur abschlie&#xDF;en Abgabe. Ebenfalls bereits auf die Abschlu&#xDF;pr&#xE4;sentation ausgerichtet." work="702000" start="20070503T140000Z" end="20070531T170000Z" work-start="20070503T140000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="1" type="FS"/>
+        </predecessors>
+      </task>
+    </task>
+  </tasks>
+  <resource-groups/>
+  <resources>
+    <resource id="1" name="Thomas Kuhnd&#xF6;rfer" short-name="tkuhndo" type="1" units="0" email="tkuhndo@fh-landshut.de" note="" std-rate="0"/>
+    <resource id="2" name="Reinhard Jeschull" short-name="rjeschu" type="1" units="0" email="rjeschu@fh-landshut.de" note="" std-rate="0"/>
+    <resource id="3" name="Philipp Gruber" short-name="pgruber" type="1" units="0" email="pgruber@fh-landshut.de" note="" std-rate="0"/>
+    <resource id="4" name="Stefan Zeltner" short-name="szeltne" type="1" units="0" email="szeltne@fh-landshut.de" note="" std-rate="0"/>
+    <resource id="5" name="Thomas Tischler" short-name="ttischl" type="1" units="0" email="ttischl@fh-landshut.de" note="" std-rate="0"/>
+    <resource id="6" name="Alle" short-name="" type="1" units="0" email="" note="" std-rate="0"/>
+  </resources>
+  <allocations>
+    <allocation task-id="27" resource-id="1" units="100"/>
+    <allocation task-id="26" resource-id="1" units="100"/>
+    <allocation task-id="25" resource-id="1" units="100"/>
+    <allocation task-id="22" resource-id="1" units="100"/>
+    <allocation task-id="23" resource-id="1" units="100"/>
+    <allocation task-id="20" resource-id="1" units="100"/>
+    <allocation task-id="6" resource-id="2" units="100"/>
+    <allocation task-id="14" resource-id="2" units="100"/>
+    <allocation task-id="9" resource-id="2" units="100"/>
+    <allocation task-id="8" resource-id="2" units="100"/>
+    <allocation task-id="7" resource-id="2" units="100"/>
+    <allocation task-id="22" resource-id="2" units="100"/>
+    <allocation task-id="19" resource-id="2" units="100"/>
+    <allocation task-id="10" resource-id="3" units="100"/>
+    <allocation task-id="13" resource-id="3" units="100"/>
+    <allocation task-id="14" resource-id="3" units="100"/>
+    <allocation task-id="12" resource-id="3" units="100"/>
+    <allocation task-id="11" resource-id="3" units="100"/>
+    <allocation task-id="16" resource-id="4" units="100"/>
+    <allocation task-id="17" resource-id="4" units="100"/>
+    <allocation task-id="30" resource-id="4" units="100"/>
+    <allocation task-id="23" resource-id="5" units="100"/>
+    <allocation task-id="4" resource-id="5" units="100"/>
+    <allocation task-id="31" resource-id="6" units="100"/>
+    <allocation task-id="29" resource-id="6" units="100"/>
+    <allocation task-id="33" resource-id="6" units="100"/>
+    <allocation task-id="32" resource-id="6" units="100"/>
+  </allocations>
+</project>

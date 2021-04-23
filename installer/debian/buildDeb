@@ -1,0 +1,306 @@
+#/bin/bash
+#use: {Blacksun_Directory}/installer/debian/buildDeb Version
+#
+#Example: buildDeb 1.0.0
+#
+#Author: Thomas Kuhndoerfer <tkuhndo@fh-landshut.de>
+#Licence: GPL
+
+################################################################
+#Teste auf Übergabeparameter
+################################################################
+echo ""
+if test $# -ne 1; then
+	echo "Dem Kommando muß 1 Parameter übergeben werden!"
+	echo "Aufruf: {Blacksun_Directory}/installer/debian/buildDeb Version"
+	exit 1
+fi
+
+echo "Starte buildDeb-Skript mit Version $1"
+echo ""
+
+################################################################
+#Setze Standardverzeichnis
+################################################################
+declare BSVersion="$1"
+declare BSDir="./blacksun_$BSVersion"
+
+echo "Starte buildDeb-Skript mit Version $BSVersion im Verzeichnis $BSDir"
+
+
+################################################################
+#Kompilierung im Release-Modus
+################################################################
+echo "Kompiliere Editor im Release-Modus"
+make --directory=./../../editor/ releaselinux 
+
+echo "Kompiliere Plugin im Release-Modus"
+make --directory=./../../plugin/ releaselinux
+
+
+################################################################
+#Löschen alter Verzeichnisse
+################################################################
+rm -rf $BSDir
+
+################################################################
+#Erstelle Ausgangsverzeichnis
+################################################################
+mkdir $BSDir
+echo "Ausgangsverzeichnis erstellt"
+
+################################################################
+# Deb-Format: debian-binary
+################################################################
+echo "2.0" > $BSDir/debian-binary 
+echo "$BSDir/debian-binary erstellt"
+
+################################################################
+# Deb-Format: control
+################################################################
+mkdir $BSDir/DEBIAN
+echo "Package: blacksun" > $BSDir/DEBIAN/control 
+echo "Version: $BSVersion" >> $BSDir/DEBIAN/control
+echo "Section: graphics" >> $BSDir/DEBIAN/control 
+echo "Priority: optional" >> $BSDir/DEBIAN/control
+echo "Architecture: i386" >> $BSDir/DEBIAN/control
+echo "Installed-Size: 1229" >> $BSDir/DEBIAN/control 
+echo "Depends: libpng3,libqt4-core,libqt4-gui" >> $BSDir/DEBIAN/control 
+echo "Maintainer: Blacksun project team <tkuhndo@fh-landshut.de>" >> $BSDir/DEBIAN/control 
+
+#Description
+echo "Description: Blacksun is a free 3D modelling environment for static objects" >> $BSDir/DEBIAN/control
+echo " ." >> $BSDir/DEBIAN/control
+echo " We are 5 students from the university of applied sciences in Landshut (Germany: www.fh-landshut.de) and we developed this project because of a study project over the time period of 2 semesters." >> $BSDir/DEBIAN/control
+echo " As only big package dependency, QT4 is needed" >> $BSDir/DEBIAN/controll
+echo " ." >> $BSDir/DEBIAN/control
+echo " Project team:" >> $BSDir/DEBIAN/control
+echo " ." >> $BSDir/DEBIAN/control
+echo " Philip Gruber <pgruber@fh-landshut.de>;" >> $BSDir/DEBIAN/control
+echo " ." >> $BSDir/DEBIAN/control
+echo " Reinhard Jeschull <rjeschu@fh-landshut.de>" >> $BSDir/DEBIAN/control
+echo " ." >> $BSDir/DEBIAN/control
+echo " Stefan Zeltner <szeltne@fh-landshut.de>" >> $BSDir/DEBIAN/control
+echo " ." >> $BSDir/DEBIAN/control
+echo " Thomas Kuhndoerfer <tkuhndo@fh-landshut.de>" >> $BSDir/DEBIAN/control
+echo " ." >> $BSDir/DEBIAN/control
+echo " Thomas Tischler <ttischl@fh-landshut.de>" >> $BSDir/DEBIAN/control
+echo " ." >> $BSDir/DEBIAN/control
+echo " Homepage: http://sourceforge.net/projects/blacksun" >> $BSDir/DEBIAN/control
+
+
+echo "$BSDir/DEBIAN/control erstellt"
+
+################################################################
+# Deb-Format: Sonstige Dateien
+################################################################
+touch $BSDir/DEBIAN/shlibs
+touch $BSDir/DEBIAN/md5sums
+
+touch $BSDir/DEBIAN/postrm
+chmod 775 $BSDir/DEBIAN/postrm
+echo "#!/bin/bash" > $BSDir/DEBIAN/postrm
+echo "rm -rf /usr/lib/blacksun" >> $BSDir/DEBIAN/postrm
+#echo "rm /usr/bin/BlackSun" >> $BSDir/DEBIAN/postrm
+#echo "rm /usr/bin/blacksun.sh" >> $BSDir/DEBIAN/postrm
+echo "exit 0" >> $BSDir/DEBIAN/postrm
+
+touch $BSDir/DEBIAN/postinst
+chmod 775 $BSDir/DEBIAN/postinst
+echo "$BSDir/DEBIAN/shlibs erstellt"
+echo "$BSDir/DEBIAN/md5sums erstellt"
+echo "$BSDir/DEBIAN/postrm erstellt"
+echo "$BSDir/DEBIAN/postinst erstellt"
+
+
+################################################################
+# Kopiere Executable
+################################################################
+mkdir $BSDir/usr/
+mkdir $BSDir/usr/bin
+
+cp ./../../editor/Linux/release/BlackSun $BSDir/usr/bin/
+echo "Kopiere Executable nach $BSDir/usr/bin/";
+echo ""
+
+################################################################
+# Erzeuge Startskript für Executable
+################################################################
+
+touch  $BSDir/usr/bin/blacksun.sh
+chmod +x $BSDir/usr/bin/blacksun.sh
+
+echo "#!/bin/bash" > $BSDir/usr/bin/blacksun.sh
+echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/blacksun:/usr/lib/blacksun/plugin:' >>  $BSDir/usr/bin/blacksun.sh
+echo "/usr/bin/BlackSun /usr/lib/blacksun/plugin >& /dev/null" >>  $BSDir/usr/bin/blacksun.sh
+
+echo "Erzeuge Startskript für Executable in $BSDir/usr/bin/";
+echo ""
+
+
+
+################################################################
+# Kopiere Hauptkomponenten
+################################################################
+mkdir $BSDir/usr/lib/
+mkdir $BSDir/usr/lib/blacksun/
+
+find ./../../editor/Linux/release/ -type f  -name "*.so.?.?.?" > all.tmp
+for i in $(cat < all.tmp); 
+do	
+	cp $i $BSDir/usr/lib/blacksun/
+	echo "Kopiere Hauptkomponente $i nach $BSDir/usr/lib/blacksun/";
+done
+echo ""
+rm all.tmp
+
+
+################################################################
+# Deb-Format: Symbolische Links für Hauptkomponenten (Drecksarbeit)
+################################################################
+
+echo "Beginne mit der Erstellung der symbolischen Links für Hauptkomponenten für das Post-Install-Skript"
+echo ""
+
+echo "#!/bin/bash"  >> $BSDir/DEBIAN/postinst
+
+declare BSInstallLIB=/usr/lib/blacksun/
+
+find $BSDir/usr/lib/blacksun/ -type f  -name "*.so.?.?.?" > all.tmp
+
+echo "" >> $BSDir/DEBIAN/postinst
+
+for i in $(cat < all.tmp); 
+do	
+	declare filename=`basename "$i"`
+
+	declare link1=$filename
+	declare len=$[ ${#link1} -2]	
+	link1=${link1:0:$len}
+
+	echo "ln -s $BSInstallLIB$filename $BSInstallLIB$link1" >> $BSDir/DEBIAN/postinst
+	
+	declare link2=$link1
+	len=$[ ${#link2} - 2]
+	link2=${link2:0:$len}
+
+	echo "ln -s $BSInstallLIB$filename $BSInstallLIB$link2" >> $BSDir/DEBIAN/postinst
+
+	declare link3=$link2
+	len=$[ ${#link3} - 2]
+	link3=${link3:0:$len}
+
+	echo "ln -s $BSInstallLIB$filename $BSInstallLIB$link3" >> $BSDir/DEBIAN/postinst
+
+	echo "" >> $BSDir/DEBIAN/postinst
+done
+echo "Symbolische Linkerstellung in $BSDir/DEBIAN/postinst hinzugefuegt"
+echo ""
+
+rm all.tmp
+
+
+################################################################
+# Kopiere Plugins
+################################################################
+mkdir $BSDir/usr/lib/blacksun/plugin
+
+find ./../../plugin/ -type f  -name "*.so.?.?.?" > pluginlist.tmp
+
+cat pluginlist.tmp | grep "release" > pluginrelease.tmp
+
+for i in $(cat <  pluginrelease.tmp); 
+do	
+	cp $i $BSDir/usr/lib/blacksun/plugin
+	echo "Kopiere Plugin $i nach $BSDir/usr/lib/blacksun/plugin";
+done
+echo ""
+rm pluginlist.tmp pluginrelease.tmp
+
+
+################################################################
+# Deb-Format: Symbolische Links für Plugins (Drecksarbeit)
+################################################################
+
+echo "Beginne mit der Erstellung der symbolischen Links für Plugins für das Post-Install-Skript"
+echo ""
+
+declare BSInstallPluginLIB=/usr/lib/blacksun/plugin/
+
+find $BSDir/usr/lib/blacksun/plugin -type f  -name "*.so.?.?.?" > all.tmp
+
+echo "" >> $BSDir/DEBIAN/postinst
+echo "" >> $BSDir/DEBIAN/postinst
+
+for i in $(cat < all.tmp); 
+do	
+	declare filename=`basename "$i"`
+
+	declare link1=$filename
+	declare len=$[ ${#link1} -2]	
+	link1=${link1:0:$len}
+
+	echo "ln -s $BSInstallPluginLIB$filename $BSInstallPluginLIB$link1" >> $BSDir/DEBIAN/postinst
+	
+	declare link2=$link1
+	len=$[ ${#link2} - 2]
+	link2=${link2:0:$len}
+
+	echo "ln -s $BSInstallPluginLIB$filename $BSInstallPluginLIB$link2" >> $BSDir/DEBIAN/postinst
+
+	declare link3=$link2
+	len=$[ ${#link3} - 2]
+	link3=${link3:0:$len}
+
+	echo "ln -s $BSInstallPluginLIB$filename $BSInstallPluginLIB$link3" >> $BSDir/DEBIAN/postinst
+
+	echo "" >> $BSDir/DEBIAN/postinst
+done
+echo "Symbolische Linkerstellung in $BSDir/DEBIAN/postinst hinzugefuegt"
+echo ""
+
+# ldconfig am Ende einfügen
+echo "" >> $BSDir/DEBIAN/postinst
+echo "ldconfig" >> $BSDir/DEBIAN/postinst
+echo "" >> $BSDir/DEBIAN/postinst
+
+rm all.tmp
+
+################################################################
+# Handbuch kopieren
+################################################################
+mkdir $BSDir/usr/lib/blacksun/manual
+mkdir $BSDir/usr/lib/blacksun/manual/css
+mkdir $BSDir/usr/lib/blacksun/manual/html
+mkdir $BSDir/usr/lib/blacksun/manual/images
+
+
+cp -Rf ./../../manual/Manual.html $BSDir/usr/lib/blacksun/manual/
+cp -Rf ./../../manual/css $BSDir/usr/lib/blacksun/manual/
+cp -Rf ./../../manual/html $BSDir/usr/lib/blacksun/manual/
+cp -Rf ./../../manual/images $BSDir/usr/lib/blacksun/manual/
+
+
+echo "Handbuch nach $BSDir/usr/lib/blacksun/manual kopiert"
+echo ""
+
+################################################################
+# Build 
+################################################################
+
+# Unnötige SVN-Ordner löschen
+for I in `find $BSDir -name .svn ` ; do rm -rf ${I}; done
+
+# Unnötige Thumb-Dateien löschen
+for I in `find $BSDir -name Thumbs.db ` ; do rm ${I}; done
+
+# Unnötige Backup-Dateien löschen
+for I in `find $BSDir -name *.*~ ` ; do rm -rf ${I}; done
+
+
+dpkg-deb --build $BSDir ./
+
+echo "Paket erstellt!"
+
+
+

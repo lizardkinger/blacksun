@@ -1,0 +1,267 @@
+==================
+      TODOs:
+==================
+
+This file should be used to give the other members of a team little tasks, for
+example a missing function needed for a component, a bug in a module, ...
+
+A task can be look like this:
+[   ] 19.03.07 rjeschu   I need a function 'Bla' in the 'Bli'-Class, which ...
+[   ] 19.03.07 rjeschu   BUG: Crash when clicking the same postion two 
+						 times (create vertex)
+
+If a task is finished, it can look like this:
+[ X ] 19.03.07 rjeschu   BUG: Crash when clicking the same postion two 
+						 times (create vertex)
+						 
+If someone has started working on a task he writes his shortname into the brackets:
+[*sz*] 19.03.07 pgruber  BUG: Program chrashes if I unplug the power line					
+
+The finished TODOs are under the (incompleted) TODOs
+
+
+
+-------------------------------------------------------------------------------
+Blacksun:
+-------------------------------------------------------------------------------
+[   ] 12.05.07 rjeschu  All core libraries and plugins must be documented 
+						(with doxygen)
+
+-------------------------------------------------------------------------------
+Core:
+-------------------------------------------------------------------------------
+[   ] 13.04.07 all      Correct deletion of singleton objects
+
+-------------------------------------------------------------------------------
+GUI:
+-------------------------------------------------------------------------------
+[   ] 11.04.07 szeltne	Fix warnings:
+						Warning: name actionZAxis is already used
+						src/configbase.cpp:109: warning: unused variable �currentIndex�
+						src/glWidget.cpp:32: warning: unused parameter �shared�
+						src/glWidget.cpp:32: warning: unused parameter �shared�
+						src/glWidget.cpp:293: warning: �current_axis� may be used uninitialized in this function
+						src/logwindow.cpp:87: warning: unused parameter �min�
+						src/configinterface.cpp:36:2: warning: no newline at end of file
+
+[   ] 25.05.07 rjeschu  A icon should be added to Copy, Past, Cut and Clone
+
+-------------------------------------------------------------------------------
+Math:
+-------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+Plugin-/Install-/Update-/makesystem:
+-------------------------------------------------------------------------------
+
+                        
+-------------------------------------------------------------------------------
+Renderer:
+-------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+SceneGraph:
+-------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+Plugins:
+-------------------------------------------------------------------------------						
+[   ] 12.05.07 rjeschu  BUG: Grid-Plugin crashes on Linux while creating a 1x1-Grid
+
+-------------------------------------------------------------------------------
+Other:
+-------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+==========================
+      FINSIHED TODOs:
+==========================
+-------------------------------------------------------------------------------
+Blacksun:
+-------------------------------------------------------------------------------
+
+
+
+-------------------------------------------------------------------------------
+Core:
+-------------------------------------------------------------------------------
+
+
+
+-------------------------------------------------------------------------------
+GUI:
+-------------------------------------------------------------------------------
+[ X ] 31.03.07 rjeschu  The viewmode 'Solid' is missing in the (context) menu
+
+[ X ] 21.03.07 tkuhndo  Extending menu structure, see seperate file Menu.txt
+
+[ X ] 31.03.07 rjeschu  Camera movements should be actived if the STR-Key is
+						or the right mouse button is pressed
+
+[ X ] 31.03.07 rjeschu  Mode 'Select' missing in the toolbox???
+					    -> tkuhndo: It's one point in the first entry
+
+[ X ] 07.04.07 rjeschu  Status bar should be filled:
+						- Position in the scene where the mouse points
+						- Other informations (for example number of pure
+						  vertices, ...)
+
+[ X ] 12.05.07 rjeschu  Hotkey conflicts should be solved
+
+[ X ] 21.03.07 tkuhndo  Selection functionality for the viewports:
+						Drawing a selection rectangle.
+						-> Done, but it has a bug under Win32
+						
+						+ Changing the cursor by holding down the left mouse button 
+						  according to move/rotate
+						  
+						+ Special behavior for 3d view: no selection rectangles,
+						  just selection by picking => Picking removed 
+
+[ X ] 21.03.07 rjeschu  Add a new item to the context menu of the OpenGl-widget
+						for enable/disable drawing the backface.
+						=> Its added to Menu -> View -> Render options -> Draw backfaces (all windows
+						will then draw the backfaces)
+
+[ X ] 12.05.07 rjeschu  More items should be added to the QToolbar (Open, Save, Copy, Paste, ...)
+
+[ X ] 12.05.07 rjeschu  Statusbar shows the widget coordinates instead of scene-coordinates
+
+[ X ] 12.05.07 rjeschu  Items of the Toolbox should be grouped (Generators, Modificators, ...)
+
+[ X ] 12.05.07 rjeschu  Some menu items should be deleted (the items which are plugin functionality and are
+						not in a 'blank' Blacksun => for example 'Material->Open material editor')
+
+[ X ] 12.05.07 rjeschu  Rotate-Widget in Toolbox can be deleted
+
+[ X ] 13.04.07 all      New tab for materials in the object explorer with a "apply" button 
+
+[ X ] 29.03.07 tkuhndo  The name list of all scene objects is accessible with sm->getSceneobjectNames();
+						Names could be shown in the left object listview
+
+[ X ] 12.05.07 rjeschu  BUG: Snapshot does not work correctly on windows
+
+[ X ] 12.05.07 rjeschu  Log-Window should store the state (Shown/Not shown), or is not shown by default
+
+[ X ] 25.05.07 rjeschu  Realtime-Mirror must be connected
+
+-------------------------------------------------------------------------------
+Math:
+-------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+Plugin-/Install-/Update-/makesystem:
+-------------------------------------------------------------------------------
+[ X ] 03.04.07 all      Directory structure after installation
+                        /	--> .exe .dll
+                        /plugins	--> plugin.dll
+                        /doc	--> .html
+                        
+[ X ] 29.03.07 tkuhndo  Standard plugins should be loaded during startup
+
+[ X ] 11.04.07 szeltne	Make the clean - command platform independent
+                        
+-------------------------------------------------------------------------------
+Renderer:
+-------------------------------------------------------------------------------
+
+[ X ] 29.03.07 tkuhndo  A function is needed for the perspective view that 
+						returns a BSMath::Ray according to a clicked position
+						at the possible rotated or zoomed scene. (Removed)
+
+[ X ] 11.04.07 szeltne	Fix warnings:
+						src/Renderer.cpp:345: warning: unused parameter �aabb�
+						src/Renderer.cpp:575: warning: unused parameter �aabb�
+
+[ X ] 12.05.07 rjeschu  BUG: RenderAABB() is scaling incorrectly
+
+-------------------------------------------------------------------------------
+SceneGraph:
+-------------------------------------------------------------------------------
+						
+[ X ] 19.03.07 rjeschu  Compiling-Error in Plugins: `Polygon' undeclared.
+						Using namespace does not solve this problem.
+						Strange: There are no errors when using BSScene::Polygon
+						instead of Polygon. Other classes from BSScene can be
+						used correctly, only Polygon have problems :-)
+						Its only an error on Windows. 
+					    -> tkuhndo: I've absolutely no clue, any idea from someone?
+					    -> Task assigned to szeltner
+					    
+[ X ] 19.03.07 rjeschu  BUG: Polygons can not be added to a scene via
+						getScene().addSceneObject(..). The polygon-counter
+						is after calling the methode 0 on Windows. The methode
+						seems to work on Linux correctly, there are only
+						problems on Windows.
+
+[ X ] 31.03.07 rjeschu  An extended version of the SelectionBuffer is needed
+						to develeop plugins that manipulate selected faces.
+						-> getSelectedObjects for meshes / polygons
+						
+[ X ] 03.04.07 rjeschu  No texture-coordinates are saved (only position and normal)
+						in Polygon::save
+						-> No changes, see Polygon.cpp: line 464 till 467
+						
+[ X ] 07.04.07 rjeschu  OGlWidgets should be updated after loading a file
+
+[ X ] 07.04.07 rjeschu  After loading the file, the filename should be displayed
+						in the titlebar ("Blacksun - Test.bla").
+						If a new scene is created (New), titlebar should be updated
+						too						
+						
+[ X ] 11.04.07 szeltne	Fix warnings:
+						src/MenuHandler.cpp:24: warning: �wPos� may be used uninitialized in this function
+						src/SceneManager.cpp:98: warning: unused parameter �done�
+						src/SceneManager.cpp:98: warning: unused parameter �axis�
+						src/SceneManager.cpp:304: warning: unused parameter �name�
+						src/SceneManager.cpp:304: warning: unused parameter �f�
+						src/SceneManager.cpp:371: warning: unused parameter �mb�
+						src/SceneManager.cpp:390: warning: unused parameter �bottomright�
+
+[ X ] 12.05.07 rjeschu  BUG: Programm crashes (Assertion: Null-Vector) while
+						selecting some meshes, for example a grid (Mesh-Selection-Mode)
+
+-------------------------------------------------------------------------------
+Plugins:
+-------------------------------------------------------------------------------
+[ X ] 31.03.07 rjeschu  Plugins should have a widget to enter parameters, which
+
+[ X ] 11.04.07 szeltne	Fix warnings:
+						src/NBoxGen.cpp:459: warning: unused variable �s�
+						src/TubeGen.cpp:730: warning: unused variable �s�
+[ X ] 11.04.07 szeltne	Fix warnings:
+						src/MaterialEditor.cpp:281: warning: unused parameter �index�
+						src/MaterialEditor.cpp:414: warning: unused parameter �sText�
+						src/MaterialEditor.cpp:425: warning: unused parameter �d�
+						src/MaterialEditor.cpp:435: warning: unused parameter �column�
+
+[ X ] 12.05.07 rjeschu  All Plugins must have a correct unload() methode
+
+[ X ] 31.03.07 rjeschu  The generator plugins can be combined to 2 generator 
+						packs, one for each develeoper, to reduce the number of 
+						plugin files - Removed	
+
+[ X ] 12.05.07 rjeschu  Plugin-Icons must be created
+
+-------------------------------------------------------------------------------
+Other:
+-------------------------------------------------------------------------------

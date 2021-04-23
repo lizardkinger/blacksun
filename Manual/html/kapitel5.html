@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="BlackSun" content="Manual" />
+  <title>BlackSun 3D-Editor</title>
+  <link rel="stylesheet" type="text/css" href="../css/main.css" />
+</head>
+
+<body text="black" link="black" vlink="black" alink="black">
+<h1><a name="05">5. Szenensteuerung</a></h1>
+
+<h2><a name="05-01">5.1 Selektieren</a></h2>
+
+<div class="pic">
+
+<div class="center">
+<img src="../images/kap5/szenensteuerung_aktionsleiste_selektieren.png"
+alt="" height="74" width="244" border="0" /> </div>
+
+<div>
+Aktionsleiste: Selektieren </div>
+</div>
+
+<div>
+<p>Um mit 3D-Modellen einer Szene arbeiten zu können, müssen diese zuvor
+selektiert werden. Alle Modifikatoren arbeiten ausschließlich auf der Menge
+der selektierten Objekte. Aus diesem Grund gibt es bei der Auswahl von
+Objekten sehr große Freiheitsgrade</p>
+
+<h3><a name="05-01-01">5.1.1 Selektion per Auswahl</a></h3>
+
+Grundsätzliches Bei dieser Selektionsmethode können Szenenobjekte in den
+2D-Objekten per Auswahlrahmen selektiert werden. Je nach Selektionsmodus
+kommen bei der Selektion andere Ergebnismengen zustande.</p>
+
+<p><span class="topic">Parameter</span><br />
+Da Szenenobjekte je nach Sichtweise aus verschiedenen Bestandteilen bestehen,
+muß dem Modeller stets mitgeteilt werden, welche Sichtweise momentan benutzt
+werden soll.</p>
+</div>
+
+<div>
+Auswahl des momentanen Selektionsmodus:<br />
+Dies geschieht über die Selektionsleiste, welche 3 Sichtweisen
+anbietet.</div>
+<br />
+
+
+<div class="pic">
+
+<div class="center">
+<img src="../images/kap5/szenensteuerung_aktionsleiste_modus_mesh.png" alt=""
+height="73" width="244" border="0" /></div>
+
+<div>
+Aktionsleiste: Modus Mesh </div>
+</div>
+
+<div>
+
+<table border="0">
+  <tbody>
+    <tr>
+      <td valign="top"><em>Mesh:</em></td>
+      <td>Bei diesem Selektionsmodus werden Objekte nur als Ganzes
+      betrachtet</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="clear"></div>
+<div class="pic">
+
+<div class="center">
+<img src="../images/kap5/szenensteuerung_aktionsleiste_modus_face.png" alt=""
+height="76" width="248" border="0" /></div>
+
+<div>
+Aktionsleiste: Modus Face </div>
+</div>
+
+<div>
+
+<table border="0">
+  <tbody>
+    <tr>
+      <td valign="top"><em>Polygon:</em></td>
+      <td>Bei diesem Selektionsmodus werden die Polygone von Objekten
+        betrachtet sowie auch Polygone die keinem Mesh zugeordnet sind.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+	 <div class="clear"></div>
+<div class="pic">
+
+<div class="center">
+<img src="../images/kap5/szenensteuerung_aktionsleiste_modus_vertex.png"
+alt="" height="77" width="250" border="0" /></div>
+
+<div>
+Aktionsleiste: Modus Vertex </div>
+</div>
+
+<div>
+
+<table border="0">
+  <tbody>
+    <tr>
+      <td valign="top"><em>Vertex:</em></td>
+      <td>Bei diesem Selektionsmodus werden die Vertices von Objekten
+        betrachtet sowie auch Vertices die keinem Polygon zugeordnet sind.
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="clear">
+<h3><a name="05-01-02">5.1.2 Selektion per Menü</a></h3>
+
+
+<div class="shortcut">
+Menü -> Selection -&gt; Select *</div>
+</div>
+
+<p>Für erweiterte Selektionsfunktionalität stehen im Menü weitere
+vorgefertigte Auswahloptionen bereit.</p>
+
+<table border="0">
+  <tbody>
+    <tr>
+      <td valign="top"><em>Select all </em> </td>
+      <td>Alle Szenenobjekte vom derzeitig eingestellten Selektionsmodus
+        werden selektiert</td>
+    </tr>
+    <tr>
+      <td valign="top"><em>Select nothing</em></td>
+      <td>Alle Selektionen werden aufgehoben</td>
+    </tr>
+    <tr>
+      <td valign="top"><em>Select invert</em> </td>
+      <td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+        Alle selektierten Objekte werden deselektiert, alle nicht
+        selektierten dagegen schon selektiert</td>
+    </tr>
+    <tr>
+      <td valign="top"><em>Select intersecting</em></td>
+      <td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+        Alle Szenenobjekte die sich mit dem derzeit selektierten Rahmen
+        schneiden, werden selektiert</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2><a name="05-02">5.2 Verschieben</a></h2>
+
+<div class="shortcut">Toolbox -&gt; Action mode -&gt; Move</div><br/>
+
+<div class="pic">
+
+<div class="center">
+<img src="../images/kap5/szenensteuerung_aktionsleiste_verschieben.png"
+alt="" height="74" width="244" border="0" /></div>
+
+<div>
+Aktionsleiste: Verschieben </div>
+</div>
+
+<div>
+Das Verschieben bezieht sich auf die derzeitige Selektion. Der Benutzer muß
+dazu in einer 2D-Ansicht die Maustaste an einer Stelle gedrückt halten und
+in die gewünschte Richtung ziehen. Dann an der Endposition die Maustaste
+wieder loslassen.</div>
+
+<div class="clear">
+<p><span class="topic">Anmerkung</span><br />
+Je nach gewähltem 2D-Fenster wird aus der Mausbewegung eines Verschiebung
+der aktuellen Selektion errechnet.<br />
+So ergibt eine Verschieberichtung in positiver Y-Richtung in der Top-Ansicht
+eine tatsächliche Verschiebung in der negativen Z-Achse der Szene.</p>
+</div>
+
+<h2><a name="05-03">5.3 Rotieren</a></h2>
+
+<div class="shortcut">
+Toolbox -&gt; Action mode -&gt; Rotate </div>
+<br/>
+<div class="pic">
+
+<div class="center">
+<img src="../images/kap5/szenensteuerung_aktionsleiste_rotieren.png" alt=""
+height="74" width="244" border="0" /></div>
+
+<div>
+Aktionsleiste: Rotieren </div>
+</div>
+
+<div>
+<p>Das Rotieren bezieht sich auf die derzeitige Selektion. Als Zentrum der
+Rotation wird der Mittelpunkt kompletten Selektion benutzt. Eine Rotation
+findet dann um diesen Mittelpunkt statt.</p>
+
+<p>Um eine Rotation durchzuführen, muß der Benutzer in einem 2D-Fenster die
+Maustaste gedrückt halten und dann die Maus entweder um einen gewissen
+Abstand nach links oder nach rechts ziehen. Eine Bewegung nach links
+entspricht einer Rotation gegen den Uhrzeigersinn, eine Bewegung nach rechts
+einer Rotation im Uhrzeigersinn.<br />
+Während der Mausbewegung erscheint ein Rotationskreis zur visuellen
+Unterstützung des Benutzers.</p>
+</div>
+
+<div class="clear">
+<p><span class="topic">Anmerkung</span><br />
+Je nach gewähltem 2D-Fenster wird aus der Mausbewegung eines Rotation der
+aktuellen Selektion errechnet.<br />
+So ergibt eine Rotation im Uhrzeigersinn in der Top-Ansicht ein anderes
+Ergebnis als beispielsweise in der Left-Ansicht.</p>
+</div>
+
+<h2><a name="05-04">5.4 Skalieren</a></h2>
+
+<div class="shortcut">Toolbox -&gt; Action mode -&gt; Scale </div>
+<br/>
+<div class="pic">
+
+<div class="center">
+<img src="../images/kap5/szenensteuerung_aktionsleiste_skalieren.png" alt=""
+height="74" width="244" border="0" /></div>
+
+<div>
+Aktionsleiste: Skalieren </div>
+</div>
+
+<div>
+<p>Das Skalieren bezieht sich auf die derzeitige Selektion und verformt alle
+Objekte unabhängig voneinander.</p>
+
+<p>Um eine Skalierung durchzuführen, muß der Benutzer in einem 2D-Fenster
+die Maustaste gedrückt halten und dann die Maus entweder um einen gewissen
+Abstand nach links oder nach rechts ziehen. Eine Bewegung nach links
+entspricht einer Verkleinerung, eine Bewegung nach rechts einer
+Vergrößerung.</p>
+</div>
+
+<div class="clear">
+<p><span class="topic">Anmerkung</span><br />
+Je nach gewähltem 2D-Fenster wird aus der Mausbewegung eines Rotation der
+aktuellen Selektion errechnet.<br />
+So ergibt eine Rotation im Uhrzeigersinn in der Top-Ansicht ein anderes
+Ergebnis als beispielsweise in der Left-Ansicht.</p>
+</div>
+
+<h2><a name="05-05">5.5 Objekte verstecken</a></h2>
+
+<div class="shortcut">Menü -> Selection -&gt; Hide *</div><br/>
+
+<div>
+Bei einer großen Anzahl von Szenenobjekten kann gegebenfalls die Übersicht
+leiden, daher gibt es die Möglichkeit Modelle zu verstecken und somit vom
+Renderprozess auszuschließen.</div>
+<br />
+
+
+<table border="0">
+  <tbody>
+    <tr>
+      <td valign="top"><em>Hide selection</em></td>
+      <td>Alle selektierten Objekte werden versteckt</td>
+    </tr>
+    <tr>
+      <td valign="top"><em>Hide all</em></td>
+      <td>Alle Objekte werden versteckt</td>
+    </tr>
+    <tr>
+      <td valign="top"><em>Hide invert</em></td>
+      <td>Alle versteckten Objekte werden sichtbar, wogegen sichtbare Objekte
+        als versteckt markiert werden</td>
+    </tr>
+    <tr>
+      <td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+        <em>Hide nothing</em></td>
+      <td>Alle Objekte werden sichtbar</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2><a name="05-06">5.6 Objekte sperren</a></h2>
+
+<div class="shortcut">Menü -> Selection -&gt; Freeze *</div><br/>
+
+<div class="pic">
+
+<div class="center">
+<img src="../images/kap5/szenensteuerung_freeze_beispiel.png" alt=""
+height="400" width="500" border="0" /></div>
+
+<div>
+Die blau umrandeten Objekte stellen gesperrte Objekte dar </div>
+</div>
+
+<div>
+Falls man Teile einer Szene bereits fertig modelliert hat und nun
+ausschließlich nur noch mit einer bestimmten Auswahl arbeiten möchte,
+bietet sich neben dem Verstecken auch das Sperren von Objekten an. Dabei
+bleiben diese zwar sichtbar aber können nicht mehr selektiert werden.</div>
+<br />
+
+
+<table border="0">
+  <tbody>
+    <tr>
+      <td valign="top"><em>Freeze selection</em></td>
+      <td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+        Alle selektierten Objekte werden gesperrt</td>
+    </tr>
+    <tr>
+      <td valign="top"><em>Freeze all</em></td>
+      <td>Alle Objekte werden gesperrt</td>
+    </tr>
+    <tr>
+      <td valign="top"><em>Freeze invert</em></td>
+      <td>Alle gesperrten Objekte werden entsperrt, wogegen freie Objekte als
+        gesperrt markiert werden</td>
+    </tr>
+    <tr>
+      <td valign="top"><em>Freeze nothing</em></td>
+      <td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+        Alle Objekte werden entsperrt</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2><a name="05-07">5.7 Zoomen</a></h2>
+
+<div class="shortcut">Menü -> Selection -&gt; Zoom *</div><br/>
+
+<div>
+Um sich während einer Modellierungstätigkeit Übersicht zu verschaffen,
+gibt es die Möglichkeit auf bestimmte Regionen der Szene zu zoomen</div>
+<br />
+
+
+<table border="0">
+  <tbody>
+    <tr>
+      <td valign="top"><em>Zoom to selection</em> </td>
+      <td>Die aktuelle Selektionsauswahl wird angezoomt</td>
+    </tr>
+    <tr>
+      <td valign="top"><em>Zoom to all</em></td>
+      <td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+        Alle Szenenobjekte werden sichtbar</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2><a name="05-08">5.8 Echtzeitspiegelung</a></h2>
+<div class="shortcut">Menü -> View -&gt; Realtime mirror </div><br/>
+
+<p></p>
+
+<div class="pic">
+
+<div class="center">
+<img src="../images/kap5/szenensteuerung_echtzeitspiegelung_beispiel.png"
+alt="" height="289" width="500" border="0" /></div>
+
+<div>
+Beispiel für Echtzeitspiegelung an der Y-Achse </div>
+</div>
+
+<p>Um die Modellierung von symmetrischen Objekten zu erleichtern, gibt es
+komfortable Möglichkeit des Spiegelns, die Echtzeitspiegelung. Es spiegelt
+die komplette Szene während der gesamten Bearbeitung an einer Ebene. </p>
+
+<div class="tip">
+<b>Tipps und Informationen:</b><br />
+Wichtig ist, dass die Szene nur zusätzlich gespiegelt <u>dargestellt</u>,
+allerdings keine neuen Vertexdaten generiert werden. Dies muss über das
+'richtige' Spiegeln (Mirror) gemacht werden. Außerdem kann nur <u>im
+Original selektiert</u> werden. Sollte also eine Selektierung nicht möglich
+sein, liegt das daran, dass versucht wurde, im gespiegeltem Teil zu
+selektieren und nicht im Original. </div>
+<br />
+</body>
+</html>

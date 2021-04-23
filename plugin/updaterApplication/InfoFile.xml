@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<BlackSunInfoFile>
+	<date>18-04-2007</date>
+	<coreComponents>
+		<Core>
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/Core.dll</url_win>
+			</version>
+		</Core>
+		<Gui>
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/Gui.dll</url_win>
+			</version>
+		</Gui>
+		<PluginSystem>
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/PlgMgr.dll</url_win>
+			</version>
+		</PluginSystem>
+		<Renderer>
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/Renderer.dll</url_win>
+			</version>
+		</Renderer>
+		<Scenegraph>
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/Scenegraph.dll</url_win>
+			</version>
+		</Scenegraph>
+		<UpdateApplication>
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/UpdaterApp.exe</url_win>
+			</version>
+		</UpdateApplication>
+	</coreComponents>
+	<plugins>
+		<plugin name="blockgenerator" uid ="11315645">
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/BlockGen.dll</url_win>
+			</version>
+		</plugin>
+		<plugin name="boxgenerator" uid ="3835135349">
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/BoxGen.dll</url_win>
+			</version>
+		</plugin>
+		<plugin name="confexhull" uid ="122172">
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/convexHull.dll</url_win>
+			</version>
+		</plugin>
+		<plugin name="explode" uid ="75835696">
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/Explode.dll</url_win>
+			</version>
+		</plugin>
+		<plugin name="extrude" uid ="9647832">
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/Extrude.dll</url_win>
+			</version>
+		</plugin>
+		<plugin name="geospheregenerator" uid ="116051">
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/GeoSphereGen.dll</url_win>
+			</version>
+		</plugin>
+		<plugin name="gridgenerator" uid ="113156">
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/GridGen.dll</url_win>
+			</version>
+		</plugin>
+		<plugin name="helixgenerator" uid ="113880">
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/HelixGen.dll</url_win>
+			</version>
+		</plugin>
+		<plugin name="imexporterpack" uid ="117732">
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/ImExporterPack.dll</url_win>
+			</version>
+		</plugin>
+		<plugin name="insertvertex" uid ="150177">
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/InsertVertex.dll</url_win>
+			</version>
+		</plugin>
+		<plugin name="makehole" uid ="120457">
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/MakeHole.dll</url_win>
+			</version>
+		</plugin>
+		<plugin name="manualedit" uid ="147215">
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/ManualEdit.dll</url_win>
+			</version>
+		</plugin>
+		<plugin name="materialeditor" uid ="112186">
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/MaterialEditor.dll</url_win>
+			</version>
+		</plugin>
+		<plugin name="nboxgenerator" uid ="16822269">
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/NBoxGen.dll</url_win>
+			</version>
+		</plugin>
+		<plugin name="pyramidgenerator" uid ="2451029">
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/PyrGen.dll</url_win>
+			</version>
+		</plugin>
+		<plugin name="revolving" uid ="15345685">
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/Revolving.dll</url_win>
+			</version>
+		</plugin>
+		<plugin name="smoothcorners" uid ="3865175841">
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/SmoothCorners.dll</url_win>
+			</version>
+		</plugin>
+		<plugin name="spheregenerator" uid ="114545">
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/SphereGen.dll</url_win>
+			</version>
+		</plugin>
+		<plugin name="spike" uid ="118707">
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/Spike.dll</url_win>
+			</version>
+		</plugin>
+		<plugin name="splitface" uid ="120888">
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/SplitFace.dll</url_win>
+			</version>
+		</plugin>
+		<plugin name="subdivision" uid ="148610">
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/Subdivision.dll</url_win>
+			</version>
+		</plugin>
+		<plugin name="texturecoordinateeditor" uid ="130608">
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/TextureCoordinateEdit.dll</url_win>
+			</version>
+		</plugin>
+		<plugin name="textureloaderpack" uid ="119735">
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/TextureLoaderPack.dll</url_win>
+			</version>
+		</plugin>
+		<plugin name="torusgenerator" uid ="114122">
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/TorusGen.dll</url_win>
+			</version>
+		</plugin>
+		<plugin name="tubegenerator" uid ="16772369">
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/TubeGen.dll</url_win>
+			</version>
+		</plugin>
+		<plugin name="updater" uid ="1556888043">
+			<version value="1.0.0">
+				<url_win>http://people.fh-landshut.de/~szeltne/Updater.dll</url_win>
+			</version>
+		</plugin>
+	</plugins>
+</BlackSunInfoFile>

@@ -1,0 +1,61 @@
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+	
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:2.5pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+	
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+	
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:24.0pt;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:Arial;
+	font-weight:bold;
+	font-style:italic;}
+	
+a:link, span.MsoHyperlink
+	{color:black;
+	text-decoration:none;}
+	
+a:visited, span.MsoHyperlinkFollowed
+	{color:black;
+	text-decoration:none;}
+a:hover
+{color:black;
+text-decoration: underline;}
+	
+p.Autor
+{
+	color:red;
+	text-decoration:underlined;
+}	
+	
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;}
+	
+div.Section1
+	{page:Section1;}
+	

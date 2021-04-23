@@ -1,0 +1,16 @@
+Where to find nice 3DS-Models:
+- http://www.3dtotal.com/    -> Free Stuff -> models
+- http://www.amazing3d.com/free/free.shtml
+
+To use textures that can be downloaded with the models, 
+you have to copy the texture files in the folder of the application.
+Otherwise no textures are loaded. This will be more comfortable
+in later version of the 3ds-loader.
+
+Very nice models are:
+- Taxi with nice materials and glasses with alpha effects:
+		http://www.amazing3d2.com/free3d2/taxi3ds.zip 
+- A car:
+		http://www.amazing3d2.com/free3d2/mirage3ds.zip
+- A full textured truck:
+		http://www.amazing3d2.com/free3d2/semi3ds.zip

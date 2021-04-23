@@ -1,0 +1,2556 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:date="http://exslt.org/dates-and-times">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<!--
+              This file is generated from xml source: DO NOT EDIT
+      -->
+    <title>Blacksun - Planner</title>
+    <meta name="GENERATOR" content="Planner HTML output" />
+    <style type="text/css">
+
+/* CSS Stylesheet for Planner HTML output.
+ * 
+ * Copyright (C) 2004-2005 Imendio AB
+ * Copyright (C) 2003 CodeFactory AB
+ * Copyright (C) 2003 Daniel Lundin (daniel@edgewall.com)
+ * Copyright (C) 2004 Chris Ladd (caladd@particlestorm.net)
+ */
+
+/*
+ * Fonts 
+ */
+html,body,table { 
+ font-family: Bitstream Vera Sans, helvetica, Arial, sans-serif;
+ font-size: 12px;
+ white-space: nowrap;
+}
+
+tr,td,th,table,font,span,div,h1,h2,h3 {
+ font-family: Bitstream Vera Sans, helvetica, Arial, sans-serif;
+}
+
+h1 {
+ font-size: 16px;
+}
+
+h2 {
+ font-size: 12px;
+ margin-bottom: 2px;
+}
+
+div.separator {
+ margin: 1em;
+}
+
+/*
+ * Header
+ */
+table.proj-header {
+ border: 0;
+ margin: 0;
+ width: auto;
+}
+
+table.proj-header .header {
+ font-weight: bold;
+}
+
+/*
+ * Footer
+ */
+.footer {
+ margin-top: 50px;  
+ padding-top: 2px;
+ border-style: dotted;
+ border-width: 1px 0 0 0;
+ border-color: #999;
+ font-size: 9px;
+ text-align: right;
+ clear: both;
+ color: #666;
+}
+
+a:link, a:visited {
+ text-decoration: none;
+ color: #666;
+}
+
+a:hover[href] {
+ text-decoration: underline;
+}
+
+
+/*
+ * Tables
+ */
+.scroll-div {
+ overflow: auto;
+ border-style: solid;
+ border-width: 1px;
+ border-color: #aaa;
+}
+
+.no-scroll-div {
+ border-style: solid;
+ border-color: #aaa;
+ border-width: 1px 0px 1px 1px;
+}
+
+table {
+ width: 100%;
+ border-collapse: collapse;	
+ border-style: none;
+ border-color: #fff;
+ white-space: nowrap;
+ margin: 0;
+}
+
+tr, td, th {
+ white-space: nowrap;
+ vertical-align: top;
+ padding-top: 1px;
+ padding-bottom: 1px;
+}
+
+th {
+ vertical-align: top;
+}
+
+tr {
+ height: 1.5em;
+}
+
+tr.header {
+ background-color: #aaa;
+ color: #fff;
+}
+
+tr.even {
+ background-color: #eee;
+}
+
+tr.odd {
+ background-color: #fff;
+}
+
+th span, td span {
+ margin-left: 6px;
+ margin-right: 6px;
+}
+
+span.note {
+ white-space: normal;
+}
+
+/*
+ * Gantt
+ */
+div.gantt-empty-begin, div.gantt-empty-end, div.gantt-complete-done, div.gantt-complete-notdone, div.gantt-summary {
+ clear: none;
+ float: left; 
+ height: 0.75em;
+ margin-top: 0.15em;
+ margin-bottom: 0;
+}
+
+div.gantt-complete-done {
+ background-color: #495f6b;
+ height: 0.75em;
+ margin-top: 0;
+ margin-bottom: 0;
+}
+
+div.gantt-complete-notdone {
+ background-color: #8db6cd;
+ border-style: solid;
+ border-width: 1px;
+}
+
+div.gantt-summary {
+ height: 0.3em;
+ margin-top: 0.25em;
+ border-bottom: 2px dashed #000;
+}
+
+div.gantt-empty-end {
+ margin-left: 0;
+}
+
+span.gantt-milestone {
+ font-size: 0.8em;
+ color: #000000;
+ position: relative;
+ margin-left: 0;
+ margin-right: 0;
+}
+
+span.gantt-resources {
+ margin-left: 0.5em;
+}
+
+th.gantt-day-header {
+ margin: 0;
+ padding: 0;
+}
+
+</style>
+  </head>
+  <body>
+    <h1 class="proj-title">
+      <a name="project" id="project">Blacksun</a>
+    </h1>
+    <table class="proj-header">
+      <tr>
+        <td class="header">Manager:</td>
+        <td>Thomas Kuhndörfer</td>
+      </tr>
+      <tr>
+        <td class="header">Start:</td>
+        <td>November 2, 2006</td>
+      </tr>
+      <tr>
+        <td class="header">Finish:</td>
+        <td>May 31, 2007</td>
+      </tr>
+      <tr>
+        <td class="header">Phase:</td>
+        <td>Alpha-Build</td>
+      </tr>
+      <tr>
+        <td class="header">Report Date:</td>
+        <td>January 16, 2007</td>
+      </tr>
+    </table>
+    <div class="separator"></div>
+    <h2>
+      <a name="gantt" id="gantt">Gantt Chart</a>
+    </h2>
+    <table cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <td>
+          <div class="no-scroll-div">
+            <table cellspacing="0" cellpadding="0" border="1">
+              <tr class="header" align="left">
+                <th>
+                  <span>WBS</span>
+                </th>
+                <th>
+                  <span>Name</span>
+                </th>
+                <th>
+                  <span>Work</span>
+                </th>
+              </tr>
+              <tr class="header">
+                <th> </th>
+                <th> </th>
+                <th> </th>
+              </tr>
+              <tr class="odd">
+                <td>
+                  <span>1</span>
+                </td>
+                <td>
+                  <a name="gantt-1" style="white-space: nowrap; margin-left: 0px;" id="gantt-1">
+                    <span>Alpha-Build</span>
+                  </a>
+                </td>
+                <td>
+                  <span></span>
+                </td>
+              </tr>
+              <tr class="even">
+                <td>
+                  <span>2</span>
+                </td>
+                <td>
+                  <a name="gantt-2" style="white-space: nowrap; margin-left: 0px;" id="gantt-2">
+                    <span>Beta-Build</span>
+                  </a>
+                </td>
+                <td>
+                  <span></span>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td>
+                  <span>3</span>
+                </td>
+                <td>
+                  <a name="gantt-3" style="white-space: nowrap; margin-left: 0px;" id="gantt-3">
+                    <span>Gamma-Build</span>
+                  </a>
+                </td>
+                <td>
+                  <span></span>
+                </td>
+              </tr>
+              <tr class="even">
+                <td>
+                  <span>4</span>
+                </td>
+                <td>
+                  <a name="gantt-4" style="white-space: nowrap; margin-left: 0px;" id="gantt-4">
+                    <span>4. Semester</span>
+                  </a>
+                </td>
+                <td>
+                  <span>1d </span>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td>
+                  <span>5</span>
+                </td>
+                <td>
+                  <a name="gantt-5" style="white-space: nowrap; margin-left: 0px;" id="gantt-5">
+                    <span>Release Candidate</span>
+                  </a>
+                </td>
+                <td>
+                  <span></span>
+                </td>
+              </tr>
+              <tr class="even">
+                <td>
+                  <span>6</span>
+                </td>
+                <td>
+                  <a name="gantt-6" style="white-space: nowrap; margin-left: 0px;" id="gantt-6">
+                    <span>Final</span>
+                  </a>
+                </td>
+                <td>
+                  <span></span>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td>
+                  <span>7</span>
+                </td>
+                <td>
+                  <a name="task-7" style="white-space: nowrap; font-weight: bold; margin-left: 0px;" id="task-7">
+                    <span>GUI</span>
+                  </a>
+                </td>
+                <td>
+                  <span style="white-space: nowrap; font-weight: bold;">79d </span>
+                </td>
+              </tr>
+              <tr class="even">
+                <td>
+                  <span>7.1</span>
+                </td>
+                <td>
+                  <a name="gantt-8" style="white-space: nowrap; margin-left: 18px;" id="gantt-8">
+                    <span>GUI-Grundgerüst</span>
+                  </a>
+                </td>
+                <td>
+                  <span>14d </span>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td>
+                  <span>7.2</span>
+                </td>
+                <td>
+                  <a name="gantt-9" style="white-space: nowrap; margin-left: 18px;" id="gantt-9">
+                    <span>Standardfunktionen</span>
+                  </a>
+                </td>
+                <td>
+                  <span>35d </span>
+                </td>
+              </tr>
+              <tr class="even">
+                <td>
+                  <span>7.3</span>
+                </td>
+                <td>
+                  <a name="gantt-10" style="white-space: nowrap; margin-left: 18px;" id="gantt-10">
+                    <span>Ansichteinstellungen</span>
+                  </a>
+                </td>
+                <td>
+                  <span>30d </span>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td>
+                  <span>8</span>
+                </td>
+                <td>
+                  <a name="task-11" style="white-space: nowrap; font-weight: bold; margin-left: 0px;" id="task-11">
+                    <span>Plugin-System</span>
+                  </a>
+                </td>
+                <td>
+                  <span style="white-space: nowrap; font-weight: bold;">113d </span>
+                </td>
+              </tr>
+              <tr class="even">
+                <td>
+                  <span>8.1</span>
+                </td>
+                <td>
+                  <a name="gantt-12" style="white-space: nowrap; margin-left: 18px;" id="gantt-12">
+                    <span>PI-Grundgerüst</span>
+                  </a>
+                </td>
+                <td>
+                  <span>14d </span>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td>
+                  <span>8.2</span>
+                </td>
+                <td>
+                  <a name="gantt-13" style="white-space: nowrap; margin-left: 18px;" id="gantt-13">
+                    <span>Testmodule erstellen</span>
+                  </a>
+                </td>
+                <td>
+                  <span>21d </span>
+                </td>
+              </tr>
+              <tr class="even">
+                <td>
+                  <span>8.3</span>
+                </td>
+                <td>
+                  <a name="gantt-14" style="white-space: nowrap; margin-left: 18px;" id="gantt-14">
+                    <span>Einfache Grundobjekte erstellen</span>
+                  </a>
+                </td>
+                <td>
+                  <span>30d </span>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td>
+                  <span>8.4</span>
+                </td>
+                <td>
+                  <a name="gantt-15" style="white-space: nowrap; margin-left: 18px;" id="gantt-15">
+                    <span>Komplexere Plugins</span>
+                  </a>
+                </td>
+                <td>
+                  <span>48d </span>
+                </td>
+              </tr>
+              <tr class="even">
+                <td>
+                  <span>9</span>
+                </td>
+                <td>
+                  <a name="task-16" style="white-space: nowrap; font-weight: bold; margin-left: 0px;" id="task-16">
+                    <span>Systemkern</span>
+                  </a>
+                </td>
+                <td>
+                  <span style="white-space: nowrap; font-weight: bold;">63d </span>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td>
+                  <span>9.1</span>
+                </td>
+                <td>
+                  <a name="gantt-17" style="white-space: nowrap; margin-left: 18px;" id="gantt-17">
+                    <span>Anwendungsgerüst</span>
+                  </a>
+                </td>
+                <td>
+                  <span>14d </span>
+                </td>
+              </tr>
+              <tr class="even">
+                <td>
+                  <span>9.2</span>
+                </td>
+                <td>
+                  <a name="gantt-18" style="white-space: nowrap; margin-left: 18px;" id="gantt-18">
+                    <span>Mathebibliothek</span>
+                  </a>
+                </td>
+                <td>
+                  <span>14d </span>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td>
+                  <span>9.3</span>
+                </td>
+                <td>
+                  <a name="gantt-19" style="white-space: nowrap; margin-left: 18px;" id="gantt-19">
+                    <span>Logging</span>
+                  </a>
+                </td>
+                <td>
+                  <span>14d </span>
+                </td>
+              </tr>
+              <tr class="even">
+                <td>
+                  <span>9.4</span>
+                </td>
+                <td>
+                  <a name="gantt-20" style="white-space: nowrap; margin-left: 18px;" id="gantt-20">
+                    <span>Threading</span>
+                  </a>
+                </td>
+                <td>
+                  <span>21d </span>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td>
+                  <span>10</span>
+                </td>
+                <td>
+                  <a name="task-21" style="white-space: nowrap; font-weight: bold; margin-left: 0px;" id="task-21">
+                    <span>Rendering Engine</span>
+                  </a>
+                </td>
+                <td>
+                  <span style="white-space: nowrap; font-weight: bold;">36d </span>
+                </td>
+              </tr>
+              <tr class="even">
+                <td>
+                  <span>10.1</span>
+                </td>
+                <td>
+                  <a name="gantt-22" style="white-space: nowrap; margin-left: 18px;" id="gantt-22">
+                    <span>OpenGL Ansicht</span>
+                  </a>
+                </td>
+                <td>
+                  <span>21d </span>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td>
+                  <span>10.2</span>
+                </td>
+                <td>
+                  <a name="gantt-23" style="white-space: nowrap; margin-left: 18px;" id="gantt-23">
+                    <span>Mausinteraktion</span>
+                  </a>
+                </td>
+                <td>
+                  <span>15d </span>
+                </td>
+              </tr>
+              <tr class="even">
+                <td>
+                  <span>11</span>
+                </td>
+                <td>
+                  <a name="task-24" style="white-space: nowrap; font-weight: bold; margin-left: 0px;" id="task-24">
+                    <span>Datenstruktur</span>
+                  </a>
+                </td>
+                <td>
+                  <span style="white-space: nowrap; font-weight: bold;">107d </span>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td>
+                  <span>11.1</span>
+                </td>
+                <td>
+                  <a name="gantt-25" style="white-space: nowrap; margin-left: 18px;" id="gantt-25">
+                    <span>Format ausarbeiten</span>
+                  </a>
+                </td>
+                <td>
+                  <span>31d </span>
+                </td>
+              </tr>
+              <tr class="even">
+                <td>
+                  <span>11.2</span>
+                </td>
+                <td>
+                  <a name="gantt-26" style="white-space: nowrap; margin-left: 18px;" id="gantt-26">
+                    <span>Laden / Speichern</span>
+                  </a>
+                </td>
+                <td>
+                  <span>28d </span>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td>
+                  <span>11.3</span>
+                </td>
+                <td>
+                  <a name="gantt-27" style="white-space: nowrap; margin-left: 18px;" id="gantt-27">
+                    <span>Importformate</span>
+                  </a>
+                </td>
+                <td>
+                  <span>24d </span>
+                </td>
+              </tr>
+              <tr class="even">
+                <td>
+                  <span>11.4</span>
+                </td>
+                <td>
+                  <a name="gantt-28" style="white-space: nowrap; margin-left: 18px;" id="gantt-28">
+                    <span>Exportformate</span>
+                  </a>
+                </td>
+                <td>
+                  <span>24d </span>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td>
+                  <span>12</span>
+                </td>
+                <td>
+                  <a name="task-29" style="white-space: nowrap; font-weight: bold; margin-left: 0px;" id="task-29">
+                    <span>Modifikatoren</span>
+                  </a>
+                </td>
+                <td>
+                  <span style="white-space: nowrap; font-weight: bold;">72d </span>
+                </td>
+              </tr>
+              <tr class="even">
+                <td>
+                  <span>12.1</span>
+                </td>
+                <td>
+                  <a name="gantt-30" style="white-space: nowrap; margin-left: 18px;" id="gantt-30">
+                    <span>Vertex-Modifikatoren</span>
+                  </a>
+                </td>
+                <td>
+                  <span>30d </span>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td>
+                  <span>12.2</span>
+                </td>
+                <td>
+                  <a name="gantt-31" style="white-space: nowrap; margin-left: 18px;" id="gantt-31">
+                    <span>Face-Modifikatoren</span>
+                  </a>
+                </td>
+                <td>
+                  <span>30d </span>
+                </td>
+              </tr>
+              <tr class="even">
+                <td>
+                  <span>12.3</span>
+                </td>
+                <td>
+                  <a name="gantt-32" style="white-space: nowrap; margin-left: 18px;" id="gantt-32">
+                    <span>Gruppen-Modifikatoren</span>
+                  </a>
+                </td>
+                <td>
+                  <span>12d </span>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td>
+                  <span>13</span>
+                </td>
+                <td>
+                  <a name="task-33" style="white-space: nowrap; font-weight: bold; margin-left: 0px;" id="task-33">
+                    <span>Infrastruktur</span>
+                  </a>
+                </td>
+                <td>
+                  <span style="white-space: nowrap; font-weight: bold;">33d </span>
+                </td>
+              </tr>
+              <tr class="even">
+                <td>
+                  <span>13.1</span>
+                </td>
+                <td>
+                  <a name="gantt-34" style="white-space: nowrap; margin-left: 18px;" id="gantt-34">
+                    <span>Versionsverwaltung einrichten</span>
+                  </a>
+                </td>
+                <td>
+                  <span>3d </span>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td>
+                  <span>13.2</span>
+                </td>
+                <td>
+                  <a name="gantt-35" style="white-space: nowrap; margin-left: 18px;" id="gantt-35">
+                    <span>Handbuch</span>
+                  </a>
+                </td>
+                <td>
+                  <span>30d </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </td>
+        <td>
+          <div class="scroll-div" style="border-color: #aaa #aaa #aaa #fff;">
+            <table cellspacing="0" cellpadding="0" border="1">
+              <tr class="header" align="left">
+                <th colspan="4"></th>
+                <th align="center" colspan="7">
+	Week 46, 2006</th>
+                <th align="center" colspan="7">
+	Week 47, 2006</th>
+                <th align="center" colspan="7">
+	Week 48, 2006</th>
+                <th align="center" colspan="7">
+	Week 49, 2006</th>
+                <th align="center" colspan="7">
+	Week 50, 2006</th>
+                <th align="center" colspan="7">
+	Week 51, 2006</th>
+                <th align="center" colspan="7">
+	Week 52, 2006</th>
+                <th align="center" colspan="7">
+	Week 53, 2006</th>
+                <th align="center" colspan="7">
+	Week 2, 2007</th>
+                <th align="center" colspan="7">
+	Week 3, 2007</th>
+                <th align="center" colspan="7">
+	Week 4, 2007</th>
+                <th align="center" colspan="7">
+	Week 5, 2007</th>
+                <th align="center" colspan="7">
+	Week 6, 2007</th>
+                <th align="center" colspan="7">
+	Week 7, 2007</th>
+                <th align="center" colspan="7">
+	Week 8, 2007</th>
+                <th align="center" colspan="7">
+	Week 9, 2007</th>
+                <th align="center" colspan="7">
+	Week 10, 2007</th>
+                <th align="center" colspan="7">
+	Week 11, 2007</th>
+                <th align="center" colspan="7">
+	Week 12, 2007</th>
+                <th align="center" colspan="7">
+	Week 13, 2007</th>
+                <th align="center" colspan="7">
+	Week 14, 2007</th>
+                <th align="center" colspan="7">
+	Week 15, 2007</th>
+                <th align="center" colspan="7">
+	Week 16, 2007</th>
+                <th align="center" colspan="7">
+	Week 17, 2007</th>
+                <th align="center" colspan="7">
+	Week 18, 2007</th>
+                <th align="center" colspan="7">
+	Week 19, 2007</th>
+                <th align="center" colspan="7">
+	Week 20, 2007</th>
+                <th align="center" colspan="7">
+	Week 21, 2007</th>
+                <th align="center" colspan="7">
+	Week 22, 2007</th>
+                <th colspan="4"></th>
+              </tr>
+              <tr class="header" align="left">
+                <th class="gantt-day-header" align="center" width="19px">2</th>
+                <th class="gantt-day-header" align="center" width="19px">3</th>
+                <th class="gantt-day-header" align="center" width="19px">4</th>
+                <th class="gantt-day-header" align="center" width="19px">5</th>
+                <th class="gantt-day-header" align="center" width="19px">6</th>
+                <th class="gantt-day-header" align="center" width="19px">7</th>
+                <th class="gantt-day-header" align="center" width="19px">8</th>
+                <th class="gantt-day-header" align="center" width="19px">9</th>
+                <th class="gantt-day-header" align="center" width="19px">10</th>
+                <th class="gantt-day-header" align="center" width="19px">11</th>
+                <th class="gantt-day-header" align="center" width="19px">12</th>
+                <th class="gantt-day-header" align="center" width="19px">13</th>
+                <th class="gantt-day-header" align="center" width="19px">14</th>
+                <th class="gantt-day-header" align="center" width="19px">15</th>
+                <th class="gantt-day-header" align="center" width="19px">16</th>
+                <th class="gantt-day-header" align="center" width="19px">17</th>
+                <th class="gantt-day-header" align="center" width="19px">18</th>
+                <th class="gantt-day-header" align="center" width="19px">19</th>
+                <th class="gantt-day-header" align="center" width="19px">20</th>
+                <th class="gantt-day-header" align="center" width="19px">21</th>
+                <th class="gantt-day-header" align="center" width="19px">22</th>
+                <th class="gantt-day-header" align="center" width="19px">23</th>
+                <th class="gantt-day-header" align="center" width="19px">24</th>
+                <th class="gantt-day-header" align="center" width="19px">25</th>
+                <th class="gantt-day-header" align="center" width="19px">26</th>
+                <th class="gantt-day-header" align="center" width="19px">27</th>
+                <th class="gantt-day-header" align="center" width="19px">28</th>
+                <th class="gantt-day-header" align="center" width="19px">29</th>
+                <th class="gantt-day-header" align="center" width="19px">30</th>
+                <th class="gantt-day-header" align="center" width="19px">1</th>
+                <th class="gantt-day-header" align="center" width="19px">2</th>
+                <th class="gantt-day-header" align="center" width="19px">3</th>
+                <th class="gantt-day-header" align="center" width="19px">4</th>
+                <th class="gantt-day-header" align="center" width="19px">5</th>
+                <th class="gantt-day-header" align="center" width="19px">6</th>
+                <th class="gantt-day-header" align="center" width="19px">7</th>
+                <th class="gantt-day-header" align="center" width="19px">8</th>
+                <th class="gantt-day-header" align="center" width="19px">9</th>
+                <th class="gantt-day-header" align="center" width="19px">10</th>
+                <th class="gantt-day-header" align="center" width="19px">11</th>
+                <th class="gantt-day-header" align="center" width="19px">12</th>
+                <th class="gantt-day-header" align="center" width="19px">13</th>
+                <th class="gantt-day-header" align="center" width="19px">14</th>
+                <th class="gantt-day-header" align="center" width="19px">15</th>
+                <th class="gantt-day-header" align="center" width="19px">16</th>
+                <th class="gantt-day-header" align="center" width="19px">17</th>
+                <th class="gantt-day-header" align="center" width="19px">18</th>
+                <th class="gantt-day-header" align="center" width="19px">19</th>
+                <th class="gantt-day-header" align="center" width="19px">20</th>
+                <th class="gantt-day-header" align="center" width="19px">21</th>
+                <th class="gantt-day-header" align="center" width="19px">22</th>
+                <th class="gantt-day-header" align="center" width="19px">23</th>
+                <th class="gantt-day-header" align="center" width="19px">24</th>
+                <th class="gantt-day-header" align="center" width="19px">25</th>
+                <th class="gantt-day-header" align="center" width="19px">26</th>
+                <th class="gantt-day-header" align="center" width="19px">27</th>
+                <th class="gantt-day-header" align="center" width="19px">28</th>
+                <th class="gantt-day-header" align="center" width="19px">29</th>
+                <th class="gantt-day-header" align="center" width="19px">30</th>
+                <th class="gantt-day-header" align="center" width="19px">31</th>
+                <th class="gantt-day-header" align="center" width="19px">1</th>
+                <th class="gantt-day-header" align="center" width="19px">2</th>
+                <th class="gantt-day-header" align="center" width="19px">3</th>
+                <th class="gantt-day-header" align="center" width="19px">4</th>
+                <th class="gantt-day-header" align="center" width="19px">5</th>
+                <th class="gantt-day-header" align="center" width="19px">6</th>
+                <th class="gantt-day-header" align="center" width="19px">7</th>
+                <th class="gantt-day-header" align="center" width="19px">8</th>
+                <th class="gantt-day-header" align="center" width="19px">9</th>
+                <th class="gantt-day-header" align="center" width="19px">10</th>
+                <th class="gantt-day-header" align="center" width="19px">11</th>
+                <th class="gantt-day-header" align="center" width="19px">12</th>
+                <th class="gantt-day-header" align="center" width="19px">13</th>
+                <th class="gantt-day-header" align="center" width="19px">14</th>
+                <th class="gantt-day-header" align="center" width="19px">15</th>
+                <th class="gantt-day-header" align="center" width="19px">16</th>
+                <th class="gantt-day-header" align="center" width="19px">17</th>
+                <th class="gantt-day-header" align="center" width="19px">18</th>
+                <th class="gantt-day-header" align="center" width="19px">19</th>
+                <th class="gantt-day-header" align="center" width="19px">20</th>
+                <th class="gantt-day-header" align="center" width="19px">21</th>
+                <th class="gantt-day-header" align="center" width="19px">22</th>
+                <th class="gantt-day-header" align="center" width="19px">23</th>
+                <th class="gantt-day-header" align="center" width="19px">24</th>
+                <th class="gantt-day-header" align="center" width="19px">25</th>
+                <th class="gantt-day-header" align="center" width="19px">26</th>
+                <th class="gantt-day-header" align="center" width="19px">27</th>
+                <th class="gantt-day-header" align="center" width="19px">28</th>
+                <th class="gantt-day-header" align="center" width="19px">29</th>
+                <th class="gantt-day-header" align="center" width="19px">30</th>
+                <th class="gantt-day-header" align="center" width="19px">31</th>
+                <th class="gantt-day-header" align="center" width="19px">1</th>
+                <th class="gantt-day-header" align="center" width="19px">2</th>
+                <th class="gantt-day-header" align="center" width="19px">3</th>
+                <th class="gantt-day-header" align="center" width="19px">4</th>
+                <th class="gantt-day-header" align="center" width="19px">5</th>
+                <th class="gantt-day-header" align="center" width="19px">6</th>
+                <th class="gantt-day-header" align="center" width="19px">7</th>
+                <th class="gantt-day-header" align="center" width="19px">8</th>
+                <th class="gantt-day-header" align="center" width="19px">9</th>
+                <th class="gantt-day-header" align="center" width="19px">10</th>
+                <th class="gantt-day-header" align="center" width="19px">11</th>
+                <th class="gantt-day-header" align="center" width="19px">12</th>
+                <th class="gantt-day-header" align="center" width="19px">13</th>
+                <th class="gantt-day-header" align="center" width="19px">14</th>
+                <th class="gantt-day-header" align="center" width="19px">15</th>
+                <th class="gantt-day-header" align="center" width="19px">16</th>
+                <th class="gantt-day-header" align="center" width="19px">17</th>
+                <th class="gantt-day-header" align="center" width="19px">18</th>
+                <th class="gantt-day-header" align="center" width="19px">19</th>
+                <th class="gantt-day-header" align="center" width="19px">20</th>
+                <th class="gantt-day-header" align="center" width="19px">21</th>
+                <th class="gantt-day-header" align="center" width="19px">22</th>
+                <th class="gantt-day-header" align="center" width="19px">23</th>
+                <th class="gantt-day-header" align="center" width="19px">24</th>
+                <th class="gantt-day-header" align="center" width="19px">25</th>
+                <th class="gantt-day-header" align="center" width="19px">26</th>
+                <th class="gantt-day-header" align="center" width="19px">27</th>
+                <th class="gantt-day-header" align="center" width="19px">28</th>
+                <th class="gantt-day-header" align="center" width="19px">1</th>
+                <th class="gantt-day-header" align="center" width="19px">2</th>
+                <th class="gantt-day-header" align="center" width="19px">3</th>
+                <th class="gantt-day-header" align="center" width="19px">4</th>
+                <th class="gantt-day-header" align="center" width="19px">5</th>
+                <th class="gantt-day-header" align="center" width="19px">6</th>
+                <th class="gantt-day-header" align="center" width="19px">7</th>
+                <th class="gantt-day-header" align="center" width="19px">8</th>
+                <th class="gantt-day-header" align="center" width="19px">9</th>
+                <th class="gantt-day-header" align="center" width="19px">10</th>
+                <th class="gantt-day-header" align="center" width="19px">11</th>
+                <th class="gantt-day-header" align="center" width="19px">12</th>
+                <th class="gantt-day-header" align="center" width="19px">13</th>
+                <th class="gantt-day-header" align="center" width="19px">14</th>
+                <th class="gantt-day-header" align="center" width="19px">15</th>
+                <th class="gantt-day-header" align="center" width="19px">16</th>
+                <th class="gantt-day-header" align="center" width="19px">17</th>
+                <th class="gantt-day-header" align="center" width="19px">18</th>
+                <th class="gantt-day-header" align="center" width="19px">19</th>
+                <th class="gantt-day-header" align="center" width="19px">20</th>
+                <th class="gantt-day-header" align="center" width="19px">21</th>
+                <th class="gantt-day-header" align="center" width="19px">22</th>
+                <th class="gantt-day-header" align="center" width="19px">23</th>
+                <th class="gantt-day-header" align="center" width="19px">24</th>
+                <th class="gantt-day-header" align="center" width="19px">25</th>
+                <th class="gantt-day-header" align="center" width="19px">26</th>
+                <th class="gantt-day-header" align="center" width="19px">27</th>
+                <th class="gantt-day-header" align="center" width="19px">28</th>
+                <th class="gantt-day-header" align="center" width="19px">29</th>
+                <th class="gantt-day-header" align="center" width="19px">30</th>
+                <th class="gantt-day-header" align="center" width="19px">31</th>
+                <th class="gantt-day-header" align="center" width="19px">1</th>
+                <th class="gantt-day-header" align="center" width="19px">2</th>
+                <th class="gantt-day-header" align="center" width="19px">3</th>
+                <th class="gantt-day-header" align="center" width="19px">4</th>
+                <th class="gantt-day-header" align="center" width="19px">5</th>
+                <th class="gantt-day-header" align="center" width="19px">6</th>
+                <th class="gantt-day-header" align="center" width="19px">7</th>
+                <th class="gantt-day-header" align="center" width="19px">8</th>
+                <th class="gantt-day-header" align="center" width="19px">9</th>
+                <th class="gantt-day-header" align="center" width="19px">10</th>
+                <th class="gantt-day-header" align="center" width="19px">11</th>
+                <th class="gantt-day-header" align="center" width="19px">12</th>
+                <th class="gantt-day-header" align="center" width="19px">13</th>
+                <th class="gantt-day-header" align="center" width="19px">14</th>
+                <th class="gantt-day-header" align="center" width="19px">15</th>
+                <th class="gantt-day-header" align="center" width="19px">16</th>
+                <th class="gantt-day-header" align="center" width="19px">17</th>
+                <th class="gantt-day-header" align="center" width="19px">18</th>
+                <th class="gantt-day-header" align="center" width="19px">19</th>
+                <th class="gantt-day-header" align="center" width="19px">20</th>
+                <th class="gantt-day-header" align="center" width="19px">21</th>
+                <th class="gantt-day-header" align="center" width="19px">22</th>
+                <th class="gantt-day-header" align="center" width="19px">23</th>
+                <th class="gantt-day-header" align="center" width="19px">24</th>
+                <th class="gantt-day-header" align="center" width="19px">25</th>
+                <th class="gantt-day-header" align="center" width="19px">26</th>
+                <th class="gantt-day-header" align="center" width="19px">27</th>
+                <th class="gantt-day-header" align="center" width="19px">28</th>
+                <th class="gantt-day-header" align="center" width="19px">29</th>
+                <th class="gantt-day-header" align="center" width="19px">30</th>
+                <th class="gantt-day-header" align="center" width="19px">1</th>
+                <th class="gantt-day-header" align="center" width="19px">2</th>
+                <th class="gantt-day-header" align="center" width="19px">3</th>
+                <th class="gantt-day-header" align="center" width="19px">4</th>
+                <th class="gantt-day-header" align="center" width="19px">5</th>
+                <th class="gantt-day-header" align="center" width="19px">6</th>
+                <th class="gantt-day-header" align="center" width="19px">7</th>
+                <th class="gantt-day-header" align="center" width="19px">8</th>
+                <th class="gantt-day-header" align="center" width="19px">9</th>
+                <th class="gantt-day-header" align="center" width="19px">10</th>
+                <th class="gantt-day-header" align="center" width="19px">11</th>
+                <th class="gantt-day-header" align="center" width="19px">12</th>
+                <th class="gantt-day-header" align="center" width="19px">13</th>
+                <th class="gantt-day-header" align="center" width="19px">14</th>
+                <th class="gantt-day-header" align="center" width="19px">15</th>
+                <th class="gantt-day-header" align="center" width="19px">16</th>
+                <th class="gantt-day-header" align="center" width="19px">17</th>
+                <th class="gantt-day-header" align="center" width="19px">18</th>
+                <th class="gantt-day-header" align="center" width="19px">19</th>
+                <th class="gantt-day-header" align="center" width="19px">20</th>
+                <th class="gantt-day-header" align="center" width="19px">21</th>
+                <th class="gantt-day-header" align="center" width="19px">22</th>
+                <th class="gantt-day-header" align="center" width="19px">23</th>
+                <th class="gantt-day-header" align="center" width="19px">24</th>
+                <th class="gantt-day-header" align="center" width="19px">25</th>
+                <th class="gantt-day-header" align="center" width="19px">26</th>
+                <th class="gantt-day-header" align="center" width="19px">27</th>
+                <th class="gantt-day-header" align="center" width="19px">28</th>
+                <th class="gantt-day-header" align="center" width="19px">29</th>
+                <th class="gantt-day-header" align="center" width="19px">30</th>
+                <th class="gantt-day-header" align="center" width="19px">31</th>
+              </tr>
+              <tr class="odd">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 290px;"></div>
+                    <span class="gantt-milestone">&#9670;</span>
+                    <span class="gantt-resources"></span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="even">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 990px;"></div>
+                    <span class="gantt-milestone">&#9670;</span>
+                    <span class="gantt-resources"></span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 1690px;"></div>
+                    <span class="gantt-milestone">&#9670;</span>
+                    <span class="gantt-resources"></span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="even">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 3086px;"></div>
+                    <div class="gantt-complete-notdone" style="width: 8px;"></div>
+                    <div class="gantt-empty-end"></div>
+                    <span class="gantt-resources"></span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 3650px;"></div>
+                    <span class="gantt-milestone">&#9670;</span>
+                    <span class="gantt-resources"></span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="even">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 4210px;"></div>
+                    <span class="gantt-milestone">&#9670;</span>
+                    <span class="gantt-resources"></span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;"></div>
+                </td>
+              </tr>
+              <tr class="even">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 6px;"></div>
+                    <div class="gantt-complete-notdone" style="width: 288px;"></div>
+                    <div class="gantt-empty-end"></div>
+                    <span class="gantt-resources">ttischl</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 306px;"></div>
+                    <div class="gantt-complete-notdone" style="width: 788px;"></div>
+                    <div class="gantt-empty-end"></div>
+                    <span class="gantt-resources">ttischl</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="even">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 1126px;"></div>
+                    <div class="gantt-complete-notdone" style="width: 688px;"></div>
+                    <div class="gantt-empty-end"></div>
+                    <span class="gantt-resources"></span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;"></div>
+                </td>
+              </tr>
+              <tr class="even">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 6px;"></div>
+                    <div class="gantt-complete-notdone" style="width: 288px;"></div>
+                    <div class="gantt-empty-end"></div>
+                    <span class="gantt-resources">szeltne</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 306px;"></div>
+                    <div class="gantt-complete-notdone" style="width: 224px;"></div>
+                    <div class="gantt-empty-end"></div>
+                    <span class="gantt-resources">szeltne, pgruber</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="even">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 1006px;"></div>
+                    <div class="gantt-complete-notdone" style="width: 688px;"></div>
+                    <div class="gantt-empty-end"></div>
+                    <span class="gantt-resources"></span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 3106px;"></div>
+                    <div class="gantt-complete-notdone" style="width: 1108px;"></div>
+                    <div class="gantt-empty-end"></div>
+                    <span class="gantt-resources"></span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="even">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;"></div>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 6px;"></div>
+                    <div class="gantt-complete-notdone" style="width: 288px;"></div>
+                    <div class="gantt-empty-end"></div>
+                    <span class="gantt-resources">tkuhndo</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="even">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 6px;"></div>
+                    <div class="gantt-complete-notdone" style="width: 288px;"></div>
+                    <div class="gantt-empty-end"></div>
+                    <span class="gantt-resources">rjeschu</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 6px;"></div>
+                    <div class="gantt-complete-notdone" style="width: 288px;"></div>
+                    <div class="gantt-empty-end"></div>
+                    <span class="gantt-resources">pgruber</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="even">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 306px;"></div>
+                    <div class="gantt-complete-notdone" style="width: 468px;"></div>
+                    <div class="gantt-empty-end"></div>
+                    <span class="gantt-resources"></span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;"></div>
+                </td>
+              </tr>
+              <tr class="even">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 306px;"></div>
+                    <div class="gantt-complete-notdone" style="width: 468px;"></div>
+                    <div class="gantt-empty-end"></div>
+                    <span class="gantt-resources">rjeschu</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 786px;"></div>
+                    <div class="gantt-complete-notdone" style="width: 328px;"></div>
+                    <div class="gantt-empty-end"></div>
+                    <span class="gantt-resources"></span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="even">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;"></div>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 306px;"></div>
+                    <div class="gantt-complete-notdone" style="width: 688px;"></div>
+                    <div class="gantt-empty-end"></div>
+                    <span class="gantt-resources"></span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="even">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 1006px;"></div>
+                    <div class="gantt-complete-notdone" style="width: 648px;"></div>
+                    <div class="gantt-empty-end"></div>
+                    <span class="gantt-resources"></span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 3106px;"></div>
+                    <div class="gantt-complete-notdone" style="width: 548px;"></div>
+                    <div class="gantt-empty-end"></div>
+                    <span class="gantt-resources"></span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="even">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 3666px;"></div>
+                    <div class="gantt-complete-notdone" style="width: 548px;"></div>
+                    <div class="gantt-empty-end"></div>
+                    <span class="gantt-resources"></span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;"></div>
+                </td>
+              </tr>
+              <tr class="even">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 3106px;"></div>
+                    <div class="gantt-complete-notdone" style="width: 688px;"></div>
+                    <div class="gantt-empty-end"></div>
+                    <span class="gantt-resources"></span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 3106px;"></div>
+                    <div class="gantt-complete-notdone" style="width: 688px;"></div>
+                    <div class="gantt-empty-end"></div>
+                    <span class="gantt-resources"></span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="even">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 3106px;"></div>
+                    <div class="gantt-complete-notdone" style="width: 268px;"></div>
+                    <div class="gantt-empty-end"></div>
+                    <span class="gantt-resources"></span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;"></div>
+                </td>
+              </tr>
+              <tr class="even">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 6px;"></div>
+                    <div class="gantt-complete-notdone" style="width: 21px;"></div>
+                    <div class="gantt-empty-end"></div>
+                    <span class="gantt-resources">tkuhndo</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="odd">
+                <td colspan="211">
+                  <div style="width: 4221px; white-space: nowrap;">
+                    <div class="gantt-empty-begin" style="width: 3106px;"></div>
+                    <div class="gantt-complete-notdone" style="width: 688px;"></div>
+                    <div class="gantt-empty-end"></div>
+                    <span class="gantt-resources"></span>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <div class="separator"></div>
+    <h2>
+      <a name="tasks" id="tasks">Tasks</a>
+    </h2>
+    <div class="scroll-div">
+      <table cellspacing="0" cellpadding="0" border="1">
+        <tr class="header" align="left">
+          <th>
+            <span>WBS</span>
+          </th>
+          <th>
+            <span>Name</span>
+          </th>
+          <th>
+            <span>Start</span>
+          </th>
+          <th>
+            <span>Finish</span>
+          </th>
+          <th>
+            <span>Work</span>
+          </th>
+          <th>
+            <span>Priority</span>
+          </th>
+          <th>
+            <span>Complete</span>
+          </th>
+          <th>
+            <span>Cost</span>
+          </th>
+          <th>
+            <span>Notes</span>
+          </th>
+        </tr>
+        <tr class="odd">
+          <td>
+            <span>1</span>
+          </td>
+          <td>
+            <a name="task1" style="margin-left: 0px" id="task1">
+              <span>Alpha-Build</span>
+            </a>
+          </td>
+          <td>
+            <span>Nov 16</span>
+          </td>
+          <td>
+            <span>Nov 16</span>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <span></span>
+          </td>
+          <td>
+            <span class="note">Geplanter Termin: 16.11
+</span>
+          </td>
+        </tr>
+        <tr class="even">
+          <td>
+            <span>2</span>
+          </td>
+          <td>
+            <a name="task2" style="margin-left: 0px" id="task2">
+              <span>Beta-Build</span>
+            </a>
+          </td>
+          <td>
+            <span>Dec 21</span>
+          </td>
+          <td>
+            <span>Dec 21</span>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <span></span>
+          </td>
+          <td>
+            <span class="note">Geplanter Termin: 21.12</span>
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <span>3</span>
+          </td>
+          <td>
+            <a name="task3" style="margin-left: 0px" id="task3">
+              <span>Gamma-Build</span>
+            </a>
+          </td>
+          <td>
+            <span>Jan 25</span>
+          </td>
+          <td>
+            <span>Jan 25</span>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <span></span>
+          </td>
+          <td>
+            <span class="note">Geplanter Termin: 25.01</span>
+          </td>
+        </tr>
+        <tr class="even">
+          <td>
+            <span>4</span>
+          </td>
+          <td>
+            <a name="task4" style="margin-left: 0px" id="task4">
+              <span>4. Semester</span>
+            </a>
+          </td>
+          <td>
+            <span>Apr 5</span>
+          </td>
+          <td>
+            <span>Apr 5</span>
+          </td>
+          <td>
+            <span>1d </span>
+          </td>
+          <td align="center">
+            <span></span>
+          </td>
+          <td align="right">
+            <span>0%
+		</span>
+          </td>
+          <td align="right">
+            <span></span>
+          </td>
+          <td>
+            <span class="note">Starttermin zur zweiten Projektphase</span>
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <span>5</span>
+          </td>
+          <td>
+            <a name="task5" style="margin-left: 0px" id="task5">
+              <span>Release Candidate</span>
+            </a>
+          </td>
+          <td>
+            <span>May 3</span>
+          </td>
+          <td>
+            <span>May 3</span>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <span></span>
+          </td>
+          <td>
+            <span class="note">Geplanter Termin: 3.05.</span>
+          </td>
+        </tr>
+        <tr class="even">
+          <td>
+            <span>6</span>
+          </td>
+          <td>
+            <a name="task6" style="margin-left: 0px" id="task6">
+              <span>Final</span>
+            </a>
+          </td>
+          <td>
+            <span>May 31</span>
+          </td>
+          <td>
+            <span>May 31</span>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <span></span>
+          </td>
+          <td>
+            <span class="note">Geplanter Termin: 31.05</span>
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <span>7</span>
+          </td>
+          <td>
+            <a name="task7" style="font-weight: bold; margin-left: 0px" id="task7">
+              <span>GUI</span>
+            </a>
+          </td>
+          <td>
+            <span>Nov 2</span>
+          </td>
+          <td>
+            <span>Jan 31</span>
+          </td>
+          <td>
+            <span>79d </span>
+          </td>
+          <td></td>
+          <td></td>
+          <td>
+            <span></span>
+          </td>
+          <td>
+            <span class="note"></span>
+          </td>
+        </tr>
+        <tr class="even">
+          <td>
+            <span>7.1</span>
+          </td>
+          <td>
+            <a name="task8" style="margin-left: 18px" id="task8">
+              <span>GUI-Grundgerüst</span>
+            </a>
+          </td>
+          <td>
+            <span>Nov 2</span>
+          </td>
+          <td>
+            <span>Nov 16</span>
+          </td>
+          <td>
+            <span>14d </span>
+          </td>
+          <td align="center">
+            <span></span>
+          </td>
+          <td align="right">
+            <span>0%
+		</span>
+          </td>
+          <td align="right">
+            <span></span>
+          </td>
+          <td>
+            <span class="note">Qt-Prototyp, der bereits mit den grundlegendsten Widgets ausgestattet sein soll</span>
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <span>7.2</span>
+          </td>
+          <td>
+            <a name="task9" style="margin-left: 18px" id="task9">
+              <span>Standardfunktionen</span>
+            </a>
+          </td>
+          <td>
+            <span>Nov 17</span>
+          </td>
+          <td>
+            <span>Dec 26</span>
+          </td>
+          <td>
+            <span>35d </span>
+          </td>
+          <td align="center">
+            <span></span>
+          </td>
+          <td align="right">
+            <span>0%
+		</span>
+          </td>
+          <td align="right">
+            <span></span>
+          </td>
+          <td>
+            <span class="note">- Menüpunkte mit teilweise schon hinterlegten Funktionen: File - Edit - View - Settings - Help
+- GUI-Vorschlag</span>
+          </td>
+        </tr>
+        <tr class="even">
+          <td>
+            <span>7.3</span>
+          </td>
+          <td>
+            <a name="task10" style="margin-left: 18px" id="task10">
+              <span>Ansichteinstellungen</span>
+            </a>
+          </td>
+          <td>
+            <span>Dec 28</span>
+          </td>
+          <td>
+            <span>Jan 31</span>
+          </td>
+          <td>
+            <span>30d </span>
+          </td>
+          <td align="center">
+            <span></span>
+          </td>
+          <td align="right">
+            <span>0%
+		</span>
+          </td>
+          <td align="right">
+            <span></span>
+          </td>
+          <td>
+            <span class="note">Interaktion der Ansichtsfenster mit dem Renderer, um dem Benutzer die Änderung der Darstellung zu ermöglichen</span>
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <span>8</span>
+          </td>
+          <td>
+            <a name="task11" style="font-weight: bold; margin-left: 0px" id="task11">
+              <span>Plugin-System</span>
+            </a>
+          </td>
+          <td>
+            <span>Nov 2</span>
+          </td>
+          <td>
+            <span>May 31</span>
+          </td>
+          <td>
+            <span>113d </span>
+          </td>
+          <td></td>
+          <td></td>
+          <td>
+            <span></span>
+          </td>
+          <td>
+            <span class="note"></span>
+          </td>
+        </tr>
+        <tr class="even">
+          <td>
+            <span>8.1</span>
+          </td>
+          <td>
+            <a name="task12" style="margin-left: 18px" id="task12">
+              <span>PI-Grundgerüst</span>
+            </a>
+          </td>
+          <td>
+            <span>Nov 2</span>
+          </td>
+          <td>
+            <span>Nov 16</span>
+          </td>
+          <td>
+            <span>14d </span>
+          </td>
+          <td align="center">
+            <span></span>
+          </td>
+          <td align="right">
+            <span>0%
+		</span>
+          </td>
+          <td align="right">
+            <span></span>
+          </td>
+          <td>
+            <span class="note">Plugin-System in dem Plugins bereits andocken können. Fokus auf erweiterbare Schnittstelle</span>
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <span>8.2</span>
+          </td>
+          <td>
+            <a name="task13" style="margin-left: 18px" id="task13">
+              <span>Testmodule erstellen</span>
+            </a>
+          </td>
+          <td>
+            <span>Nov 17</span>
+          </td>
+          <td>
+            <span>Nov 28</span>
+          </td>
+          <td>
+            <span>21d </span>
+          </td>
+          <td align="center">
+            <span></span>
+          </td>
+          <td align="right">
+            <span>0%
+		</span>
+          </td>
+          <td align="right">
+            <span></span>
+          </td>
+          <td>
+            <span class="note">- Hausgenerator
+- Statistische Auswertungen</span>
+          </td>
+        </tr>
+        <tr class="even">
+          <td>
+            <span>8.3</span>
+          </td>
+          <td>
+            <a name="task14" style="margin-left: 18px" id="task14">
+              <span>Einfache Grundobjekte erstellen</span>
+            </a>
+          </td>
+          <td>
+            <span>Dec 22</span>
+          </td>
+          <td>
+            <span>Jan 25</span>
+          </td>
+          <td>
+            <span>30d </span>
+          </td>
+          <td align="center">
+            <span></span>
+          </td>
+          <td align="right">
+            <span>0%
+		</span>
+          </td>
+          <td align="right">
+            <span></span>
+          </td>
+          <td>
+            <span class="note">Einfache Objekte, die am besten ohne Abhängigkeiten 
+entworfen werden können.
+Für andere Tasks werden bereits einfache Objekte wie Würfel, Zylinder, etc. gebraucht</span>
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <span>8.4</span>
+          </td>
+          <td>
+            <a name="task15" style="margin-left: 18px" id="task15">
+              <span>Komplexere Plugins</span>
+            </a>
+          </td>
+          <td>
+            <span>Apr 6</span>
+          </td>
+          <td>
+            <span>May 31</span>
+          </td>
+          <td>
+            <span>48d </span>
+          </td>
+          <td align="center">
+            <span></span>
+          </td>
+          <td align="right">
+            <span>0%
+		</span>
+          </td>
+          <td align="right">
+            <span></span>
+          </td>
+          <td>
+            <span class="note">Aufwendigere volumetrische Körper</span>
+          </td>
+        </tr>
+        <tr class="even">
+          <td>
+            <span>9</span>
+          </td>
+          <td>
+            <a name="task16" style="font-weight: bold; margin-left: 0px" id="task16">
+              <span>Systemkern</span>
+            </a>
+          </td>
+          <td>
+            <span>Nov 2</span>
+          </td>
+          <td>
+            <span>Dec 10</span>
+          </td>
+          <td>
+            <span>63d </span>
+          </td>
+          <td></td>
+          <td></td>
+          <td>
+            <span></span>
+          </td>
+          <td>
+            <span class="note"></span>
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <span>9.1</span>
+          </td>
+          <td>
+            <a name="task17" style="margin-left: 18px" id="task17">
+              <span>Anwendungsgerüst</span>
+            </a>
+          </td>
+          <td>
+            <span>Nov 2</span>
+          </td>
+          <td>
+            <span>Nov 16</span>
+          </td>
+          <td>
+            <span>14d </span>
+          </td>
+          <td align="center">
+            <span></span>
+          </td>
+          <td align="right">
+            <span>0%
+		</span>
+          </td>
+          <td align="right">
+            <span></span>
+          </td>
+          <td>
+            <span class="note">Hautprogramm für Windows und Linux, welches die Oberfläche startet.
+Optional mit Splashscreen.</span>
+          </td>
+        </tr>
+        <tr class="even">
+          <td>
+            <span>9.2</span>
+          </td>
+          <td>
+            <a name="task18" style="margin-left: 18px" id="task18">
+              <span>Mathebibliothek</span>
+            </a>
+          </td>
+          <td>
+            <span>Nov 2</span>
+          </td>
+          <td>
+            <span>Nov 16</span>
+          </td>
+          <td>
+            <span>14d </span>
+          </td>
+          <td align="center">
+            <span></span>
+          </td>
+          <td align="right">
+            <span>0%
+		</span>
+          </td>
+          <td align="right">
+            <span></span>
+          </td>
+          <td>
+            <span class="note">Mathematisch notwendige Klassen wie etwa Vektor und Matrix, mit den zugehörigen Methoden</span>
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <span>9.3</span>
+          </td>
+          <td>
+            <a name="task19" style="margin-left: 18px" id="task19">
+              <span>Logging</span>
+            </a>
+          </td>
+          <td>
+            <span>Nov 2</span>
+          </td>
+          <td>
+            <span>Nov 16</span>
+          </td>
+          <td>
+            <span>14d </span>
+          </td>
+          <td align="center">
+            <span></span>
+          </td>
+          <td align="right">
+            <span>0%
+		</span>
+          </td>
+          <td align="right">
+            <span></span>
+          </td>
+          <td>
+            <span class="note">Kernabschnitt, der mit der Ausgabe von Status- und Fehlermeldungen betraut ist</span>
+          </td>
+        </tr>
+        <tr class="even">
+          <td>
+            <span>9.4</span>
+          </td>
+          <td>
+            <a name="task20" style="margin-left: 18px" id="task20">
+              <span>Threading</span>
+            </a>
+          </td>
+          <td>
+            <span>Nov 17</span>
+          </td>
+          <td>
+            <span>Dec 10</span>
+          </td>
+          <td>
+            <span>21d </span>
+          </td>
+          <td align="center">
+            <span></span>
+          </td>
+          <td align="right">
+            <span>0%
+		</span>
+          </td>
+          <td align="right">
+            <span></span>
+          </td>
+          <td>
+            <span class="note">Gewährleistung der plattformunabhängigen Parallelisierbarkeit.
+Bislang geplant: QThread</span>
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <span>10</span>
+          </td>
+          <td>
+            <a name="task21" style="font-weight: bold; margin-left: 0px" id="task21">
+              <span>Rendering Engine</span>
+            </a>
+          </td>
+          <td>
+            <span>Nov 17</span>
+          </td>
+          <td>
+            <span>Dec 27</span>
+          </td>
+          <td>
+            <span>36d </span>
+          </td>
+          <td></td>
+          <td></td>
+          <td>
+            <span></span>
+          </td>
+          <td>
+            <span class="note"></span>
+          </td>
+        </tr>
+        <tr class="even">
+          <td>
+            <span>10.1</span>
+          </td>
+          <td>
+            <a name="task22" style="margin-left: 18px" id="task22">
+              <span>OpenGL Ansicht</span>
+            </a>
+          </td>
+          <td>
+            <span>Nov 17</span>
+          </td>
+          <td>
+            <span>Dec 10</span>
+          </td>
+          <td>
+            <span>21d </span>
+          </td>
+          <td align="center">
+            <span></span>
+          </td>
+          <td align="right">
+            <span>0%
+		</span>
+          </td>
+          <td align="right">
+            <span></span>
+          </td>
+          <td>
+            <span class="note">Notwendiger Initialisierungscode für OpenGL.
+Von außen steuerbare Darstellungsmodi.</span>
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <span>10.2</span>
+          </td>
+          <td>
+            <a name="task23" style="margin-left: 18px" id="task23">
+              <span>Mausinteraktion</span>
+            </a>
+          </td>
+          <td>
+            <span>Dec 11</span>
+          </td>
+          <td>
+            <span>Dec 27</span>
+          </td>
+          <td>
+            <span>15d </span>
+          </td>
+          <td align="center">
+            <span></span>
+          </td>
+          <td align="right">
+            <span>0%
+		</span>
+          </td>
+          <td align="right">
+            <span></span>
+          </td>
+          <td>
+            <span class="note">Erkennen von Mausklicks.
+Zuordnung von Mausklicks zu Renderobjekten.</span>
+          </td>
+        </tr>
+        <tr class="even">
+          <td>
+            <span>11</span>
+          </td>
+          <td>
+            <a name="task24" style="font-weight: bold; margin-left: 0px" id="task24">
+              <span>Datenstruktur</span>
+            </a>
+          </td>
+          <td>
+            <span>Nov 17</span>
+          </td>
+          <td>
+            <span>May 31</span>
+          </td>
+          <td>
+            <span>107d </span>
+          </td>
+          <td></td>
+          <td></td>
+          <td>
+            <span></span>
+          </td>
+          <td>
+            <span class="note"></span>
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <span>11.1</span>
+          </td>
+          <td>
+            <a name="task25" style="margin-left: 18px" id="task25">
+              <span>Format ausarbeiten</span>
+            </a>
+          </td>
+          <td>
+            <span>Nov 17</span>
+          </td>
+          <td>
+            <span>Dec 21</span>
+          </td>
+          <td>
+            <span>31d </span>
+          </td>
+          <td align="center">
+            <span></span>
+          </td>
+          <td align="right">
+            <span>0%
+		</span>
+          </td>
+          <td align="right">
+            <span></span>
+          </td>
+          <td>
+            <span class="note">Datenformat erarbeiten und realisieren</span>
+          </td>
+        </tr>
+        <tr class="even">
+          <td>
+            <span>11.2</span>
+          </td>
+          <td>
+            <a name="task26" style="margin-left: 18px" id="task26">
+              <span>Laden / Speichern</span>
+            </a>
+          </td>
+          <td>
+            <span>Dec 22</span>
+          </td>
+          <td>
+            <span>Jan 23</span>
+          </td>
+          <td>
+            <span>28d </span>
+          </td>
+          <td align="center">
+            <span></span>
+          </td>
+          <td align="right">
+            <span>0%
+		</span>
+          </td>
+          <td align="right">
+            <span></span>
+          </td>
+          <td>
+            <span class="note">Lade- und Speicherfunktion implementieren
+</span>
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <span>11.3</span>
+          </td>
+          <td>
+            <a name="task27" style="margin-left: 18px" id="task27">
+              <span>Importformate</span>
+            </a>
+          </td>
+          <td>
+            <span>Apr 6</span>
+          </td>
+          <td>
+            <span>May 3</span>
+          </td>
+          <td>
+            <span>24d </span>
+          </td>
+          <td align="center">
+            <span></span>
+          </td>
+          <td align="right">
+            <span>0%
+		</span>
+          </td>
+          <td align="right">
+            <span></span>
+          </td>
+          <td>
+            <span class="note">Erstellen von Importfiltern.
+Anzahl abhängig von Zeit der Durchführung.
+Als Minimum: md3 und pov</span>
+          </td>
+        </tr>
+        <tr class="even">
+          <td>
+            <span>11.4</span>
+          </td>
+          <td>
+            <a name="task28" style="margin-left: 18px" id="task28">
+              <span>Exportformate</span>
+            </a>
+          </td>
+          <td>
+            <span>May 4</span>
+          </td>
+          <td>
+            <span>May 31</span>
+          </td>
+          <td>
+            <span>24d </span>
+          </td>
+          <td align="center">
+            <span></span>
+          </td>
+          <td align="right">
+            <span>0%
+		</span>
+          </td>
+          <td align="right">
+            <span></span>
+          </td>
+          <td>
+            <span class="note">Erstellen von Exportfiltern.
+Anzahl abhängig von Zeit der Durchführung.
+Als Minimum: md3 und pov</span>
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <span>12</span>
+          </td>
+          <td>
+            <a name="task29" style="font-weight: bold; margin-left: 0px" id="task29">
+              <span>Modifikatoren</span>
+            </a>
+          </td>
+          <td>
+            <span>Apr 6</span>
+          </td>
+          <td>
+            <span>May 10</span>
+          </td>
+          <td>
+            <span>72d </span>
+          </td>
+          <td></td>
+          <td></td>
+          <td>
+            <span></span>
+          </td>
+          <td>
+            <span class="note"></span>
+          </td>
+        </tr>
+        <tr class="even">
+          <td>
+            <span>12.1</span>
+          </td>
+          <td>
+            <a name="task30" style="margin-left: 18px" id="task30">
+              <span>Vertex-Modifikatoren</span>
+            </a>
+          </td>
+          <td>
+            <span>Apr 6</span>
+          </td>
+          <td>
+            <span>May 10</span>
+          </td>
+          <td>
+            <span>30d </span>
+          </td>
+          <td align="center">
+            <span></span>
+          </td>
+          <td align="right">
+            <span>0%
+		</span>
+          </td>
+          <td align="right">
+            <span></span>
+          </td>
+          <td>
+            <span class="note">Objektmodifikatoren auf Vertexebene.</span>
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <span>12.2</span>
+          </td>
+          <td>
+            <a name="task31" style="margin-left: 18px" id="task31">
+              <span>Face-Modifikatoren</span>
+            </a>
+          </td>
+          <td>
+            <span>Apr 6</span>
+          </td>
+          <td>
+            <span>May 10</span>
+          </td>
+          <td>
+            <span>30d </span>
+          </td>
+          <td align="center">
+            <span></span>
+          </td>
+          <td align="right">
+            <span>0%
+		</span>
+          </td>
+          <td align="right">
+            <span></span>
+          </td>
+          <td>
+            <span class="note">Objektmodifikatoren auf Faceebene.</span>
+          </td>
+        </tr>
+        <tr class="even">
+          <td>
+            <span>12.3</span>
+          </td>
+          <td>
+            <a name="task32" style="margin-left: 18px" id="task32">
+              <span>Gruppen-Modifikatoren</span>
+            </a>
+          </td>
+          <td>
+            <span>Apr 6</span>
+          </td>
+          <td>
+            <span>Apr 19</span>
+          </td>
+          <td>
+            <span>12d </span>
+          </td>
+          <td align="center">
+            <span></span>
+          </td>
+          <td align="right">
+            <span>0%
+		</span>
+          </td>
+          <td align="right">
+            <span></span>
+          </td>
+          <td>
+            <span class="note">Objektmodifikatoren auf Gruppenebene.</span>
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <span>13</span>
+          </td>
+          <td>
+            <a name="task33" style="font-weight: bold; margin-left: 0px" id="task33">
+              <span>Infrastruktur</span>
+            </a>
+          </td>
+          <td>
+            <span>Nov 2</span>
+          </td>
+          <td>
+            <span>May 10</span>
+          </td>
+          <td>
+            <span>33d </span>
+          </td>
+          <td></td>
+          <td></td>
+          <td>
+            <span></span>
+          </td>
+          <td>
+            <span class="note"></span>
+          </td>
+        </tr>
+        <tr class="even">
+          <td>
+            <span>13.1</span>
+          </td>
+          <td>
+            <a name="task34" style="margin-left: 18px" id="task34">
+              <span>Versionsverwaltung einrichten</span>
+            </a>
+          </td>
+          <td>
+            <span>Nov 2</span>
+          </td>
+          <td>
+            <span>Nov 3</span>
+          </td>
+          <td>
+            <span>3d </span>
+          </td>
+          <td align="center">
+            <span></span>
+          </td>
+          <td align="right">
+            <span>0%
+		</span>
+          </td>
+          <td align="right">
+            <span></span>
+          </td>
+          <td>
+            <span class="note">Einrichtung der Projektstruktur mit Subclipse.</span>
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <span>13.2</span>
+          </td>
+          <td>
+            <a name="task35" style="margin-left: 18px" id="task35">
+              <span>Handbuch</span>
+            </a>
+          </td>
+          <td>
+            <span>Apr 6</span>
+          </td>
+          <td>
+            <span>May 10</span>
+          </td>
+          <td>
+            <span>30d </span>
+          </td>
+          <td align="center">
+            <span></span>
+          </td>
+          <td align="right">
+            <span>0%
+		</span>
+          </td>
+          <td align="right">
+            <span></span>
+          </td>
+          <td>
+            <span class="note">Erstellung eines Handbuchs zur Dokumentation für Anwender.
+Gesonderter Abschnitt zur Dokumentation der Pluginschnittstelle für Entwickler.</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="separator"></div>
+    <h2>
+      <a name="resources" id="resources">Resources</a>
+    </h2>
+    <div class="scroll-div">
+      <table cellspacing="0" cellpadding="0" border="1" width="100%">
+        <tr class="header" align="left">
+          <th>
+            <span>Name</span>
+          </th>
+          <th>
+            <span>Short name</span>
+          </th>
+          <th>
+            <span>Type</span>
+          </th>
+          <th>
+            <span>Group</span>
+          </th>
+          <th>
+            <span>Email</span>
+          </th>
+          <th>
+            <span>Cost</span>
+          </th>
+        </tr>
+        <tr class="odd">
+          <td>
+            <a name="res-3" id="res-3">
+              <span>Philipp Gruber</span>
+            </a>
+          </td>
+          <td>
+            <span>pgruber</span>
+          </td>
+          <td>
+            <span>Work</span>
+          </td>
+          <td>
+            <span></span>
+          </td>
+          <td>
+            <a href="mailto:pgruber@fh-landshut.de">
+              <span>pgruber@fh-landshut.de</span>
+            </a>
+          </td>
+          <td align="right">
+            <span>0</span>
+          </td>
+        </tr>
+        <tr class="even">
+          <td>
+            <a name="res-2" id="res-2">
+              <span>Reinhard Jeschull</span>
+            </a>
+          </td>
+          <td>
+            <span>rjeschu</span>
+          </td>
+          <td>
+            <span>Work</span>
+          </td>
+          <td>
+            <span></span>
+          </td>
+          <td>
+            <a href="mailto:rjeschu@fh-landshut.de">
+              <span>rjeschu@fh-landshut.de</span>
+            </a>
+          </td>
+          <td align="right">
+            <span>0</span>
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <a name="res-4" id="res-4">
+              <span>Stefan Zeltner</span>
+            </a>
+          </td>
+          <td>
+            <span>szeltne</span>
+          </td>
+          <td>
+            <span>Work</span>
+          </td>
+          <td>
+            <span></span>
+          </td>
+          <td>
+            <a href="mailto:szeltne@fh-landshut.de">
+              <span>szeltne@fh-landshut.de</span>
+            </a>
+          </td>
+          <td align="right">
+            <span>0</span>
+          </td>
+        </tr>
+        <tr class="even">
+          <td>
+            <a name="res-1" id="res-1">
+              <span>Thomas Kuhndörfer</span>
+            </a>
+          </td>
+          <td>
+            <span>tkuhndo</span>
+          </td>
+          <td>
+            <span>Work</span>
+          </td>
+          <td>
+            <span></span>
+          </td>
+          <td>
+            <a href="mailto:tkuhndo@fh-landshut.de">
+              <span>tkuhndo@fh-landshut.de</span>
+            </a>
+          </td>
+          <td align="right">
+            <span>0</span>
+          </td>
+        </tr>
+        <tr class="odd">
+          <td>
+            <a name="res-5" id="res-5">
+              <span>Thomas Tischler</span>
+            </a>
+          </td>
+          <td>
+            <span>ttischl</span>
+          </td>
+          <td>
+            <span>Work</span>
+          </td>
+          <td>
+            <span></span>
+          </td>
+          <td>
+            <a href="mailto:ttischl@fh-landshut.de">
+              <span>ttischl@fh-landshut.de</span>
+            </a>
+          </td>
+          <td align="right">
+            <span>0</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="footer">
+      <div>This file was generated by <a href="http://www.imendio.com/projects/planner/">Planner</a></div>
+    </div>
+  </body>
+</html>

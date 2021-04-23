@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//DE" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta name="BlackSun" content="Manual"/>
+<title>BlackSun 3D-Editor</title>
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+<body text="black" link="black" vlink="black" alink="black">
+<a name="03">
+<h1>3. Fenster/Ansichten</h1>
+</a><br />
+<a name="03-01">
+<h2>3.1 Bedienfeld</h2>
+</a><br />
+<div class="pic">
+	<div class="center"> <img src="../images/kap3/mainwindow.png" alt="" width="400" border="0" /> </div>
+	<div> Hauptfenster </div>
+</div>
+<div>
+	<p>Das Hauptfenster besteht aus einer Toolbar (hier links), einer Menübar (oben), einer Statusbar (unten) und 4 Ansichten.
+Es gibt 3 orthogonale Ansichten: Draufsicht, Seitenansicht und Frontalansicht und eine frei drehbare perspektivische Ansicht.<p>
+In der Toolbar werden neben den Buttons für das <a href="./kapitel5.html#5-01">  Selektieren</a>, <a href="./kapitel5.html#5-02"> Verschieben</a>, <a href="./kapitel5.html#5-03"> Rotieren</a> und <a href="./kapitel5.html#5-04"> Skalieren</a> auch Buttons für Modifikatoren und das Einfügen von Objekten aufgeführt. Bitte beachten Sie, dass faste alle Generatoren und Modifikatoren nur als Plugins verfügbar sind. Wie sie Plugins installieren und laden erfahren Sie in <a href="./kapitel10.html#10-01"> Kapitel 10.1 Pluginmanager </a> </p>
+<p>
+Die Buttons sind der Übersichtlichkeit halber in verschiedenen Boxen gruppiert. Von diesen können Sie, um beispielsweise den Platz in der Toolbar besser auszunutzen, den Inhalt mit der enstprechenden Checkbox verstecken. </p>
+</div>
+<br />
+
+<a name="03-01-01">
+<h2>3.1.1 Objektexplorer</h2>
+</a>
+
+<div class="pic">
+	<div class="center"> <img src="../images/kap3/objectexplorer.png" alt="" width="200" border="0" /> </div>
+	<div> Objektexplorer </div>
+</div>
+
+<div>
+	<p>
+	   Mithilfe des Objektexplorers ist es möglich einzelne Meshes der Szene auszuwählen und umzubennen.</p> <p>Um ein Mesh umzubennen klicken sie entweder doppelt auf den Menüeintrag oder Rechtsklicken sie auf den Menüeintrag und wählen sie die Option "Rename" aus.</p> <p> Sie können mithilfe der "Strg" oder "Shift" Tasten mehrere Meshes gleichzeitig auswählen: Mithilfe der Strg-Taste wählen sie einzelne Einträge aus und wieder ab. Mithilfe der Shift-Taste können sie einen Bereich selektieren. Sie können auch die linke Maustaste gedrückt halten und sie so über den entsprechenden Bereich ziehen um alle Einträge in diesem Bereich auszuwählen.</p>
+    </p>
+</div>
+<br />
+
+<a name="03-01-02">
+<h2>3.1.2 Materialexplorer</h2>
+</a>
+
+<div class="pic">
+	<div class="center"> <img src="../images/kap3/materialexplorer.png" alt="" width="200" border="0" /> </div>
+	<div> Materialexplorer </div>
+</div>
+
+<div>
+	<p>
+	   Mithilfe des Materialexplorers ist es möglich Materialien zu verwalten. Sie können diese mithilfe des Kontextmenüs löschen (Menüpunkt "Delete"), umbennen(Menüpunkt "Rename") oder auf Objekte anwenden (Menüpunkt Apply). Falls das "Material-Edtior" Plugin installiert ist können Sie disen per Menüpunkt "Material" aufrufen.
+    </p>
+    <p>
+        Falls sie ein Objekt selektieren das ein Material besitzt wird der enstsprechende Eintrag im Materialexplorer blau angezeigt.
+    </p>
+</div>
+<br />
+
+<a name="03-02">
+<h2>3.2 Ansichten</h2>
+</a>
+<div class="pic">
+	<div class="center"> <img src="../images/kap3/Ansichten_Normalen.png" alt="" height="277" width="196" border="0" /> </div>
+	<div> Textured + Normal </div>
+</div>
+<div>
+	<p>Die Szene lässt sich auf 2 Arten darstellen: 2D (Orthogonal) und 3D (Perspektivisch). Jede dieser Arten hat ihre Vor- und 		Nachteile, die insbesondere die Übersichtlichkeit und Funktionalität betreffen. Über das Kontextmenü (erreichbar über die rechte Maustaste) lässt sich jedes Fenster individuell einstellen. </p>
+	<p><span class="topic">Das Gitter:</span><br />
+		In den Ansichten gibt es 2 verschiedene Arten von Gittern – das Minor-Gitter und das Major-Gitter. Das Major-Gitter dient dazu, volle Dekaden darzustellen und deswegen haben diese daher immer eine Entfernung von 10^n voneinander (z.B. 0.01, 1 oder 10, je nach Entfernung der Kamera). Eine weitere Unterteilung einer solchen Dekade nimmt das Minor-Gitter vor. Um beispielsweise ein Gitter zu erhalten, das alle 0.2 Einheiten eine Linie hat, wählt man eine Partition des Minor-Gitters von 5. Die Einstellungen des Gitters befinden sich in den Renderer-Einstellungen.</p>
+</div>
+<div class="pic">
+	<div class="center"> <img src="../images/kap3/Ansichten_Kontextmenue.png" alt="" height="162" width="139" border="0" /> </div>
+	<div> Kontextmenü </div>
+</div>
+<div>
+	<table border="0" align="left">
+		<tr>
+			<td valign="top">Grid:</td>
+			<td>Aktiviert/Deaktiviert das Gitternetz</td>
+		</tr>
+		<tr>
+			<td valign="top">Maximized:</td>
+			<td>Maximiert das aktuelle Ansichtsfenster</td>
+		</tr>
+		<tr>
+			<td valign="top">Normals:</td>
+			<td>Aktiviert/Deakviert das Darstellen der Normalenvektoren</td>
+		</tr>
+		<tr>
+			<td valign="top">Textured:</td>
+			<td>Darstellungsmodus: Das Face wird normal  dargestellt. Au&szlig;erdem wird das daran gebundene Material inklusive  aller Texturen verwendet</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>Wireframe:</em> </td>
+			<td>Darstellungsmodus: Es wird das  Drahtgittermodell dargestellt, das nur die Kanten, nicht aber das 'Innere' der  	Faces dargestellt</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>WireframeOverlay:</em></td>
+			<td>Darstellungsmodus: Kombiniert Textured-  und Wireframe-Modus. Das texturierte Modell enth&auml;lt ein  dar&uuml;ber gerendertes Drahtgittermodell</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>Points only:</em></td>
+			<td>Darstellungsmodus: Es werden nur die  Eckpunkte der Faces dargestellt</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>Solid:</em></td>
+			<td>Darstellungsmodus: Das Face wird normal  dargestellt, au&szlig;erdem wird das daran gebundene Material verwendet  (ohne Texturen!)</td>
+		</tr>
+	</table>
+	
+</div>
+<br />
+<br />
+<a name="03-02-01">
+<h3>3.2.1 Orthogonale Ansicht (2D Ansichten)</h3>
+</a>
+<div>Die orthogonalen Ansichtsfenster zeigen die Szene von allen Seiten – Vorne, Hinten, Oben, Unten, Rechts, Links. Die einzelnen Fenster zeigen jeweils eine Sicht auf die Szene parallel zu einer einzelnen Achse.
+	In allen orthogonalen Ansichten lässt sich die Szene bearbeiten (Selektieren, Rotieren, ...).</div>
+<br />
+<div>Für die Darstellung stehen die oben erwähnten 5 Modi bereit:
+	<ul class="listleft">
+		<li>Point</li>
+		<li>Wireframe</li>
+		<li>Solid</li>
+		<li>Textured</li>
+		<li>Wireframe Overlay</li>
+	</ul>
+</div>
+<div class="picshori">
+	<div class="center"> <img src="../images/kap3/Ansichten_2D_Point.png" alt="" height="277" width="196" border="0" /> </div>
+	<div> Point </div>
+</div>
+<div class="picshori">
+	<div class="center"> <img src="../images/kap3/Ansichten_2D_Wireframe.png" alt="" height="277" width="196" border="0" /> </div>
+	<div> Wireframe </div>
+</div>
+<div class="picshori">
+	<div class="center"> <img src="../images/kap3/Ansichten_2D_Solid.png" alt="" height="277" width="196" border="0" /> </div>
+	<div> Solid </div>
+</div>
+<div class="picshori">
+	<div class="center"> <img src="../images/kap3/Ansichten_2D_Textured.png" alt="" height="277" width="196" border="0" /> </div>
+	<div> Textured </div>
+</div>
+<div class="picshori">
+	<div class="center"> <img src="../images/kap3/Ansichten_2D_WireframeOverlay.png" alt="" height="277" width="196" border="0" /> </div>
+	<div> WireframeOverlay </div>
+</div>
+<a name="03-02-02">
+<h3>3.2.2 Perspektivische Ansicht (3D Ansicht)</h3>
+</a><br />
+<div>Die 3D Ansicht stellt die Szene in einer 3-dimensionalen Perspektive dar. 
+	In dieser Ansichten lässt sich die Szene nicht bearbeiten (Selektieren, Rotieren, ...). Sie dient 'nur' der Ansicht.</div>
+<br />
+<div>Für die Darstellung stehen die oben erwähnten 5 Modi bereit:
+	<ul class="listleft">
+		<li>Point</li>
+		<li>Wireframe</li>
+		<li>Solid</li>
+		<li>Textured</li>
+		<li>Wireframe Overlay</li>
+	</ul>
+</div>
+<div class="picshori">
+	<div class="center"> <img src="../images/kap3/Ansichten_3D_Point.png" alt="" height="277" width="196" border="0" /> </div>
+	<div> Point </div>
+</div>
+<div class="picshori">
+	<div class="center"> <img src="../images/kap3/Ansichten_3D_Wireframe.png" alt="" height="277" width="196" border="0" /> </div>
+	<div> Wireframe </div>
+</div>
+<div class="picshori">
+	<div class="center"> <img src="../images/kap3/Ansichten_3D_Solid.png" alt="" height="277" width="196" border="0" /> </div>
+	<div> Solid </div>
+</div>
+<div class="picshori">
+	<div class="center"> <img src="../images/kap3/Ansichten_3D_Textured.png" alt="" height="277" width="196" border="0" /> </div>
+	<div> Textured </div>
+</div>
+<div class="picshori">
+	<div class="center"> <img src="../images/kap3/Ansichten_3D_WireframeOverlay.png" alt="" height="277" width="196" border="0" /> </div>
+	<div> WireframeOverlay </div>
+</div>
+
+<a name="03-03">
+<h2>3.3 Screenshots</h2>
+</a><br/>
+
+<div class="pic">
+	<div class="center"> <img src="../images/kap3/screenshotmaker.png" alt="" width="200" border="0" /> </div>
+	<div> Screenshot dialog </div>
+</div>
+
+<div>
+	<p>
+        Im Menüpunkt File->Take Screenshot findet sich dieser Dialog welcher es Ihnen erlaubt eine der 4 Ansichten in ein Bild umzuwandeln.
+    </p> 
+    <p>Die unterstützten Formate können gegebenfalls von ihrem System abhängen. Auf jedenfall werden jedoch das PNG (Portable Network Graphics) und das JPEG - Format unterstützt. Da es sich bei den Szenen um Computergraphiken handelt, empfielt sich das Speichern im PNG format, da bei JPEG-Blidern unansehliche "Artefakte" auftreten können.
+    </p>
+    Mithilfe des Drop-Down Menüs an der Oberseite des Dialogs können sie die gewüschte Ansicht auswählen. Sie können die Ansicht wie gewöhnlich drehen und zoomen.
+    </p>
+    <p>
+    In der oberen Rechten Ecke finden sie die Einstellungen für das Format in das das Bild gespeichert wird.
+    Darunter können sie die Qualität des Bildes festlegen, falls sie das bild als JPEG speichern möchten.
+    </p>
+    <p>
+    Darunter können sie festlegen in welcher Auflösung das Bild gespeichert werden soll. Falls sie eine benutzerdefinierte Auflösung eintragen möchten, können Sie das tun, indem Sie die Checkbox "Costum" anklicken und die Werte in die entsprechenden Felder eintragen. Sie können diese Auflösung auch dauerhaft speichern, in dem Sie das "+"-Symbol anklicken. Mit dem "-"-Symbol löschen sie diese wieder.
+    </p>
+    <p>
+    An der Unterseite des Dialogs können Sie den Pfad angeben, in dem das Bild gespeichert werden soll.
+    </p>
+    
+</div>
+<br />
+
+<br />
+<br />
+<br />
+<p></p>
+</body>
+</html>

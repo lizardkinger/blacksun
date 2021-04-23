@@ -1,0 +1,294 @@
+<ui version="4.0" >
+ <class>mouseConfig</class>
+ <widget class="QWidget" name="mouseConfig" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>548</width>
+    <height>392</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" >
+   <property name="margin" >
+    <number>9</number>
+   </property>
+   <property name="spacing" >
+    <number>6</number>
+   </property>
+   <item>
+    <widget class="QGroupBox" name="groupBox" >
+     <property name="title" >
+      <string>2D View</string>
+     </property>
+     <layout class="QHBoxLayout" >
+      <property name="margin" >
+       <number>9</number>
+      </property>
+      <property name="spacing" >
+       <number>6</number>
+      </property>
+      <item>
+       <widget class="QGroupBox" name="groupBox_3" >
+        <property name="title" >
+         <string>Left button</string>
+        </property>
+        <layout class="QGridLayout" >
+         <property name="margin" >
+          <number>9</number>
+         </property>
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <item row="3" column="0" >
+          <widget class="QLabel" name="label_4" >
+           <property name="text" >
+            <string>Ctrl + Shift modifier</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1" >
+          <widget class="QComboBox" name="leftCtrlShiftModifier2DBox" />
+         </item>
+         <item row="2" column="1" >
+          <widget class="QComboBox" name="leftCtrlModifier2DBox" />
+         </item>
+         <item row="2" column="0" >
+          <widget class="QLabel" name="label_3" >
+           <property name="text" >
+            <string>Ctrl modifier</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" >
+          <widget class="QLabel" name="label_2" >
+           <property name="text" >
+            <string>Shift modifier</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" >
+          <widget class="QComboBox" name="leftShiftModifier2DBox" />
+         </item>
+         <item row="0" column="1" >
+          <widget class="QComboBox" name="leftNoModifier2DBox" />
+         </item>
+         <item row="0" column="0" >
+          <widget class="QLabel" name="label" >
+           <property name="text" >
+            <string>No modifier</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox_8" >
+        <property name="title" >
+         <string>Middle button</string>
+        </property>
+        <layout class="QGridLayout" >
+         <property name="margin" >
+          <number>9</number>
+         </property>
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <item row="3" column="0" >
+          <widget class="QLabel" name="label_20" >
+           <property name="text" >
+            <string>Ctrl + Shift modifier</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" >
+          <widget class="QLabel" name="label_19" >
+           <property name="text" >
+            <string>Ctrl modifier</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" >
+          <widget class="QLabel" name="label_18" >
+           <property name="text" >
+            <string>Shift modifier</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" >
+          <widget class="QLabel" name="label_17" >
+           <property name="text" >
+            <string>No modifier</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1" >
+          <widget class="QComboBox" name="middleCtrlShiftModifier2DBox" />
+         </item>
+         <item row="2" column="1" >
+          <widget class="QComboBox" name="middleCtrlModifier2DBox" />
+         </item>
+         <item row="1" column="1" >
+          <widget class="QComboBox" name="middleShiftModifier2DBox" />
+         </item>
+         <item row="0" column="1" >
+          <widget class="QComboBox" name="middleNoModifier2DBox" />
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_2" >
+     <property name="title" >
+      <string>3D View</string>
+     </property>
+     <layout class="QHBoxLayout" >
+      <property name="margin" >
+       <number>9</number>
+      </property>
+      <property name="spacing" >
+       <number>6</number>
+      </property>
+      <item>
+       <widget class="QGroupBox" name="groupBox_5" >
+        <property name="title" >
+         <string>Left button</string>
+        </property>
+        <layout class="QGridLayout" >
+         <property name="margin" >
+          <number>9</number>
+         </property>
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <item row="3" column="0" >
+          <widget class="QLabel" name="label_6" >
+           <property name="text" >
+            <string>Ctrl + Shift modifier</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" >
+          <widget class="QLabel" name="label_8" >
+           <property name="text" >
+            <string>Ctrl modifier</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" >
+          <widget class="QLabel" name="label_5" >
+           <property name="text" >
+            <string>Shift modifier</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" >
+          <widget class="QLabel" name="label_7" >
+           <property name="text" >
+            <string>No modifier</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1" >
+          <widget class="QComboBox" name="leftCtrlShiftModifier3DBox" />
+         </item>
+         <item row="2" column="1" >
+          <widget class="QComboBox" name="leftCtrlModifier3DBox" />
+         </item>
+         <item row="1" column="1" >
+          <widget class="QComboBox" name="leftShiftModifier3DBox" />
+         </item>
+         <item row="0" column="1" >
+          <widget class="QComboBox" name="leftNoModifier3DBox" />
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox_6" >
+        <property name="title" >
+         <string>Middle button</string>
+        </property>
+        <layout class="QGridLayout" >
+         <property name="margin" >
+          <number>9</number>
+         </property>
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <item row="3" column="0" >
+          <widget class="QLabel" name="label_24" >
+           <property name="text" >
+            <string>Ctrl + Shift modifier</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" >
+          <widget class="QLabel" name="label_22" >
+           <property name="text" >
+            <string>Ctrl modifier</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" >
+          <widget class="QLabel" name="label_23" >
+           <property name="text" >
+            <string>Shift modifier</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" >
+          <widget class="QLabel" name="label_21" >
+           <property name="text" >
+            <string>No modifier</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1" >
+          <widget class="QComboBox" name="middleCtrlShiftModifier3DBox" />
+         </item>
+         <item row="2" column="1" >
+          <widget class="QComboBox" name="middleCtrlModifier3DBox" />
+         </item>
+         <item row="1" column="1" >
+          <widget class="QComboBox" name="middleShiftModifier3DBox" />
+         </item>
+         <item row="0" column="1" >
+          <widget class="QComboBox" name="middleNoModifier3DBox" />
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>leftNoModifier2DBox</tabstop>
+  <tabstop>leftShiftModifier2DBox</tabstop>
+  <tabstop>leftCtrlModifier2DBox</tabstop>
+  <tabstop>leftCtrlShiftModifier2DBox</tabstop>
+  <tabstop>middleNoModifier2DBox</tabstop>
+  <tabstop>middleShiftModifier2DBox</tabstop>
+  <tabstop>middleCtrlModifier2DBox</tabstop>
+  <tabstop>middleCtrlShiftModifier2DBox</tabstop>
+  <tabstop>leftNoModifier3DBox</tabstop>
+  <tabstop>leftShiftModifier3DBox</tabstop>
+  <tabstop>leftCtrlModifier3DBox</tabstop>
+  <tabstop>leftCtrlShiftModifier3DBox</tabstop>
+  <tabstop>middleNoModifier3DBox</tabstop>
+  <tabstop>middleShiftModifier3DBox</tabstop>
+  <tabstop>middleCtrlModifier3DBox</tabstop>
+  <tabstop>middleCtrlShiftModifier3DBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,15 @@
+<!DOCTYPE BSColorScheme>
+<ColorScheme>
+ <wireframeColor Blue="1" Red="0.8862745098039215" Green="0" />
+ <wireframeSelectionColor Blue="0" Red="1" Green="0" />
+ <pointColor Blue="0" Red="1" Green="1" />
+ <selectedPointsColor Blue="0" Red="1" Green="0.5000076295109483" />
+ <freezedColor Blue="1" Red="0.5499961852445259" Green="0.6" />
+ <normalColor Blue="0.9333333333333333" Red="0" Green="1" />
+ <selectionAABBColor Blue="0" Red="0" Green="1" />
+ <colorOrtho Blue="0" Red="0" Green="0" />
+ <colorPerspective Blue="0" Red="0" Green="0" />
+ <majorLineColor Blue="0" Red="0.5000076295109483" Green="0.5000076295109483" />
+ <minorLineColor Blue="0.6999923704890516" Red="0.6999923704890516" Green="0.6999923704890516" />
+ <rubberBandColor Blue="0.5019607843137255" Red="0" Green="0" />
+</ColorScheme>

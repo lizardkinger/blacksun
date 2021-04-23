@@ -1,0 +1,89 @@
+// tkuhndo 21.03.07
+// Work template for the menu structure, will discussed in calender week 12/13
+
+// Note: Many menu entries are only active if a selection is made
+
+File
+	- Open
+	- Open recent with a list of recent files
+	- Comment scene
+	- Take screenshot 	-> Top
+						-> Left
+						-> Right
+						-> 3D
+	- Import
+	- Export
+	
+Edit
+	- Cut
+	- Copy
+	- Paste
+	- Delete
+	- Delete by name
+	
+	- Clone
+	- Mirror	-> X axis
+				-> Y axis
+				-> Z axis
+	
+	< Mesh specific >
+	- Make mesh from polygons
+	- Extract polygons from mesh
+	
+Selection
+	< General selection >
+	- Select all
+	- Selet nothing
+	- Select invert
+	- Select intersecting
+	
+	< Hiding >
+	- Hide selection
+	- Hide all
+	- Hide invert
+	- Hide nothing
+	
+	< Freezing >
+	- Freeze selection
+	- Freeze all
+	- Freeze invert
+	- Freeze nothing
+	
+	< Arrange >
+	- To grid
+	- To surface
+	
+Modify
+	< Vertices >
+	- Triangulate
+	- Build convex hull
+	- Remove unbound vertices
+	
+	< Face >
+	- Extrude
+	- Turn vertex order
+	- Swap corners
+
+	< Mesh >
+	- Build rotation object
+	
+	
+Material?
+	- Open material editor
+	- Open texture editor
+	- Edit texture placements
+	- Remove material assignment -> selection
+								 -> all
+	
+View 
+	- Realtime mirror 	-> X axis
+						-> Y axis
+						-> Z axis
+	- Scene statistics
+	
+Help
+	- Documentation
+	- Project homepage
+	- Give feedback
+	- Check for new version
+	

@@ -1,0 +1,303 @@
+\documentclass[10pt,oneside,a4paper]{scrartcl}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage[final]{graphicx}
+
+%Neue Farben:
+\definecolor{darkgreen}{rgb}{0.0, 0.5, 0.0}
+
+%Neue Befehle
+%\newcommand{\ProgressComplete}{\textbf{\color{darkgreen}Complete}}
+%\newcommand{\ProgressIncomplete}{\textbf{\color{red}Incomplete}}
+%\newcommand{\ProgressWorking}{\textbf{\color{orange}Working}}
+
+\newcommand{\ProgressComplete}{\multicolumn{1}{>{\columncolor{darkgreen}}c}{\textbf{\color{white}Complete}}}
+\newcommand{\ProgressIncomplete}{\multicolumn{1}{>{\columncolor{red}}c}{\textbf{\color{white}Incomplete}}}
+\newcommand{\ProgressInProcess}{\multicolumn{1}{>{\columncolor{orange}}c}{\textbf{\color{white}In process}}}
+\newcommand{\ProgressRemoved}{\multicolumn{1}{>{\columncolor{yellow}}c}{\textbf{\color{black}Removed}}}
+ 
+\newcommand{\ReinhardJeschull}{Reinhard Jeschull}
+\newcommand{\ThomasKuhndoerfer}{Thomas Kuhndörfer}
+\newcommand{\PhilippGruber}{Philipp Gruber}
+\newcommand{\ThomasTischler}{Thomas Tischler}
+\newcommand{\StefanZeltner}{Stefan Zeltner}
+\newcommand{\NoProgrammer}{}
+\newcommand{\Optional}{\textbf{\color{red}[optional]}}
+
+%Neue Spalten-Typen
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\arraybackslash}p{#1}}
+
+%Silbentrennung deaktivieren
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+
+
+%Dokument beginnen
+\begin{document}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=1.5cm]{img/fh.jpg}
+	\label{fig:fhlogo}
+\end{figure}
+
+%Überschrift ausgeben
+\begin{center}
+	\Large\textbf{\color{blue}Produktfunktionen von BlackSun}
+	\newline
+	{\small siehe Pflichtenheft für genauere Beschreibungen}
+	\newline
+\end{center}
+
+%Tabelle für die Grundeditierungsmöglichkeiten
+\small\center
+\begin{tabular}{|L{9.00cm}|C{3.40cm}|C{2.25cm}|}
+	\hline 
+	\multicolumn{3}{>{\columncolor[gray]{0.5}\color{white}}c}{\textbf{Grundeditierungsmöglichkeiten}} \\
+	\hline 
+	\hline
+	\textbf{Aufgaben-/Plugin-Name} & \textbf{Programmierer} &
+		\textbf{Status} \\ \hline
+	\hline 
+	Selektieren eines Models (Vertex-, Face- und Groupebene) 					&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Bewegen/Verschieben von selektierten Modelldaten 							&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Rotieren von selektierten Modelldaten 										&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Skalieren von selektierten Modelldaten 										&  \ThomasKuhndoerfer & \ProgressComplete\\ \hline
+	Extrudieren einer Fläche 													&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Kopieren, einfügen und ausschneiden von selektierten Modelldaten 			&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Direktes duplizieren von selektierten Modelldaten 							&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Löschen der selektierten Modelldaten aus der Szene 							&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Löschen der kompletten Szene 												&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Selektieren einer Gruppe über ihren Namen oder ihr Material(-namen) 		&  \ThomasTischler & \ProgressComplete \\ \hline
+	Selektieren der ganzen Szene 												&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Aufheben der Modelldaten-Selektierung, sodass nichts mehr selektiert ist 	&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Invertieren der Selektierung 												&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Verbergen und wieder darstellen der selektierten Faces und Gruppen 			&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Schützen einer Gruppe vor jeglicher Veränderung (Sperren und Entsperren) 	&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Undo/Redo-System 															&  \StefanZeltner & \ProgressComplete \\
+	\hline
+\end{tabular}
+
+%Tabelle für die Grundobjekte
+\small\center
+\begin{tabular}{|L{9.00cm}|C{3.40cm}|C{2.25cm}|}
+	\hline 
+	\multicolumn{3}{>{\columncolor[gray]{0.5}\color{white}}c}{\textbf{Grundobjekte}} \\
+	\hline 
+	\hline
+	\textbf{Aufgaben-/Plugin-Name} & \textbf{Programmierer} &
+		\textbf{Status} \\ \hline
+	\hline 
+	Vertex 					&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Face 					&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Box 					&  \PhilippGruber & \ProgressComplete \\ \hline
+	Block (Box, bei der die Seiten aus N x N Teilfächen bestehen) &  \PhilippGruber & \ProgressComplete \\ \hline
+	Kugel 					&  \ReinhardJeschull & \ProgressComplete \\ \hline
+	GeoSphere \Optional 	&  \ReinhardJeschull & \ProgressComplete \\ \hline
+	Zylinder 				&  \PhilippGruber & \ProgressComplete \\ \hline
+	Kegel/Pyramide			&  \PhilippGruber & \ProgressComplete \\ \hline
+	Röhre 					&  \PhilippGruber & \ProgressComplete \\ \hline
+	Gitter (Fläche aus N x N Teilfächen) &  \ReinhardJeschull & \ProgressComplete \\ \hline
+	Torus					&  \ReinhardJeschull & \ProgressComplete \\ \hline
+	Helix					&  \ReinhardJeschull & \ProgressComplete \\ \hline	
+	Linie (2D) \Optional 	&  \NoProgrammer & \ProgressIncomplete \\ \hline
+	Polyline (2D) \Optional &  \NoProgrammer & \ProgressIncomplete \\ \hline
+	Kreis (2D) \Optional 	&  \NoProgrammer & \ProgressIncomplete \\ \hline
+	Schrift \Optional 		&  \NoProgrammer & \ProgressIncomplete \\ \hline
+	Polyhedron (N-Flächer) \Optional &  \NoProgrammer & \ProgressIncomplete \\ \hline
+	Teapot \Optional 		&  \NoProgrammer & \ProgressIncomplete \\ \hline
+	Goblet					&  \PhilippGruber & \ProgressInProcess \\	
+	\hline 
+\end{tabular}
+
+
+%Tabelle für die Model-Manipulation auf Vertex-Ebene
+\small\center
+\begin{tabular}{|L{9.00cm}|C{3.40cm}|C{2.25cm}|}
+	\hline 
+	\multicolumn{3}{>{\columncolor[gray]{0.5}\color{white}}c}{\textbf{Model-Manipulation auf Vertex-Ebene}} \\
+	\hline 
+	\hline
+	\textbf{Aufgaben-/Plugin-Name} & \textbf{Programmierer} &
+		\textbf{Status} \\ \hline
+	\hline 
+	Zusammenfassen beliebig vieler Vertices (haben dann gleiche Position, es werden keine Vertices gelöscht) 	&  \ThomasKuhndoerfer & \ProgressComplete\\ \hline
+	Ausrichten von Vertices am Gitter (näheste Gitterposition) 													&  \ThomasKuhndoerfer & \ProgressRemoved \\ \hline
+	Ausrichten von Vertices an Ebene (bilden dann Fläche) 														&  \ThomasKuhndoerfer & \ProgressComplete\\ \hline
+	Spiegeln von Vertices an einer Ebene 																		&  \ThomasKuhndoerfer & \ProgressComplete\\ \hline
+	Manuelles bearbeiten der Vertexdaten selektierter Vertices 													&  \ReinhardJeschull & \ProgressComplete \\ \hline
+	Erzeugen einer triangulierten Fläche aus einer Menge von (evt. ungebundenen) Vertices 						&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Einfügen eines zusätzlichen Vertex zwischen zwei selektierten Vertices (gegenfalls mit Teilung des Faces um neuen Vertex einzubinden) &  \ReinhardJeschull & \ProgressComplete \\ \hline	
+	Alle ungebundene Vertices, die in keinem Face eingebunden sind, aus Szene entfernen 						&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline	
+	Erzeugen einer konvexen Hülle aus einer Menge von Vertices 													&  \ReinhardJeschull & \ProgressComplete \\
+	\hline
+\end{tabular}
+
+
+%Tabelle für die Model-Manipulation auf Face-Ebene
+\small\center
+\begin{tabular}{|L{9.00cm}|C{3.40cm}|C{2.25cm}|}
+	\hline 
+	\multicolumn{3}{>{\columncolor[gray]{0.5}\color{white}}c}{\textbf{Model-Manipulation auf Face-Ebene}} \\
+	\hline 
+	\hline
+	\textbf{Aufgaben-/Plugin-Name} & \textbf{Programmierer} &
+		\textbf{Status} \\ \hline
+	\hline 
+	Umdrehen der Vertexreihenfolge eines Faces 					&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Teilen der selektierten Faces in beliebig viele Subfaces 	&  \PhilippGruber & \ProgressComplete \\ \hline
+	Erzeugung eines Lochs in jedes selektierte Face 			&  \ReinhardJeschull & \ProgressComplete \\ \hline
+	Generierung von Stacheln aus jedem selektiertem Face 		&  \ReinhardJeschull & \ProgressComplete \\ \hline
+	Vertauschen der Ecken zweier benachbarter Faces 			&  \NoProgrammer & \ProgressRemoved \\ \hline
+	Abschrägen der Kanten (Bevel) \Optional 					&  \NoProgrammer & \ProgressIncomplete \\
+	\hline
+\end{tabular}
+
+
+%Tabelle für die Model-Manipulation auf Gruppen-Ebene
+\small\center
+\begin{tabular}{|L{9.00cm}|C{3.40cm}|C{2.25cm}|}
+	\hline 
+	\multicolumn{3}{>{\columncolor[gray]{0.5}\color{white}}c}{\textbf{Model-Manipulation auf Gruppen-Ebene}} \\
+	\hline 
+	\hline
+	\textbf{Aufgaben-/Plugin-Name} & \textbf{Programmierer} &
+		\textbf{Status} \\ \hline
+	\hline 
+	Zusammenfassen der selektierten Faces/Gruppen zu einer neuen Gruppe 	&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Erstellen eines Rotationskörpers aus einer selektierten Gruppe 			&  \PhilippGruber & \ProgressComplete \\ \hline
+	Automatische Optimierung der Vertexanzahl \Optional 					&  \NoProgrammer & \ProgressIncomplete \\ \hline
+	Reduzierung der Vertexanzahl um einen beliebigen Prozentsatz \Optional 	&  \NoProgrammer & \ProgressIncomplete \\ \hline
+	Subdivision (macht Modell plastischer) 									&  \ReinhardJeschull & \ProgressComplete \\ \hline
+	Verschieben jedes Faces einer Gruppe vom Zentrum der Gruppe (Explosion) &  \PhilippGruber & \ProgressComplete \\ \hline
+	Normalen an Ecken weich berechnen 										&  \PhilippGruber & \ProgressComplete\\ \hline
+	CSG - Constructive Solid Geometry für boolesche Operatoren auf Gruppen (Vereinigung, Differenz, Schnitt) \Optional &  \NoProgrammer & \ProgressIncomplete \\ 
+	\hline
+\end{tabular}
+
+
+%Tabelle für die Texturierung
+\small\center
+\begin{tabular}{|L{9.00cm}|C{3.40cm}|C{2.25cm}|}
+	\hline 
+	\multicolumn{3}{>{\columncolor[gray]{0.5}\color{white}}c}{\textbf{Texturierung}} \\
+	\hline 
+	\hline
+	\textbf{Aufgaben-/Plugin-Name} & \textbf{Programmierer} &
+		\textbf{Status} \\ \hline
+	\hline 
+	Hinzufügen von Materialien 													&  \ReinhardJeschull & \ProgressComplete \\ \hline
+	Einstellen von Materialien in einem Material-Editor 						&  \ReinhardJeschull & \ProgressComplete \\ \hline
+	Speichern und Laden von Materialien (im Material-Editor) 					&  \ReinhardJeschull & \ProgressComplete \\ \hline
+	Zuweisen eines Materials an eine Gruppe 									&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Löschen der Zuordnung eines Materials an eine Gruppe 						&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Beliebige Anpassung der Texturkoordinaten über Texturkoordinaten-Editor 	&  \ReinhardJeschull & \ProgressComplete \\ \hline
+	Automatische Generierung von Texturkoordinaten \Optional 					&  \NoProgrammer & \ProgressIncomplete \\ \hline
+	Einstellen des Texturkoordinaten-Offsets (Verschiebung) und Wiederholungen 	&  \ThomasKuhndoerfer & \ProgressComplete\\ \hline
+	Generierung von Texturen (Holz, Mamor, spezielle Muster, ..) \Optional 		&  \NoProgrammer & \ProgressIncomplete \\ 
+	\hline
+\end{tabular}
+
+
+%Tabelle für die Darstellung
+\small\center
+\begin{tabular}{|L{9.00cm}|C{3.40cm}|C{2.25cm}|}
+	\hline 
+	\multicolumn{3}{>{\columncolor[gray]{0.5}\color{white}}c}{\textbf{Darstellung}} \\
+	\hline 
+	\hline
+	\textbf{Aufgaben-/Plugin-Name} & \textbf{Programmierer} &
+		\textbf{Status} \\ \hline
+	\hline 
+	Bereitstellen verschieder Darstellungsmöglichen für die 4-Fenster-Ansicht 				&  \ThomasTischler & \ProgressComplete \\ \hline
+	Beliebiges einstellen der 4-Fenster-Ansicht 											&  \ThomasTischler & \ProgressComplete \\ \hline
+	Anpassen der Viewports, sodass ganzes Modell sichtbar ist 								&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Anpassen der Viewports, sodass die selektierten Modellteile sichtbar sind 				&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Wiederherstellen der Viewports zu ursprünglichen Einstellungen 							&  \ReinhardJeschull & \ProgressComplete \\ \hline
+	Darstellung der 3D-Daten auf verschiedene Argen (Wireframe, Solid, Texturiert, ..) 		&  \ReinhardJeschull & \ProgressComplete \\ \hline
+	Speichern des Inhalts eines der Viewports in eine Datei oder kopieren in Zwischenablage &  \ThomasTischler & \ProgressComplete \\ \hline
+	Möglichst beliebig einstellbare GUI (Menüs, Toolbars, ..) 								&  \ThomasTischler & \ProgressComplete \\ \hline
+	Individualisierung des Aussehens der GUI über Skins/Styles \Optional 					&  \ThomasTischler & \ProgressComplete \\ 
+	\hline
+\end{tabular}
+
+
+%Tabelle für die sonstiges Tools
+\small\center
+\begin{tabular}{|L{9.00cm}|C{3.40cm}|C{2.25cm}|}
+	\hline 
+	\multicolumn{3}{>{\columncolor[gray]{0.5}\color{white}}c}{\textbf{Sonstige Tools}} \\
+	\hline 
+	\hline
+	\textbf{Aufgaben-/Plugin-Name} & \textbf{Programmierer} &
+		\textbf{Status} \\ \hline
+	\hline 
+	Kommentieren des Modells 													&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Anzeigen der Model-Statistik 												&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Anzeigen der Model-Hierachie 												&  \NoProgrammer & \ProgressRemoved \\ \hline
+	Zuschaltbares automatisches Spiegeln an einer Ebene 						&  \ReinhardJeschull & \ProgressComplete\\ \hline
+	Zuschaltbare Darstellung der Normalen und ähnliche wichtige Vektoren 		&  \ReinhardJeschull & \ProgressComplete \\ \hline
+	Tool zur Generierung von Pflanzen-Modellen mithilfe der L-Systeme \Optional &  \NoProgrammer & \ProgressIncomplete \\
+	\hline
+\end{tabular}
+
+%Tabelle für die Dateioperationen
+\small\center
+\begin{tabular}{|L{9.00cm}|C{3.40cm}|C{2.25cm}|}
+	\hline 
+	\multicolumn{3}{>{\columncolor[gray]{0.5}\color{white}}c}{\textbf{Dateioperationen}} \\
+	\hline 
+	\hline
+	\textbf{Aufgaben-/Plugin-Name} & \textbf{Programmierer} &
+		\textbf{Status} \\ \hline
+	\hline 
+	Erstellen einer neuen Szene 									&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Öffnen einer Szene aus einer Datei 								&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Speichern der Szene 											&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Einfügen eines Modells aus einer Datei in die aktuelle Szene 	&  \ThomasKuhndoerfer & \ProgressComplete \\ \hline
+	Importieren eines Modells aus einem bestimmten Dateiformat 		&  \ReinhardJeschull & \ProgressComplete \\ \hline
+	Exportieren der Szene in ein bestimmtes Dateiformat 			&  \ReinhardJeschull & \ProgressComplete \\
+	\hline
+\end{tabular}
+
+
+%Tabelle für die Pluginmanager
+\small\center
+\begin{tabular}{|L{9.00cm}|C{3.40cm}|C{2.25cm}|}
+	\hline 
+	\multicolumn{3}{>{\columncolor[gray]{0.5}\color{white}}c}{\textbf{Pluginmanager}} \\
+	\hline 
+	\hline
+	\textbf{Aufgaben-/Plugin-Name} & \textbf{Programmierer} &
+		\textbf{Status} \\ \hline
+	\hline
+	Einfügen von Plugins mithilfe eines Pluginmanager 					&  \StefanZeltner & \ProgressComplete \\ \hline
+	Löschen (Deinstallieren) eines Plugins mithilfe des Pluginmanagers 	&  \StefanZeltner & \ProgressComplete \\ \hline
+	Verwalten der Plugins mithilfe des Pluginmanager 					&  \StefanZeltner & \ProgressComplete \\ 
+	\hline
+\end{tabular}
+
+
+%Tabelle für Sonstiges
+\small\center
+\begin{tabular}{|L{9.00cm}|C{3.40cm}|C{2.25cm}|}
+	\hline 
+	\multicolumn{3}{>{\columncolor[gray]{0.5}\color{white}}c}{\textbf{Sonstiges}} \\
+	\hline 
+	\hline
+	\textbf{Aufgaben-/Plugin-Name} & \textbf{Programmierer} &
+		\textbf{Status} \\ \hline
+	\hline 
+	Updaten des Programms über einen Menüpunkt 				&  \StefanZeltner & \ProgressComplete\\ \hline
+	Einstellen der Sprache (englisch, deutsch) \Optional 	&  \NoProgrammer & \ProgressIncomplete \\ 
+	\hline
+\end{tabular}
+
+%Dokument beenden
+\end{document}

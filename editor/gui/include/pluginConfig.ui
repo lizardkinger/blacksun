@@ -1,0 +1,146 @@
+<ui version="4.0" >
+ <class>pluginConfig</class>
+ <widget class="QWidget" name="pluginConfig" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>832</width>
+    <height>445</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" >
+   <property name="margin" >
+    <number>9</number>
+   </property>
+   <property name="spacing" >
+    <number>6</number>
+   </property>
+   <item rowspan="2" row="2" column="4" >
+    <widget class="QGroupBox" name="autosearchBox" >
+     <property name="title" >
+      <string>Autosearching for Plugins</string>
+     </property>
+     <property name="checkable" >
+      <bool>true</bool>
+     </property>
+     <layout class="QGridLayout" >
+      <property name="margin" >
+       <number>9</number>
+      </property>
+      <property name="spacing" >
+       <number>6</number>
+      </property>
+      <item row="1" column="0" colspan="2" >
+       <widget class="QCheckBox" name="autoloadBox" >
+        <property name="text" >
+         <string>Load plugins automatically</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2" >
+       <widget class="QToolButton" name="changePath" >
+        <property name="text" >
+         <string>...</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" >
+       <widget class="QLabel" name="label_2" >
+        <property name="text" >
+         <string>Path:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" >
+       <widget class="QLineEdit" name="pluginPath" />
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="3" column="3" >
+    <widget class="QPushButton" name="unloadButton" >
+     <property name="text" >
+      <string>Unload</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2" >
+    <widget class="QPushButton" name="uninstallButton" >
+     <property name="text" >
+      <string>Uninstall</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1" >
+    <widget class="QPushButton" name="installButton" >
+     <property name="text" >
+      <string>Install</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" >
+    <widget class="QPushButton" name="loadButton" >
+     <property name="text" >
+      <string>Load</string>
+     </property>
+    </widget>
+   </item>
+   <item rowspan="2" row="1" column="0" colspan="4" >
+    <widget class="QTreeWidget" name="pluginList" >
+     <property name="sizePolicy" >
+      <sizepolicy>
+       <hsizetype>5</hsizetype>
+       <vsizetype>5</vsizetype>
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="alternatingRowColors" >
+      <bool>true</bool>
+     </property>
+     <property name="rootIsDecorated" >
+      <bool>false</bool>
+     </property>
+     <property name="sortingEnabled" >
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="4" >
+    <widget class="QLabel" name="label" >
+     <property name="text" >
+      <string>Available Plugins:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="4" >
+    <widget class="QStackedWidget" name="aboutStack" >
+     <property name="sizePolicy" >
+      <sizepolicy>
+       <hsizetype>7</hsizetype>
+       <vsizetype>7</vsizetype>
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>pluginList</tabstop>
+  <tabstop>loadButton</tabstop>
+  <tabstop>installButton</tabstop>
+  <tabstop>uninstallButton</tabstop>
+  <tabstop>unloadButton</tabstop>
+  <tabstop>pluginPath</tabstop>
+  <tabstop>changePath</tabstop>
+  <tabstop>autoloadBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta name="BlackSun" content="Manual"/>
+<title>BlackSun 3D-Editor</title>
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+<body text="black" link="black" vlink="black" alink="black">
+<a name="06">
+<h1>6. Objekt bearbeiten</h1>
+</a>
+<p>Folgend finden sie die Möglichkeiten zur Manipulation von Szeneninhalten</p>
+<a name="06-01">
+<h2>6.1 Vertex</h2>
+</a><br />
+Vertices bieten aufgrund ihrer Einfachheit nur eine beschränkte Sammlung von Bearbeitungsmöglichkeiten<br />
+<br />
+<a name="06-01-01">
+<h3>6.1.1 Vertizes verbinden</h3>
+</a>
+<div class="shortcut">Menü -> Modify -> Triangulate</div><br />
+<div class="pic">
+	<div class="center"> <a href="../images/kap6/objekt_bearbeiten_vertices.png" target="_blank"><img src="../images/kap6/objekt_bearbeiten_vertices.png" alt="" height="160" width="427" border="0" /></a></div>
+	<div> Beispiel <a href="../images/kap6/objekt_bearbeiten_vertices.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div> Ungebundene Vertices können automatisch zu Polygonen zusammengefasst werden. Die Vertexreihenfolge wird dabei von der Aufnahmreihenfolge der Vertices zur Selektion bestimmt. </div>
+<a name="06-01-02">
+<h3>6.1.2 Ausrichten</h3>
+</a>
+<div class="shortcut">Menü -> Selection -> Arrange vertices together</div><br/>
+<p>Alle selektierten Vertices die zu einem Mesh-Körper gehören, werden an einen gemeinsamen Punkt verschoben. Dabei wird der erste Punkt der Selektion als Referenzort benutzt. Bei diesem Vorgang werden keine Vertices gelöscht.
+</p>
+
+<p>
+<div class="pic">
+	<div class="center"> <a href="../images/kap6/objekt_bearbeiten_arrange_vorher.png" target="_blank"><img src="../images/kap6/objekt_bearbeiten_arrange_vorher.png" alt="" height="207" width="350" border="0" /></a></div>
+	<div>Vorher: Selektierte Vertices vor der Zusammenfassung<a href="../images/kap6/objekt_bearbeiten_arrange_vorher.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+
+<div class="pic">
+	<div class="center"> <a href="../images/kap6/objekt_bearbeiten_arrange_nachher.png" target="_blank"><img src="../images/kap6/objekt_bearbeiten_arrange_nachher.png" alt="" height="207" width="350" border="0" /></a></div>
+	<div>Nachher: Selektierte Vertices nach der Zusammenfassung <a href="../images/kap6/objekt_bearbeiten_arrange_nachher.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+</p>
+
+<div class="shortcut">Menü -> Selection -> Align vertices to axis -> X/Z/Y</div><br/>
+<p>Alle selektierten Vertices die zu einem Mesh-Körper gehören, werden an der gewählten Achse ausgerichtet. Dabei wird der erste Punkt der Selektion als Referenzort benutzt.Bei diesem Vorgang werden keine Vertices gelöscht.</p>
+
+<div class="pic">
+	<div class="center"> <a href="../images/kap6/objekt_bearbeiten_ausrichtung_vorher.png" target="_blank"><img src="../images/kap6/objekt_bearbeiten_ausrichtung_vorher.png" alt="" height="207" width="350" border="0" /></a></div>
+	<div>Vorher: Selektierte Vertices vor der Ausrichtung <a href="../images/kap6/objekt_bearbeiten_ausrichtung_vorher.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+
+<div class="pic">
+	<div class="center"> <a href="../images/kap6/objekt_bearbeiten_ausrichtung_nachher_y.png" target="_blank"><img src="../images/kap6/objekt_bearbeiten_ausrichtung_nachher_y.png" alt="" height="207" width="350" border="0" /></a></div>
+	<div>Nachher Beispiel 1: Ausrichtung anhand der Y-Achse <a href="../images/kap6/objekt_bearbeiten_ausrichtung_nachher_y.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+
+<div class="pic">
+	<div class="center"> <a href="../images/kap6/objekt_bearbeiten_ausrichtung_nachher_x.png" target="_blank"><img src="../images/kap6/objekt_bearbeiten_ausrichtung_nachher_x.png" alt="" height="207" width="350" border="0" /></a></div>
+	<div>Nachher Beispiel 2: Ausrichtung anhand der X-Achse <a href="../images/kap6/objekt_bearbeiten_ausrichtung_nachher_x.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+
+<a name="06-02">
+<h2>6.2 Modifikatoren</h2>
+</a>
+<p>Unter Modifikatoren versteht man Effekte die auf bestehende Geometrien angewand werden. Deswegen ist auch vor der Anwendung eines jeden Modifikators eine aktive Selektion vonnöten.</p>
+<a name="06-02-01">
+<h3>6.2.1 Konvexe Hülle</h3>
+</a>
+<div class="shortcut">Toolbox -> Modificators -> <img src="../images/kap6/Modifikatoren_ConvexHull_Icon.png" />Convex Hull</div><br/>
+<br />
+<div class="pic">
+	<div class="center"> <a href="../images/kap6/Modifikatoren_ConvexHull_Example.png" target="_blank"><img src="../images/kap6/Modifikatoren_ConvexHull_Example.png" alt="" height="107" width="250" border="0" /></a></div>
+	<div> Beispiel <a href="../images/kap6/Modifikatoren_ConvexHull_Example.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div> Generiert mithilfe der 'Convex Hull'-Technik ein neues Objekt , das alle selektierten Vertices umschließt. Es ist zum Beispiel besonders hilfreich um komplexe Objekte zu vereinen. </div>
+<a name="06-02-02">
+<h3>6.2.2 Explosion</h3>
+</a> 
+
+<div class="shortcut">Toolbox -> Modificators -> <img src="../images/kap6/Modifikatoren_explode_icon.png" />Explode</div> <br />
+<br />
+<div class="pic">
+	<div class="center"> <a href="../images/kap6/Modifikatoren_explode_beispiel.png" target="_blank"><img src="../images/kap6/Modifikatoren_explode_beispiel.png" alt="" height="100" width="316 border="0" /></a></div>
+	<div> Beispiel <a href="../images/kap6/Modifikatoren_explode_beispiel.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div>Verschiebt jedes selektierte Face um eine bestimmte Distanz, wodurch sich der Effekt einer Explosion ergibt. Durch den Parameter "Explode from Center" ist es möglich auszuwählen, ob die Verschiebung entlang der Normalen der Vertices oder vom Mittelpunkt der Selektion aus stattfinden soll. Mit "Diffusion" gibt man die Weite der Streuung an. Ist dieser Wert ungleich 0 werden die selektierten Faces zufällig im Distanzbereich zwischen Distance und Distance+Diffusion verschoben. Mit "Recalculate Normals" werden die Normalen der Faces neu berechnet. Diese Option hat nur eine Auswirkung, wenn die Vertices des Objekts "geteilt" (shared) sind.</div>
+
+<div class="pic">
+	<div class="center"> <img src="../images/kap6/Plugin_Explode_Parameter.png" alt="" height="203" width="271" border="0" /></a></div>
+	<div> Einstellungen/Parameter </div>
+</div>
+<div><table border="0">
+	<tr>
+		<td valign="top">Distance:</td>
+		<td>Distanz um die verschoben werden soll </td>
+	</tr>
+	<tr>
+		<td valign="top">Diffusion:</td>
+		<td>Distanz der Streuung (Verschiebungbereich: zwischen Distance und Distance + Diffusion) </td>
+	</tr>
+	<tr>
+		<td valign="top">Recalculate Normals: </td>
+		<td>Neuberechnung der Normalen </td>
+	</tr>
+	<tr>
+		<td valign="top">Explode from Center: </td>
+		<td>Die Explosion findet vom Zentrum der Selektion aus statt. (ansonsten entlang der Normalen) </td>
+	</tr>
+</table>
+</div>
+
+<a name="06-02-03">
+<h3>6.2.3 Extrude</h3>
+</a>
+<div class="shortcut">Toolbox -> Modificators -> <img src="../images/kap6/objekt_bearbeiten_extrude_icon.png" />Extrude</div><br/>
+<br />
+<div class="pic">
+	<div class="center"> <img src="../images/kap6/objekt_bearbeiten_extrude.png" alt="" height="168" width="495" border="0" /></a></div>
+	<div> Beispiel </div>
+</div>
+<div>Erzeugt eine Erhebung bzw. Versenkung in einem selektierten Face.</div>
+<div class="pic">
+	<div class="center"> <img src="../images/kap6/objekt_bearbeiten_extrude_dialog.png" alt="" height="142" width="189" border="0" /></a></div>
+	<div> Einstellungen/Parameter </div>
+</div>
+<div>
+	<table border="0">
+		<tr>
+			<td valign="top"><em>Amount:</em></td>
+			<td>Bestimmt die H&ouml;he der extrudierten  Erhebung</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>Direction:</em></td>
+			<td>Richtung in die die Erhebung w&auml;chst.</td>
+		</tr>
+	</table>
+</div>
+<a name="06-02-04">
+<h3>6.2.4 Makehole</h3>
+</a>
+<div class="shortcut">Toolbox -> Modificators -> <img src="../images/kap6/Modifikatoren_MakeHole_Icon.png" />Make Hole </div><br/>
+<br />
+<div class="pic">
+	<div class="center"> <a href="../images/kap6/Modifikatoren_MakeHole_Example.png" target="_blank"><img src="../images/kap6/Modifikatoren_MakeHole_Example.png" alt="" height="107" width="250" border="0" /></a></div>
+	<div> Beispiel <a href="../images/kap6/Modifikatoren_MakeHole_Example.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div> Stanzt ein Loch in jedes selektierte Face, wobei die Loch- und Rahmengröße in einem bestimmten Verhältnis zueinander stehen. </div>
+<br />
+<div class="pic">
+	<div class="center"> <img src="../images/kap6/Modifikatoren_MakeHole_Einstellungen.png" alt="" height="96" width="181" border="0" /></a></div>
+	<div> Einstellungen/Parameter </div>
+</div>
+<div class="fleft"> Percentage:	Das Verhältnis zwischen Lochgröße und entstehendem 'Rahmen'. </div>
+<a name="06-02-05">
+<h3>6.2.5 Rotationskörper</h3>
+</a>
+
+<div class="shortcut">Toolbox -> Modificators -> <img src="../images/kap6/Modifikatoren_revolve_icon.png" />Revolving </div><br />
+<br />
+<div class="pic">
+	<div class="center"> <a href="../images/kap6/Modifikatoren_revolve_beispiel.png" target="_blank"><img src="../images/kap6/Modifikatoren_revolve_beispiel.png" alt="" height="150" width="275" border="0" /></a></div>
+	<div> Beispiel <a href="../images/kap6/Modifikatoren_revolve_beispiel.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div>Rotiert eine Liste von Vertices um einen Bestimten Winkel und verbindet dabei diese zu einem Körper. Dabei kann gewählt werden, um welche der 3 Achsen rotiert werden soll und wieviele Unterteilungen (Ecken) die Rotation beinhaltet. Wenn der Parameter "Closed" gewählt ist, wird der letzte Punkt der Liste mit dem ersten verbunden. Dadurch entsteht ein geschlossener Körper.</div>
+
+<div class="pic">
+	<div class="center"> <img src="../images/kap6/Plugin_Revolve_Parameter.png" alt="" height="204" width="272" border="0" /></a></div>
+	<div> Einstellungen/Parameter </div>
+</div>
+<div><table border="0">
+	<tr>
+		<td valign="top">Axis:</td>
+		<td>Achse, um die rotiert werden soll </td>
+	</tr>
+	<tr>
+		<td valign="top">Angle:</td>
+		<td>Der Winkel um den Rotiert werden soll </td>
+	</tr>
+	<tr>
+		<td valign="top">Corners:</td>
+		<td>Anzahl der Unterteilungen (Ecken) der Rotation </td>
+	</tr>
+	<tr>
+		<td valign="top">Closed:</td>
+		<td>Ob der Letzte und erste Punkt verbunden werden soll </td>
+	</tr>
+</table>
+</div>
+
+
+
+<a name="06-02-06">
+<h3>6.2.6 Weiche Ecken</h3>
+</a>
+Toolbox -> Modificators -> [ICON]SmoothCorners <br />
+<br />
+<div class="pic">
+	<div class="center"> <a href="../images/kap6/Modifikatoren_smoothcorners_beispiel.png" target="_blank"><img src="../images/kap6/Modifikatoren_smoothcorners_beispiel.png" alt="" height="150" width="350" border="0" /></a></div>
+	<div> Beispiel <a href="../images/kap6/Modifikatoren_smoothcorners_beispiel.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div>Berechnet für jede Ecke aus den Normalen ihrer Eckvertices eine gemeinsame Normale. Dadurch erscheinen die Ecken weich.</div>
+
+
+<a name="06-02-07">
+<h3>6.2.7 Stacheln</h3>
+</a>
+<div class="shortcut">Toolbox -> Modificators -> <img src="../images/kap6/Modifikatoren_Spike_Icon.png" />Spike</div>
+<br />
+<div class="pic">
+	<div class="center"> <a href="../images/kap6/Modifikatoren_Spike_Example.png" target="_blank"><img src="../images/kap6/Modifikatoren_Spike_Example.png" alt="" height="107" width="250" border="0" /></a></div>
+	<div> Beispiel <a href="../images/kap6/Modifikatoren_Spike_Example.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div> Fügt ein neues Vertex in jedes selektierte Face und generiert daraus Stacheln mit einer bestimmten Länge. Der Modifkator kann gleichzeitig bei Länge 0.0 dazu dienen, jedes Face in 3 Subfaces zu teilen. </div>
+<br />
+<div class="pic">
+	<div class="center"> <img src="../images/kap6/Modifikatoren_Spike_Einstellungen.png" alt="" height="148" width="183" border="0" /></a></div>
+	<div> Einstellungen/Parameter </div>
+</div>
+<div class="fleft">
+	<table border="0">
+		<tr>
+			<td valign="top"><em>Length:</em> </td>
+			<td valign="bottom"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Die  L&auml;nge der Stacheln</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>Transform  by normal:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Gibt  an, ob die Stacheln entlang der Face-Normale transformiert werden sollen</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Transform  from centre:</em></td>
+			<td>Gibt  an, ob die Stacheln vom Zentrum des Meshes aus transformiert werden sollen</td>
+		</tr>
+	</table>
+</div>
+<a name="06-02-08">
+<h3>6.2.8 Subdivision</h3>
+<div class="shortcut">Menü -> Modify -> Subdivide</div><br />
+</a>
+<div class="pic">
+	<div class="center"> <a href="../images/kap6/Modifikatoren_Subdivision_Example.png" target="_blank"><img src="../images/kap6/Modifikatoren_Subdivision_Example.png" alt="" height="187" width="500" border="0" /></a></div>
+	<div> Beispiel <a href="../images/kap6/Modifikatoren_Subdivision_Example.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div>Subdivision ist ein Verfahren, dass ein Modell durch das Einfügen neuer Vertices plastischer  macht. Es hat den Vorteil, das das Originalmodel nicht sehr detailiert modeliert werden muss, um am Ende ein plastisches Modell zu erhalten. Außerdem lassen sich so Modelle in verschiedenen Detailgraden berechnen, die in Spielen verwendet werden können (sog. LOD – Weiter entfernte Objekte werden nicht so detailiert gerendert als nahe Objekte).</div>
+<a name="06-02-09">
+<h3>6.2.9 Split Face</h3>
+</a><br />
+<div class="shortcut">Menü -> Modify -> Split face ... -> ... into 2(3,4,5,6) subfaces</div>
+<br />
+<div class="pic">
+	<div class="center"> <img src="../images/kap6/Modifikatoren_Splitface_Example.PNG" alt="" height="225" width="200" border="0" /></a></div>
+	<div> Beispiel:<br />
+		In 6 Teile 'zerschnittenes' Face </div>
+</div>
+<div>Hier können Faces in eine bestimmte Anzahl 'zerschnitten' werden. Dabei wird jedes selektierte Face durch eine entsprechende Anzahl neuer Faces ersetzt. Zur Verfügung stehen die Teilung eines Faces in 2, 3, 4, 5 und 6 Teile. </div>
+<a name="06-02-10">
+<h3>6.2.10 Vertex einfügen</h3>
+</a> <div class="shortcut">Toolbox -> Modificators -> <img src="../images/kap6/Modifikatoren_InsertVertex_Icon.png" />Insert vertex</div><br />
+<br />
+<div class="pic">
+	<div class="center"> <a href="../images/kap6/Modifikatoren_InsertVertex_Example.png" target="_blank"><img src="../images/kap6/Modifikatoren_InsertVertex_Example.png" alt="" height="127" width="232" border="0" /></a></div>
+	<div> Beispiel <a href="../images/kap6/Modifikatoren_InsertVertex_Example.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div> Fügt zwischen zwei selektierten Vertices einen neuen Vertex ein und verbindet diesen mit den an den selektieren Vertices verbundenen Faces. Wichtig ist hierbei, dass zwar mehr als zwei Vertices selektiert werden können, diese aber zwingend <u>genau zwei verschiedene Positionen</u> haben müssen. D.h. es müssen nicht zwigend zwei komplett individuelle Vertices selektiert werden. </div>
+<a name="06-03">
+<h2>6.3 Manuelle Bearbeitung</h2>
+</a>
+<div class="shortcut">Menü -> Modify -> Manual Edit (Strg + Shift + E)</div>
+<br />
+<br />
+<div class="pic">
+	<div class="center"> <a href="../images/kap6/Modifikatoren_ManualEdit_Dialog.png" target="_blank"><img src="../images/kap6/Modifikatoren_ManualEdit_Dialog.png" alt="" height="128" width="337" border="0" /></a></div>
+	<div> Manuelle Bearbeitung <a href="../images/kap6/Modifikatoren_ManualEdit_Dialog.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div> Hier können Daten von selektierten Vertices manuell bearbeitet werden. Es können die Vertexposition (X/Y/Z), der Normalenvektor (nX/nY/nZ) und die 1. Texturkoordinate (U/V) geändert werden. Die Genauigkeit der Darstellung liegt bei 6 Nachkommastellen. </div>
+<a name="06-04">
+<h2>6.4 Allgemeine Bearbeitung</h2>
+</a> <a name="06-04-01">
+<h3>6.4.01 Transformation</h3>
+</a>
+<div class="shortcut">Menü -> Edit</div><br/>
+<div>Hiermit können verschiedene logische Einteilungen von Szenenobjekten geändert werden</div>
+<br />
+<table border="0">
+	<tr>
+		<td valign="top"><em>Make mesh from polygons</em></td>
+		<td>Aus allen selektierten Polygonen wird  ein einziges Mesh erzeugt</td>
+	</tr>
+	<tr>
+		<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+			<em>Extract polygons from mesh</em></td>
+		<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+			Die einzelnen Polygone eines Meshes  werden extrahiert und verlieren ihre Zugeh&ouml;rigkeit zu einem Mesh</td>
+	</tr>
+	<tr>
+		<td valign="top"><em>Merge meshes</em></td>
+		<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+			Mehrere selektierte Meshes werden zu  einem Gesamtmesh zusammengefasst</td>
+	</tr>
+</table>
+<a name="06-04-02">
+<h3>6.4.02 Spiegelung</h3>
+</a>
+<div class="shortcut">Menü -> Edit -> Mirror local -> X/Y/Z</div><br/>
+<div class="pic">
+	<div class="center"> <a href="../images/kap6/objekt_bearbeiten_mirror.png" target="_blank"><img src="../images/kap6/objekt_bearbeiten_mirror.png" alt="" height="160" width="427" border="0" /></a></div>
+	<div> Beispiel: Y-Spiegelung <a href="../images/kap6/objekt_bearbeiten_mirror.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div> Selektierte Szenenobjekte werden an ihrer Position entsprechend der gewählten Achse gespiegelt. 
+Dabei wird keine Kopie erzeugt und eingefügt sondern das selektierte Objekt direkt gespiegelt. </div>
+
+<div class="shortcut">Menü -> Edit -> Mirror world -> X/Y/Z</div><br/>
+
+<div> Neben der lokalen Spiegelung gibt es noch die Möglichkeit eine Selektion an den Weltachsen spiegeln zu lassen.
+Dies entspricht in etwa dem Effekt der Echtzeitspiegelung (<b>Siehe Kapitel 5.8</b>), nur mit dem Unterschied dass hierbei 
+eine tatsächliche Translation stattfindet.
+ </div>
+
+
+</body>
+</html>

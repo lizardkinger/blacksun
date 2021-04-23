@@ -1,0 +1,98 @@
+<ui version="4.0" >
+ <class>selectButtons</class>
+ <widget class="QWidget" name="selectButtons" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>382</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <layout class="QHBoxLayout" >
+   <property name="margin" >
+    <number>9</number>
+   </property>
+   <property name="spacing" >
+    <number>6</number>
+   </property>
+   <item>
+    <layout class="QHBoxLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="objectButton" >
+       <property name="toolTip" >
+        <string>Set selection mode to mesh</string>
+       </property>
+       <property name="text" >
+        <string>Mesh</string>
+       </property>
+       <property name="icon" >
+        <iconset resource="../actions.qrc" >:/media/selModeMesh_32.png</iconset>
+       </property>
+       <property name="checkable" >
+        <bool>true</bool>
+       </property>
+       <property name="checked" >
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive" >
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="surfaceButton" >
+       <property name="toolTip" >
+        <string>Set selection mode to face</string>
+       </property>
+       <property name="text" >
+        <string>Face</string>
+       </property>
+       <property name="icon" >
+        <iconset resource="../actions.qrc" >:/media/selModeFace_32.png</iconset>
+       </property>
+       <property name="checkable" >
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive" >
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="vertexButton" >
+       <property name="toolTip" >
+        <string>Set selection mode to vertex</string>
+       </property>
+       <property name="text" >
+        <string>Vertex</string>
+       </property>
+       <property name="icon" >
+        <iconset resource="../actions.qrc" >:/media/selModeVertex_32.png</iconset>
+       </property>
+       <property name="checkable" >
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive" >
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../actions.qrc" />
+ </resources>
+ <connections/>
+</ui>

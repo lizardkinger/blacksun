@@ -1,0 +1,6 @@
+How to configure doxygen correctly
+------------------------------------
+
+The warning 'Problems running dot. Check your installation!' is displayed:
+You have to download graphviz (http://www.graphviz.org), it's necessary for
+generating the graphics, for example the collaboration graph.

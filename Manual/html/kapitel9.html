@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta name="BlackSun" content="Manual"/>
+<title>BlackSun 3D-Editor</title>
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+<body text="black" link="black" vlink="black" alink="black">
+<a name="09">
+<h1>9. Import/Export</h1>
+</a>
+<div class="shortcut">Menü ->File ->  Import <br />
+	Menu -> File ->  Export </div><br />
+	<br />
+	Die Im- und Exporter dienen dazu, Dateiformate von anderen Programmen/Spielen/... zu laden bzw. in dieses Format zu speichern.
+	Beim Importieren wird die neu geladene Szene immer mit der aktuellen Szene verschmolzen, beim Exportieren wird die ganze Szene gespeichert.</div>
+<br />
+<a name="09-01">
+<h2>9.1 Import</h2>
+</a> <a name="09-01-01">
+<h3>9.1.1 MD2: Quake 2</h3>
+</a>
+<div class="shortcut">Menü ->File -> Importer -> Quake II MD2</div><br />
+	<br />
+	MD2 ist das Dateiformat, das im Spiel 'Quake II' verwendet wird. Es speichert Animationen, welche allerdings hier nicht geladen werden. Nachdem das Model importiert wurde, befindet sich nur ein Material ohne Textur darauf. Um dem Model seine Textur zu geben (Skin), muss diese im Material-Editor ausgewählt werden.</div>
+<a name="09-01-02">
+<h3>9.1.2 3ds: 3d Studio</h3>
+</a>
+<div class="shortcut">Menü ->File -> Import -> Autodesk 3DS </div><br />
+	<br />
+	3DS ist das Autodesk 3D Studio Model Format. Das Modelformat kann zusätzlich zu den statischen Daten noch zusätzliche Animationen abspeichern, welche aber beim Importieren ignoriert werden. </div>
+<br />
+<div class="pic">
+	<div class="center"> <a href="../images/kap9/Importer_3DS.png" target="_blank"><img src="../images/kap9/Importer_3DS.png" alt="" height="161" width="203" border="0" /></a></div>
+	<div> Einstellungen/Parameter <a href="../images/kap9/Importer_3DS.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div>
+	<table border="0">
+		<tr>
+			<td valign="top"><em>Filename:</em> </td>
+			<td>Der Dateipfad des zu ladenden Modells</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>Texture directory:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Der Pfad zu den Texturen. Wird das Feld  leer gelassen, werden die Texturen aus dem gleichen Ordner wie die zu  ladende Datei verwendet</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>Disable loading textures: </em> </td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Erzwingt,  dass keine Texturen geladen werden</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Center mesh:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Gibt an, ob das geladene Modell  zentriert in die Szene eingef&uuml;gt werden soll</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Scale to max. size:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Gibt an, ob das geladene Modell auf  eine bestimmte maximale Gr&ouml;&szlig;e skaliert werden soll</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Set specular power 0.0 to specific  value:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Gibt  an, ob ein Glanzfaktor von 0.0 mit einem anderen Wert  ersetzt werden soll</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Negate v-coordinate of texture:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Gibt an, ob die v-Texturecoordinate  negiert werden soll</td>
+		</tr>
+	</table>
+</div>
+<a name="09-01-03">
+<h3>9.1.3 OBJ: Lightwave</h3>
+</a>
+<div class="shortcut">Menü ->File -> Import -> Lightwave OBJ</div><br />
+	<br />
+	OBJ ist das Modelformat von Lightwave. Es werden die Vertex-, Material- und Gruppendaten gelesen, alle anderen Daten der Datei werden ignoriert.</div>
+<br />
+<div class="pic">
+	<div class="center"> <a href="../images/kap9/Importer_OBJ.png" target="_blank"><img src="../images/kap9/Importer_OBJ.png" alt="" height="162" width="226" border="0" /></a></div>
+	<div> Einstellungen/Parameter <a href="../images/kap9/Importer_OBJ.png" target="_blank"><img src="../images/popup.png" alt="" height="11" width="15" border="0" /></a></div>
+</div>
+<div>
+	<table border="0">
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Filename:</em> </td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Der Dateipfad des zu ladenden Modells</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Texture directory:</em></td>
+			<td>Der Pfad zu den  Materialfiles (mtl). Wird das Feld leer gelassen, werden die Materialien aus  dem gleichen Ordner wie die zu ladende Datei verwendet</td>
+		</tr>
+		<tr>
+			<td valign="top"><em>Texture directory:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Der Pfad zu den Texturen. Wird das Feld  leer gelassen, werden die Texturen aus dem gleichen Ordner wie die zu  ladende Datei verwendet</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Disable loading textures:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Erzwingt,  dass keine Texturen geladen werden</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Center mesh:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Gibt an, ob das geladene Modell  zentriert in die Szene eingef&uuml;gt werden soll</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Scale to max. size:</em></td>
+			<td><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Gibt an, ob das geladene Modell auf  eine bestimmte maximale Gr&ouml;&szlig;e skaliert werden soll</td>
+		</tr>
+		<tr>
+			<td valign="top"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				<em>Set specular power 0.0 to specific  value:</em></td>
+			<td valign="bottom"><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+				Gibt  an, ob ein Glanzfaktor von 0.0 mit einem anderen Wert  ersetzt werden soll</td>
+		</tr>
+	</table>
+</div>
+<a name="09-02">
+<h2>9.2 Export</h2>
+</a> <a name="09-02-01">
+<h3>9.2.1 OBJ: Lightwave</h3>
+</a>
+<div class="shortcut">Menü ->File -> Export -> Lightwave OBJ</div><br />
+	<br />
+	OBJ ist das Modelformat von Lightwave. Es werden die Vertex-, Material- und Gruppendaten gespeichert, alle anderen Szenendaten (z.b. Szenenkommentar) werden ignoriert. Die generierte Materialfile (mtl) befindet sich im gleichen Ordner wie die OBJ-Datei und hat den gleichen Namen wie diese Datei.</div>
+<br />
+<br />
+<br />
+<p></p>
+</body>
+</html>

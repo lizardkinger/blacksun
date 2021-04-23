@@ -1,0 +1,8 @@
+			Keine						Shift						Strg		Alt		Shift-Strg
+	
+Rechts		Kontext						-							-			-		-
+
+Links		2D:Ausgewählte Aktionen/	Zur Selektion hinzufügen	Verschieben	-		Von Selektion entfernen/
+			3D:Verschieben				/-												-
+	
+Mittel		Verschieben					Verschieben					Verschieben	-		Verschieben		

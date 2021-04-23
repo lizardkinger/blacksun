@@ -1,0 +1,81 @@
+
+____ All objects ___
+
+	#include <list> 
+	#include <vector>
+	#include <iostream>
+	
+	// Sample modification for all scene objects
+	
+	SceneManager *sm =	SceneManager::getInstance();
+	Scene &s = sm->getScene();
+	list<Mesh>*	 sMeshes = s.getSceneMeshes();
+	 
+	for(list<Mesh>::iterator itMesh = sMeshes->begin();itMesh != sMeshes->end(); ++itMesh)
+ 	{
+ 		vector<Polygon>* sPolys = itMesh->getPolys();
+ 		 
+ 		 
+		for(vector<Polygon>::iterator itPolys = sPolys->begin(); itPolys != sPolys->end(); ++itPolys)
+		{
+			itPolys->changeBias();
+			
+			vector<Vertex>*	sVerts = itPolys->getVertices();
+			for(vector<Vertex>::iterator itVerts = sVerts->begin(); itVerts != sVerts->end(); ++itVerts)
+			{
+					Vertex *v = &(*itVerts);
+					v->vPos *= 3;
+			}     
+			      
+  			vector<int>* sInds = itPolys->getIndices(); 
+  			for(vector<int>::iterator itInds = sInds->begin(); itInds != sInds->end(); ++itInds)
+  			{
+				int *out = &(*itInds);
+				cout << *out;
+  			}
+		}
+ 	}
+ 	
+ 	sm->notifyContentChanged( SceneObjectType , false);
+ 	
+ 	
+ __ Only selected objects using the SelectionBuffer ___
+ 
+	SceneManager *sm =	SceneManager::getInstance();	
+ 	SelectionBuffer &sb = sm->getSelBuffer();
+	list<SceneObject*>& sObjects = sb.getSelectedObjects();
+	
+	for(list<SceneObject*>::iterator it = sObjects.begin();it != sObjects.end(); ++it) 
+   	{
+		if( (*it)->getType() == SCENETYPE_Mesh)
+		{
+			Vector vecBeside(0.2f,0.2f,0.2f);
+			
+            Mesh *mesh = dynamic_cast<Mesh*>(*it);
+            mesh->move(vecBeside);
+		}
+   	}
+   	
+   	sm->notifyContentChanged( SceneObjectType, true );
+   	
+   	
+ __ Selected vertices in vertex selection mode using the SelectionBuffer ___
+ 
+ 	SceneManager *sm =	SceneManager::getInstance();
+ 	SelectionBuffer &sb = sm->getSelBuffer();
+	list<SelectedVertex>& sSelVerts = sb.getSelectedVertices();
+	
+	Vector vecBeside(0.2f,0.2f,0.2f);
+	
+	for(list<SelectedVertex>::iterator it = sSelVerts.begin();it != sSelVerts.end(); ++it) 
+	{
+		SelectedVertex *sVert = &(*it);
+		Polygon *p = sVert->getPolygon();
+		p->move(vecBeside);
+		
+		Polygon *pNeu;
+		Vertex *vNeu;
+		sVert->set(vNeu,pNeu);
+	}
+	
+	sm->notifyContentChanged( SceneObjectType, true );

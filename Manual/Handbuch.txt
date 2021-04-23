@@ -1,0 +1,26 @@
+[ X ] Einführung - Impressum: Es fehlen bei einigen Leuten Aufgaben:
+	Thomas Kuhndörfer: Pluginentwicklung
+	Reinhard Jeschull: Mathebibliothek
+	Stefan Zeltner: Updater/Installer
+	Philipp Gruber: Core/Logger
+[ X ] Fenster/Ansichten - Ansichten: Die Auflistung sollte am besten nebem das Kontextmenü-Bild
+[ X ] Objekte erstellen: In vielen Bildern steht als Beschreibung 'Abbildung x', das sollte entfernt werden 
+			oder überall hingeschrieben werden, damit es einheitlich wird
+[   ] Objekte erstellen - Vertex: Die Bilder sind hier nicht verkleinert, im drauffolgenden Unterkapitel aber schon.
+			Das sollte angeglichen werden.
+[   ] Objekte erstellen - Sphere: Das Beispielbild ist nicht verkleiert. Es sollte am besten erst über einen Klick
+			in Originalgröße dargestellt werden (wie die anderen Beispielbilder auch)
+[ X ] Szenensteuerung - Selektieren: Der unterstrichene 'Parameter' sollte komplett unter'm Bild Anfangen. Bei mir
+			ist die Überschrift nebem dem Bild, der Rest darunter (sieht komisch aus)
+[ X ] Szenensteuerung - Selektieren: Die Zeilen für Mesh/Polygon/Vertex sollten aufgeteilt werden und direkt nebem
+			das jeweilige Bild geschrieben werden (anstatt es alles beim ersten Bild hinzuschreiben)
+[ X ] Objekte bearbeiten - Subdivision: Die Erreichbarkeit ist nun bekannt: 'Modify -> Subdivide'
+[ X ] Objekte bearbeiten: Falls nur 'Modify -> ...' dastehen sollte, dies bitte durch 'Menü -> Modify -> ... '
+			ersetzen
+[ X ] Materialien: Der Punkt 'Textur laden' kann entfernt werden, er wird im Materialeditor erwähnt
+[ X ] Materialien: Den Punkt 'Texturkoordinaten bearbeiten' umbenennen in 'Texturkoordinateneditor'
+[ X ] Serialisierung: 'Menüleiste' durch 'Menü' ersetzen (damit es einheitlich zu anderen Kapiteln wird)
+[ X ] Import/Export: Die Erreichbarkein 'File -> ...' durch 'Menü -> File -> ...' ersetzen
+[   ] 2.3 Onlineupdate fehlt
+[ X ] 6.1 Vertex fehlt 
+[ X ] 7.2 Textur laden fehlt

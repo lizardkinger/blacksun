@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?fileVersion 3.1.0?>
+
+<ManagedProjectBuildInfo>
+<project id="math.cdt.managedbuild.target.gnu.cygwin.lib.1642874902" name="Static Library (Gnu on Windows)" projectType="cdt.managedbuild.target.gnu.cygwin.lib">
+<configuration artifactExtension="a" artifactName="math" cleanCommand="rm -rf" description="" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" id="cdt.managedbuild.config.gnu.cygwin.lib.debug.996116872" name="Linux_Debug" parent="cdt.managedbuild.config.gnu.cygwin.lib.debug" postbuildStep="cp libmath.a ../../../libraries/editor/libmath.a">
+<toolChain id="cdt.managedbuild.toolchain.gnu.cygwin.lib.debug.287074753" name="GCC Tool Chain" superClass="cdt.managedbuild.toolchain.gnu.cygwin.lib.debug">
+<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.lib.debug.1964390349" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.lib.debug"/>
+<tool id="cdt.managedbuild.tool.gnu.c.compiler.cygwin.lib.debug.1270270772" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.cygwin.lib.debug"/>
+<tool id="cdt.managedbuild.tool.gnu.archiver.cygwin.lib.debug.1210818511" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.cygwin.lib.debug"/>
+<tool id="cdt.managedbuild.tool.gnu.assembler.cygwin.lib.debug.1873818094" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.cygwin.lib.debug"/>
+<macros/>
+</toolChain>
+</configuration>
+<configuration artifactExtension="a" artifactName="math" cleanCommand="rm -rf" description="" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" id="cdt.managedbuild.config.gnu.cygwin.lib.release.2011066292" name="Linux_Release" parent="cdt.managedbuild.config.gnu.cygwin.lib.release" postbuildStep="cp libmath.a ../../../libraries/editor/libmath.a">
+<toolChain id="cdt.managedbuild.toolchain.gnu.cygwin.lib.release.2013112671" name="GCC Tool Chain" superClass="cdt.managedbuild.toolchain.gnu.cygwin.lib.release">
+<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.lib.release.1675752793" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.lib.release"/>
+<tool id="cdt.managedbuild.tool.gnu.c.compiler.cygwin.lib.release.1277178091" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.cygwin.lib.release"/>
+<tool id="cdt.managedbuild.tool.gnu.archiver.cygwin.lib.release.2105366340" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.cygwin.lib.release"/>
+<tool id="cdt.managedbuild.tool.gnu.assembler.cygwin.lib.release.1810608787" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.cygwin.lib.release"/>
+<macros/>
+</toolChain>
+</configuration>
+<configuration artifactExtension="a" artifactName="math" cleanCommand="rm -rf" description="" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" id="cdt.managedbuild.config.gnu.cygwin.lib.debug.727159169" name="Windows_Debug" parent="cdt.managedbuild.config.gnu.cygwin.lib.debug" postannouncebuildStep="" postbuildStep="copy libmath.a ..\..\..\libraries\editor\libmath.a">
+<toolChain id="cdt.managedbuild.toolchain.gnu.cygwin.lib.debug.595223363" name="GCC Tool Chain" superClass="cdt.managedbuild.toolchain.gnu.cygwin.lib.debug">
+<builder arguments="" command="mingw32-make" id="cdt.managedbuild.target.gnu.builder.cygwin.lib.debug.1696686141" name="Gnu Make.Windows_Debug" superClass="cdt.managedbuild.target.gnu.builder.cygwin.lib.debug"/>
+<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.lib.debug.393047503" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.lib.debug"/>
+<tool id="cdt.managedbuild.tool.gnu.c.compiler.cygwin.lib.debug.587419061" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.cygwin.lib.debug"/>
+<tool id="cdt.managedbuild.tool.gnu.archiver.cygwin.lib.debug.1061135085" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.cygwin.lib.debug"/>
+<tool id="cdt.managedbuild.tool.gnu.assembler.cygwin.lib.debug.1755653643" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.cygwin.lib.debug"/>
+<macros/>
+</toolChain>
+</configuration>
+<configuration artifactExtension="a" artifactName="math" cleanCommand="rm -rf" description="" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" id="cdt.managedbuild.config.gnu.cygwin.lib.release.749323839" name="Windows_Release" parent="cdt.managedbuild.config.gnu.cygwin.lib.release" postbuildStep="copy libmath.a ..\..\..\libraries\editor\libmath.a">
+<toolChain id="cdt.managedbuild.toolchain.gnu.cygwin.lib.release.1766657826" name="GCC Tool Chain" superClass="cdt.managedbuild.toolchain.gnu.cygwin.lib.release">
+<builder arguments="" command="mingw32-make" id="cdt.managedbuild.target.gnu.builder.cygwin.lib.release.425210633" name="Gnu Make.Windows_Release" superClass="cdt.managedbuild.target.gnu.builder.cygwin.lib.release"/>
+<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.lib.release.414844904" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.lib.release"/>
+<tool id="cdt.managedbuild.tool.gnu.c.compiler.cygwin.lib.release.473296652" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.cygwin.lib.release"/>
+<tool id="cdt.managedbuild.tool.gnu.archiver.cygwin.lib.release.661114863" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.cygwin.lib.release"/>
+<tool id="cdt.managedbuild.tool.gnu.assembler.cygwin.lib.release.1791782583" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.cygwin.lib.release"/>
+<macros/>
+</toolChain>
+</configuration>
+</project>
+</ManagedProjectBuildInfo>

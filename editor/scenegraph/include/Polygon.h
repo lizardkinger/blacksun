@@ -1,0 +1,391 @@
+/***************************************************************************
+ *   Copyright (C) 2006 by Thomas Kuhndörfer
+ *   tkuhndo@fh-landshut.de
+ *   
+ *   This program is free software; you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation; either version 2 of the License, or
+ *   (at your option) any later version.
+ *   
+ *   This program is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *   
+ *   You should have received a copy of the GNU General Public License
+ *   along with this program; if not, write to the
+ *   Free Software Foundation, Inc.,
+ *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ *   (See COPYING for details.)
+ ***************************************************************************
+ *
+ *  Module:     Scenegraph (BlackSun)
+ *  File:       Polygon.h
+ *  Created:    29.11.2006
+ *  Author:     Thomas Kuhndörfer (tkuhndo)
+ *
+ **************************************************************************/
+
+#ifndef POLYGON_H_
+#define POLYGON_H_ 
+
+/** \file Polygon.h
+ * \brief Defines the polygon class.
+ * 
+ * \author Thomas Kuhndörfer.
+ */
+
+
+///////////////////////////////////////////////////////////
+// Includes for STL
+/////////////////////////////////////////////////////////// 
+#include <vector> 
+
+///////////////////////////////////////////////////////////
+// Blacksun-Includes for scenegraph-lib
+///////////////////////////////////////////////////////////
+#include "./SceneObject.h"
+#include "./SceneAction2D.h"
+
+
+namespace BSScene   
+{ 
+
+///////////////////////////////////////////////////////////
+// Forward declarations
+///////////////////////////////////////////////////////////	
+class Mesh;
+class SelectionBuffer;
+
+/*! \brief The polygon object 
+*
+* A concrete class set consists of vertices and indices that specifies 
+* the connections of the vertices 
+*/
+class Polygon : public SceneObject
+{
+public:
+
+	/*!
+	* \brief Constructor
+	*/	
+	Polygon();
+	
+	/*!
+	* \brief Copy constructor
+	* 
+	* \param p Another Polygon that will be copied
+	*/		
+	Polygon(const Polygon &p);
+	
+	/*!
+	* \brief Assignment constructor
+	* 
+	* \param p Another Polygon whom values will be copied
+	*/		
+	Polygon&	operator=(const Polygon& p);
+	
+	/*!
+	* \brief Destructor
+	*/		
+	virtual ~Polygon();
+	
+	/*!
+	* \brief Saves a sceneobject into a file
+	* 
+	* \param qd The stream the data will be written to
+	*/	
+	void    save(QDataStream &qd);
+	
+	/*!
+	* \brief Loads a sceneobject from a file
+	* 
+	* \param qd The stream the data will read from
+	*/			
+  	void    load(QDataStream &qd);
+  	
+	/*!
+	* \brief Calls the Renderer to draw this object
+	* 
+	* \param r The rendering device
+	*/	  	
+  	void    render(Renderer& r);
+	
+	/*!
+	* \brief Set the vertices list of this polygon
+	* 
+	* \param v The vertex vector
+	*/	  
+  	void    setVertices(const vector<Vertex>& v);
+
+	/*!
+	* \brief Set the indices list of this polygon
+	* 
+	* \param v The indices vector
+	*/	  
+  	void    setIndices(const vector<int>& v);
+  	
+  	/*!
+	* \brief Get the vertices list
+	* 
+	* \return r The vertices vector
+	*/	  
+  	vector<Vertex>*    getVertices() 
+  	{ 
+  		return &m_vertices; 
+  	}
+
+  	/*!
+	* \brief Get the indices list
+	* 
+	* \return The indices vector
+	*/	 
+  	vector<int>*    getIndices() 
+  	{ 
+  		return &m_indices; 
+  	}
+  	
+  	/*!
+	* \brief Get the vertices count
+	* 
+	* \return The vertices count
+	*/	 
+  	long		countVertices() const ;
+  	
+  	/*!
+	* \brief Get the indices count
+	* 
+	* \return The indices count
+	*/	 
+  	long		countIndices()	const ;
+  
+	/*!
+	* \brief Moves the object depending on a vector
+	* 
+	* \param v Translation vector for the scene object
+	*/	
+  	void 	move(const Vector &v); 
+  	
+	/*!
+	* \brief Rotates the object depending on a amount around a specific center
+	* 
+	* \param axis The rotation axis
+	* \param center The center point for the rotation
+	* \param amount The amount of rotation in degrees
+	*/	  	
+  	void    rotate(const SceneAxis axis,const Vector& center, const float amount);
+  	
+	/*!
+	* \brief Mirror the object
+	* 
+	* \param axis The mirror axis
+	* \param center The center point for the mirroring
+	*/	  	
+  	void    mirror(const SceneAxis axis,const  Vector& center);
+
+	/*!
+	* \brief Mirror the object  by world axis
+	* 
+	* \param axis The mirror axis
+	*/	  	
+  	void    mirrorWorld(const SceneAxis axis);
+
+	/*!
+	* \brief Scales an object freely on each direction 
+	* 
+	* \param percentageX The value of scaling the X components
+	* \param percentageY The value of scaling the Y components
+	* \param percentageZ The value of scaling the Z components
+	*/		
+	void 	scale(const double percentageX,const double percentageY,const double percentageZ);
+
+  	
+    /*!
+	* \brief Hit test for selection in 2D view
+	* 
+	* \param boundary	Box that was generated by an selection area
+	* \param axis	Axis of the view that will be the infinite component of the intersection test
+	*/	
+  	bool    intersects(const Aabb& boundary, const SceneAxis axis) ;
+  	
+    /*!
+	* \brief Selects intersecting vertices
+	* 
+	* \param boundary	Box that was generated by an selection area
+	* \param sb		Reference to the SelectionBuffer to add selected items
+	* \param axis	Axis of the view that will be the infinite component of the intersection test
+	* \param selType Additional selection information	 
+	*/	
+  	void    getIntersectingVertices(const Aabb& boundary, SelectionBuffer& sb,const SceneAxis axis, const SceneAction2D_SelectionType selType);
+  	
+  	/*!
+	* \brief Turns the indices order
+	* 
+	*/	
+  	void    changeBias();
+
+  	/*!
+	* \brief Test if this polygon is part of a mesh
+	* 
+	* \return True if this polygon is part of a mesh
+	*/	
+  	bool    isPartOfMesh() const 
+  	{ 
+  		return (m_parentID.length()>0); 
+  	}
+  	
+  	/*!
+	* \brief Set this polygon as part of a mesh
+	* 
+	* \param pName Name of the parent mesh
+	*/	
+  	void    setAsPartOfMesh(const QString& pName);
+  	
+  	/*!
+	* \brief Get the name of the parent mesh
+	* 
+	* \return Name of the parent mesh
+	*/	
+  	QString&	getParent()
+  	{ 
+  		return m_parentID; 
+  	}
+
+  	/*!
+	* \brief Calculates indices for this polygon
+	* 
+	* \param ccw Specifies the turning side wether clockwise or counterclockwise
+	*/	
+  	void    triangulate(bool ccw = true);
+  	
+  	/*!
+	* \brief Calculates the bounding box of this polygon
+	* 
+	*/	
+  	void    calcBoundingBox();
+  	
+  	/*!
+	* \brief Calculates the normals of this polygon
+	* 
+	*/	
+  	void    calcNormals();
+  	
+	
+	/*!
+	* \brief Calculates the texture coordinates of this polygon
+	* 
+	* \param axis The mapping axis
+	* \param pAabb The bounding box used to map the coordinates
+	*/	
+  	void    calcTextureCoords(const SceneAxis axis,const Aabb* pAabb);
+  	
+  	/*!
+	* \brief Translate the texture coordinates
+	* 
+	* \param dtU Changes the U value of the offset coordinates
+	* \param dtV Changes the V value of the offset coordinates
+	* \param drU Changes the U value of the repeat coordinates
+	* \param drV Changes the V value of the repeat coordinates  
+	*/	
+  	void   	transTextureCoords(double dtU, double dtV, double drU, double drV);
+  	
+  	/*!
+	* \brief Get the texture coordinates
+	* 
+	* \param pdtU The U value of the offset coordinates
+	* \param pdtV The V value of the offset coordinates
+	* \param pdrU The U value of the repeat coordinates
+	* \param pdrV The V value of the repeat coordinates  
+	*/	
+  	void   	getTextureTrans(double *pdtU, double *pdtV,double *pdrU, double *pdrV);
+  	
+  	
+  	/*!
+	* \brief Removes a single vertex from this polygon
+	* 
+	* \param v Reference to the vertex that will be removed
+	* 
+	*/	
+  	void 	removeVertex(Vertex* v);	  	
+  	
+  	
+  	void mergeNeighourIndices();
+  	
+  	/*!
+	* \brief Informs the parent mesh of local changes
+	* 
+	*/	
+  	void 	forwardChanges();	
+  	
+  	/*!
+	* \brief Print out all known information about this polygon 
+	* 
+	*/	
+  	void 	print() const;
+
+	/*!
+	* \brief Compares two scene objects
+	* 
+	* \param so The object that will be copied
+	* 
+	* \return Return true if it's the same objects
+	*/	
+  	bool operator==(const SceneObject &so) const;
+ 
+private:
+
+	/*!
+	* \brief Initializes a polygon
+	*/	
+ 	void 	init();
+ 	
+	/*!
+	* \brief Initializes a polygon using another polygon 
+	*/	 	
+ 	void 	init(const Polygon& copy);
+ 	
+	/*!
+	* \brief Releases a polygon
+	*/	 	
+	void 	release();
+	
+  	/*!
+	* \brief Tests for the extremal points of an AABB if they intersects with the 3 planes
+	* 
+	* \param planeA The first plane which defines the limits
+	* \param planeB The second plane which defines the limits
+	* \param planeC The third plane which defines the limits
+	* \param aabb The bounding box whose extremal points will be used
+	* \param axis Specifies the axis for the taking the right extremal points of the AABB
+	*/		 
+	bool    isPlaneIntersecting(const Plane<double> &planeA,
+								const Plane<double> &planeB,
+								const Plane<double> &planeC,
+						   		const Aabb& aabb, 
+						   		const SceneAxis axis);
+				
+  	/*!
+	* \brief Tests if the vertex intersects with the plane
+	* 
+	* \param v The vertex that will be tested 
+	* \param axis The reference axis
+	* \param boundary The bounding box whose extremal points will be used
+	*/							   
+	bool    isVertexIntersecting(	const Vertex& v, 
+									const SceneAxis axis,
+									const  Aabb& boundary);				   
+	
+private:
+  vector<Vertex>	m_vertices;   	/*!< \brief Array of all vertices belong to this polygon */   
+  vector<int>		m_indices;     	/*!< \brief Array of all indices belong to this polygon */   
+
+  QString   		m_parentID;		/*!< \brief Name of the parent mesh */
+  
+  double       		m_textureOffset[2]; 	/*!< \brief U/V for the texture offsets */    
+  double      		m_textureRepeat[2];  	/*!< \brief U/V for the texture repeatings */
+  
+};
+
+}
+
+#endif /*POLYGON_H_*/
