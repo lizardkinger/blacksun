@@ -1,6 +1,6 @@
-# Blacksun 3D Modeller
+# Blacksun 3D Modeler
 
-Blacksun is a free 3D modelling environment for static objects
+Blacksun is a free 3D modeling software for static objects.
 
 ## Authors
 
